@@ -52,7 +52,7 @@ def animate(i):
         theta = 2 * np.pi * j / num_linhas
         x_cil = [largura_retangulo / 2 * np.cos(angulo), largura_retangulo / 2 * np.cos(angulo + 2 * np.pi)]
         y_cil = [-altura_retangulo / 2 + largura_retangulo / 2 * np.sin(angulo),
-                 -altura_retangulo / 2 + largura_retangulo / 2 * np.sin(angulo)] + j * (altura_retangulo / (num_linhas - 1))
+         -altura_retangulo / 2 + largura_retangulo / 2 * np.sin(angulo)] + [j * (altura_retangulo / (num_linhas - 1))]
         linha.set_data(x_cil * np.cos(theta) - y_cil * np.sin(theta),
                        x_cil * np.sin(theta) + y_cil * np.cos(theta))
 
