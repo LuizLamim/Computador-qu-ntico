@@ -1,0 +1,85 @@
+\documentclass[11pt, a4paper]{article}
+
+% --- PACOTES GERAIS ---
+\usepackage[utf8]{inputenc} % Codificação de entrada
+\usepackage[T1]{fontenc}    % Codificação de fonte
+\usepackage[brazilian]{babel} % Idioma português do Brasil
+\usepackage{geometry}       % Controle de margens
+\usepackage{fancyhdr}       % Para cabeçalhos e rodapés personalizados
+\usepackage{graphicx}       % Para incluir logotipos ou imagens
+\usepackage{xcolor}         % Para cores personalizadas
+\usepackage{lipsum}         % Para texto de exemplo (lorem ipsum)
+
+% --- CONFIGURAÇÃO DE GEOMETRIA (MARGENS) ---
+\geometry{
+    a4paper,
+    top=2.5cm,
+    bottom=2.5cm,
+    left=3cm,
+    right=3cm,
+    headheight=14pt,
+    footskip=1.2cm
+}
+
+% --- CORES PERSONALIZADAS ---
+\definecolor{corporateblue}{HTML}{005691} % Azul corporativo
+\definecolor{corporategray}{HTML}{505050} % Cinza corporativo
+
+% --- CONFIGURAÇÃO DO CABEÇALHO E RODAPÉ ---
+\pagestyle{fancy}
+\fancyhf{} % Limpa cabeçalhos e rodapés padrão
+
+% Cabeçalho: Nome da Empresa Centralizado
+\fancyhead[C]{%
+    \textsf{\color{corporateblue}\textbf{\Large NOME DA SUA EMPRESA S.A.}}
+}
+
+% Rodapé: Número da página (opcional, mas bom para documentos longos)
+\fancyfoot[R]{%
+    \textsf{\color{corporategray}\thepage}
+}
+
+\renewcommand{\headrulewidth}{0.8pt} % Linha abaixo do cabeçalho
+\renewcommand{\footrulewidth}{0pt}   % Remove linha no rodapé (se não quiser)
+
+% --- ESTILOS DE TÍTULO ---
+\newcommand{\documenttitle}[1]{%
+    \vspace*{1.5cm} % Espaço antes do título
+    \begin{center}
+        \textsf{\color{corporateblue}\bfseries\Huge #1}
+    \end{center}
+    \vspace*{1cm} % Espaço depois do título
+}
+
+% --- INÍCIO DO DOCUMENTO ---
+\begin{document}
+
+% --- TÍTULO DO DOCUMENTO ---
+\documenttitle{Relatório Mensal de Desempenho}
+
+% --- CORPO DO TEXTO ---
+\section*{Introdução} % Seção sem numeração
+\textsf{\color{corporategray}\lipsum[1]} % Texto de exemplo
+
+\vspace{0.5cm} % Espaço
+
+\section*{Análise de Resultados}
+\textsf{\color{corporategray}\lipsum[2]} % Texto de exemplo
+
+\subsection*{Vendas}
+\textsf{\color{corporategray}\lipsum[3]} % Texto de exemplo
+
+\subsection*{Marketing}
+\textsf{\color{corporategray}\lipsum[4]} % Texto de exemplo
+
+\section*{Conclusão}
+\textsf{\color{corporategray}\lipsum[5]} % Texto de exemplo
+
+\vspace{1cm} % Espaço antes da assinatura
+\begin{flushright}
+    \textsf{\color{corporategray}Atenciosamente,}\\
+    \textsf{\color{corporategray}Departamento Responsável}\\
+    \textsf{\color{corporategray}Data: \today}
+\end{flushright}
+
+\end{document}
