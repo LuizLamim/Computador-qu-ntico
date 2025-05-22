@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1747933518.93576 "c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/neweinstein.tex" "neweinstein.pdf" "neweinstein" 1747933519.92708 2
+["pdflatex"] 1747936307.48709 "c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/neweinstein.tex" "neweinstein.pdf" "neweinstein" 1747936308.19739 2
   "C:/Users/luizb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1747923472 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/luizb/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1200.pk" 1746574273 14064 8a29bf6d0f67e8760b1ab391cbd2a796 ""
   "C:/Users/luizb/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1746574261 13157681 2378aee56ff1a7770df671ad3f1ae249 ""
@@ -63,12 +63,13 @@
   "C:/Users/luizb/AppData/Local/Programs/MiKTeX/tex/latex/graphics/trig.sty" 1730544106 4023 2c9f39712cf7b43d3eb93a8bbd5c8f67 ""
   "C:/Users/luizb/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1745818159 30366 13daaaa774357bc2a262523ba6a04bac ""
   "C:/Users/luizb/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
-  "c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/neweinstein.tex" 1747933494 4513 d43d7e6d06de951448ee64c67aec8bf7 ""
-  "neweinstein.aux" 1747933519 1056 82f8c1f67191d21e411c414fb719b68a "pdflatex"
-  "neweinstein.tex" 1747933494 4513 d43d7e6d06de951448ee64c67aec8bf7 ""
+  "c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/neweinstein.tex" 1747936307 4515 1f4dadb7da998d8e3d3f2b2b0fcf9938 ""
+  "neweinstein.aux" 1747936308 1056 82f8c1f67191d21e411c414fb719b68a "pdflatex"
+  "neweinstein.tex" 1747936307 4515 1f4dadb7da998d8e3d3f2b2b0fcf9938 ""
   "tensor.gif" 1746642180 845045 7d09a0d3a2e3c88e38d7ad1dfb83aa80 ""
   (generated)
   "neweinstein.aux"
   "neweinstein.log"
   "neweinstein.pdf"
   (rewritten before read)
+  "neweinstein.aux"
