@@ -1,0 +1,194 @@
+\documentclass[12pt, a4paper]{letter} % Set the font size (10pt, 11pt and 12pt) and paper size 
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{eso-pic}
+\usepackage[export]{adjustbox}
+\usepackage{tikz} 
+
+\usepackage[utf8]{inputenc}
+\usepackage{longtable} % Required for tables that span multiple pages
+
+
+\usepackage{xcolor}
+\usepackage{transparent}
+\definecolor{umdred}{RGB}{77, 95, 227}
+
+\geometry{
+	top=1cm,
+	bottom=2cm,
+	left=2cm,
+	right=2cm,
+}
+
+\newcommand\BackgroundPicture{
+	\put(0,0){
+		\parbox[b][\paperheight]{\paperwidth}{
+			\vfill
+			\centering
+			\transparent{0.15}\includegraphics[width=0.5\paperwidth,height=0.5\paperheight,keepaspectratio]{IRB.png}
+			\vfill
+}}}
+\AddToShipoutPicture{\BackgroundPicture}
+
+\begin{document}
+
+\begin{minipage}{0.6\textwidth}
+	\includegraphics[width=3in]{IRB.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\textwidth}\raggedright
+	\small{\textbf{\color{umdred}Site:}\hphantom{A}https://irb.academy/\\
+		\textbf{\color{umdred}Endereço:}\hphantom{A} Ed. Jade Home Office\\
+		\hphantom{AA}SGCV/S, Lote 15, Bloco C, St.\\
+		\hphantom{AA}Park Sul\\
+		\hphantom{AA}Sala 224, Brasília\\
+		\hphantom{AA}DF, 71215-100\\
+		\textbf{\color{umdred}WhatsApp: }(61) 8187-4673\\
+		\textbf{\color{umdred}Email: }suporte@irb.academy }
+\end{minipage}
+
+\today
+
+Pauta – Reunião sobre Possível Migração do Tutor MSL para Moodle
+
+Gostaria de abrir um ponto importante para discussão, que é a possibilidade de migração do sistema atual de gestão de cursos, o Tutor MSL, para a plataforma Moodle, de forma integrada à nossa operação.
+
+Nosso questionamento central gira em torno da viabilidade técnica e operacional dessa migração, considerando que atualmente estamos em fase de estruturação e integração dos sistemas — como Spedy, Asaas, WooCommerce e outros — que serão responsáveis por toda a automação de vendas, pagamentos e acesso aos cursos.
+
+É fundamental entender se, uma vez finalizadas essas integrações na estrutura atual, a migração do Tutor MSL para o Moodle poderá ser feita sem gerar prejuízos operacionais, sem perda de dados, de alunos, de matrículas ou de histórico acadêmico, garantindo que todo o ecossistema funcione de forma fluida.
+
+Além disso, precisamos avaliar se, após já estarmos operando comercialmente — vendendo cursos e cadastrando usuários na plataforma atual — essa migração poderá ocorrer de forma transparente, tanto para a empresa quanto para os alunos, sem que haja interrupções nos serviços, na comunicação entre sistemas ou no ambiente de aprendizagem.
+
+Portanto, os pontos principais para esclarecimento são:
+
+Viabilidade técnica da migração do Tutor MSL para o Moodle, considerando todas as integrações já realizadas.
+
+Possibilidade de realizar essa transição sem impacto nas vendas e na experiência dos alunos, especialmente após o início da operação comercial.
+
+Riscos e desafios envolvidos, bem como o que seria necessário para garantir uma migração segura — como backup de dados, replicação de integrações, testes e eventuais ajustes na infraestrutura.
+
+Análise de custo-benefício dessa migração no médio e longo prazo, comparando as funcionalidades, os custos de manutenção, as possibilidades de customização e escalabilidade entre as duas plataformas.
+
+
+
+
+\clearpage
+
+O quadro a seguir apresenta um comparativo entre as plataformas Tutor LMS (plugin para WordPress) e Moodle (plataforma open source independente), considerando aspectos técnicos, operacionais e estratégicos.
+
+\begin{longtable}{|p{3cm}|p{5cm}|p{6cm}|}
+	\hline
+	\textbf{Critério}                  & \textbf{Tutor LMS (WordPress)}                & \textbf{Moodle (Open Source)}                            \\
+	\hline
+	\endhead % End of the table header
+	\textbf{Natureza}                  & Plugin para WordPress                         & Plataforma independente, open source                     \\
+	\hline
+	\textbf{Custo inicial}             & Menor; licença anual                          & Gratuito, mas requer infraestrutura e equipe técnica     \\
+	\hline
+	\textbf{Hospedagem}                & Compartilha com o WordPress                   & Requer hospedagem dedicada (VPS ou cloud)                \\
+	\hline
+	\textbf{Facilidade de uso}         & Interface amigável para usuários de WordPress & Interface técnica, com curva de aprendizado maior        \\
+	\hline
+	\textbf{Escalabilidade}            & Limitada à arquitetura do WordPress           & Alta – ideal para expansão institucional                 \\
+	\hline
+	\textbf{Customização}              & Limitada aos recursos do plugin               & Altíssima – totalmente customizável                      \\
+	\hline
+	\textbf{Comunidade e suporte}      & Menor, centrada nos criadores do plugin       & Enorme comunidade global e suporte técnico amplo         \\
+	\hline
+	\textbf{Funcionalidades nativas}   & Funções básicas de LMS                        & Completo: fóruns, gamificação, SCORM, LTI, trilhas, etc. \\
+	\hline
+	\textbf{Integrações}               & Limitadas ao ecossistema WordPress            & Ampla capacidade de integração via API e plugins         \\
+	\hline
+	\textbf{Segurança e controle}      & Controle limitado de permissões e perfis      & Controle granular e robusto                              \\
+	\hline
+	\textbf{Atualizações e manutenção} & Simples, seguindo o ciclo do WordPress        & Requer equipe técnica para manutenções regulares         \\
+	\hline
+\end{longtable}
+
+
+
+Participantes: Sócios do Instituto RBE
+
+\section{1. Abertura e Indagação Central}
+Pergunta norteadora da deliberação: “Diante do nosso modelo de negócios, o que desejamos como horizonte estratégico?”
+
+Discussão inicial com os sócios sobre o direcionamento institucional:
+\begin{itemize}
+	\item Permanecer apenas com cursos livres, com operação enxuta e sem ambição de expansão institucional?
+	\item OU - Buscar escalabilidade e crescimento exponencial, com o objetivo de ofertar cursos de pós-graduação, extensão universitária e, futuramente, graduação?
+\end{itemize}
+
+\section{2. Contextualização da Situação Atual}
+\begin{itemize}
+	\item A plataforma inicial selecionada foi o Moodle, entretanto, por falha no controle de e-mails e pagamentos, o ambiente foi descontinuado.
+	\item Como solução provisória, adotou-se o Tutor LMS, plataforma mais limitada, vinculada ao WordPress.
+	\item No presente momento, a operação técnica (integrações com Spedy, Asaas e WooCommerce) ainda está em fase inicial, o que permite redirecionamento sem perdas significativas.
+\end{itemize}
+
+\clearpage
+\section{3. Avaliação Estratégica das Alternativas Técnicas}
+Comparativo resumido Moodle x Tutor LMS:
+\begin{itemize}
+	\item O Moodle é mais robusto, escalável e customizável, com funcionalidades avançadas e apropriado para instituições que pretendem operar com cursos de pós e graduação.
+	\item O Tutor LMS é limitado, atende bem a operações simples com cursos livres, mas não comporta o crescimento planejado.
+\end{itemize}
+
+\section{4. Impactos de uma Migração Posterior (caso permaneçamos com o Tutor LMS)}
+\begin{itemize}
+	\item Desgaste técnico com reconfiguração de integrações.
+	\item Perda de tempo e recursos financeiros e humanos.
+	\item Risco de comprometimento da imagem institucional, por intercorrências como:
+	      \begin{itemize}
+		      \item Perda ou duplicidade de históricos acadêmicos.
+		      \item Emissão incorreta de certificados.
+		      \item Reclamações de alunos e professores.
+	      \end{itemize}
+	\item Problemas contábeis e fiscais:
+	      \begin{itemize}
+		      \item Numeração desordenada de notas fiscais eletrônicas.
+		      \item RPS fora de sequência.
+		      \item Dificuldade de conciliação contábil.
+	      \end{itemize}
+\end{itemize}
+
+\section{5. Proposta de Solução Estratégica}
+Decisão propositiva: interromper a adoção do Tutor LMS e restabelecer o ambiente Moodle imediatamente, antes da abertura comercial da operação.
+
+Fundamentos da decisão:
+\begin{itemize}
+	\item O momento atual ainda é favorável para reestruturação.
+	\item Evita-se retrabalho futuro e desgaste com usuários.
+	\item Adoção do Moodle desde o início permite:
+	      \begin{itemize}
+		      \item Numeração fiscal sequencial e regular.
+		      \item Ambiente institucional robusto e confiável.
+		      \item Valorização da imagem da IRB.ACADEMY como referência em educação de qualidade.
+	      \end{itemize}
+\end{itemize}
+
+\section{6. Governança e Compartilhamento de Acessos}
+\begin{itemize}
+	\item Proposta de compartilhamento institucionalizado de senhas da hospedagem e do WordPress entre os sócios, mediante uso de cofre digital seguro (ex: 1Password ou Bitwarden).
+	\item Definir responsáveis alternados para monitoramento dos alertas de pagamento e prazos contratuais.
+	\item Implementar rotina de verificação mensal preventiva da infraestrutura técnica.
+\end{itemize}
+
+\clearpage
+\section{7. Encaminhamentos e Deliberações}
+\begin{itemize}
+	\item Votação sobre a adoção definitiva do Moodle.
+	\item Indicação de responsável pela reativação da plataforma.
+	\item Cronograma para migração das integrações já iniciadas.
+	\item Designação de responsável pela gestão de acessos e hospedagem.
+	\item Agendamento da próxima reunião de acompanhamento técnico.
+\end{itemize}
+
+\section{8. Encerramento}
+
+\includegraphics[width=2.1in]{assiss.png}
+
+Atenciosamente,\\
+IRB Academy,\\
+Quinta-feira 22/05/2025\\
+Possíveis soluções.
+\end{document}
