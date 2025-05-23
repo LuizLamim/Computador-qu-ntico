@@ -96,6 +96,7 @@ function checar(){
             aviso.innerHTML = 'O jogador ' + numeroJogador() + ' ganhou!'
         }
 
+        
 }
 function numeroJogador(){
     return jogador%2 +1
