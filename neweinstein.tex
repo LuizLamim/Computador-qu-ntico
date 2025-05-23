@@ -12,8 +12,14 @@
 
 \geometry{
   a4paper,
-  margin=2.5cm,
+  top=2cm,
+  bottom=2cm,
+  left=2cm,
+  right=2cm,
 }
+
+
+\begin{document}
 
 \title{Equações Fundamentais da Relatividade Geral h}
 \author{}
@@ -36,7 +42,13 @@ $$G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R$$
 
 onde $g_{\mu\nu}$ é o tensor métrico, que descreve a geometria do espaço-tempo.
 
-\includegraphics{tensor.gif}
+\begin{figure}[h!] % [h!] tenta posicionar a imagem "aqui" (here)
+    \centering % Centraliza o conteúdo dentro do ambiente figure
+    \includegraphics[width=0.5\textwidth]{Tensor_Einstein.png} % Ou .jpg, .pdf
+    \caption{Versão Simplificada do Tensor.} % Legenda da imagem
+    \label{fig:Tensor_Einstein} % Opcional: para referenciar a imagem no texto (e.g., Fig. \ref{fig:minha_imagem})
+\end{figure}
+
 
 \subsection{Tensor de Ricci}
 

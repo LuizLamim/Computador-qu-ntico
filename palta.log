@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.6)  22 MAY 2025 12:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.6)  22 MAY 2025 16:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -397,89 +397,98 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 <IRB.png, id=4, 301.125pt x 68.255pt>
 File: IRB.png Graphic file (type png)
 <use IRB.png>
-Package pdftex.def Info: IRB.png  used on input line 36.
+Package pdftex.def Info: IRB.png  used on input line 37.
 (pdftex.def)             Requested size: 216.81pt x 49.14563pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 37.
+(Font)              <12> on input line 38.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 37.
+(Font)              <8> on input line 38.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 37.
+(Font)              <6> on input line 38.
 
-Overfull \hbox (2.61107pt too wide) in paragraph at lines 35--49
+Overfull \hbox (2.61107pt too wide) in paragraph at lines 36--50
 []$[]$  $[]$ 
  []
+
+c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:53: Undefined control sequence.
+l.53 \maketitle
+               
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 
 
 File: IRB.png Graphic file (type png)
 <use IRB.png>
-Package pdftex.def Info: IRB.png  used on input line 75.
+Package pdftex.def Info: IRB.png  used on input line 77.
 (pdftex.def)             Requested size: 298.7809pt x 67.72366pt.
 [1
 
 {C:/Users/luizb/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./IRB.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 81--81
+Underfull \hbox (badness 10000) in paragraph at lines 83--83
 []|\OT1/cmr/bx/n/12 Tutor LMS (Word-
  []
 
 
-Underfull \hbox (badness 1158) in paragraph at lines 84--85
+Underfull \hbox (badness 1158) in paragraph at lines 86--87
 []|\OT1/cmr/m/n/12 Plataforma in-de-pen-dente, open
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 []|\OT1/cmr/m/n/12 Requer hospedagem ded-i-cada
  []
 
 
-Underfull \hbox (badness 5008) in paragraph at lines 90--90
+Underfull \hbox (badness 5008) in paragraph at lines 92--92
 []|\OT1/cmr/bx/n/12 Facilidade de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--90
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
 []|\OT1/cmr/m/n/12 Interface amig^^Savel para
  []
 
 
-Underfull \hbox (badness 1337) in paragraph at lines 94--94
+Underfull \hbox (badness 1337) in paragraph at lines 96--96
 []|\OT1/cmr/m/n/12 Limitada aos re-cur-sos do
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 []|\OT1/cmr/m/n/12 Alt^^S^^Pssima { to-tal-mente cus-
  []
 
 
-Underfull \hbox (badness 1648) in paragraph at lines 96--96
+Underfull \hbox (badness 1648) in paragraph at lines 98--98
 []|\OT1/cmr/m/n/12 Menor, cen-trada nos cri-
  []
 
 
-Overfull \hbox (8.11258pt too wide) in paragraph at lines 98--98
+Overfull \hbox (8.11258pt too wide) in paragraph at lines 100--100
 []|\OT1/cmr/bx/n/12 Funcionalidades
  []
 
 
-Underfull \hbox (badness 3312) in paragraph at lines 100--100
+Underfull \hbox (badness 3312) in paragraph at lines 102--102
 []|\OT1/cmr/m/n/12 Limitadas ao ecos-sis-tema
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--102
+Underfull \hbox (badness 10000) in paragraph at lines 104--104
 []|\OT1/cmr/bx/n/12 Seguran^^Xca e
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 []|\OT1/cmr/m/n/12 Requer equipe t^^Secnica para
  []
 
-c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:112: Undefined control sequence.
-l.112 \section
+c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:114: Undefined control sequence.
+l.114 \section
               {1. Abertura e Indagação Central}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -487,8 +496,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:121: Undefined control sequence.
-l.121 \section
+c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:123: Undefined control sequence.
+l.123 \section
               {2. Contextualização da Situação Atual}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -500,13 +509,13 @@ and I'll forget about whatever was undefined.
 
 File: IRB.png Graphic file (type png)
 <use IRB.png>
-Package pdftex.def Info: IRB.png  used on input line 128.
+Package pdftex.def Info: IRB.png  used on input line 130.
 (pdftex.def)             Requested size: 298.7809pt x 67.72366pt.
 [2
 
 ]
-c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:129: Undefined control sequence.
-l.129 \section
+c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:131: Undefined control sequence.
+l.131 \section
               {3. Avaliação Estratégica das Alternativas Técnicas}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -514,8 +523,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:136: Undefined control sequence.
-l.136 \section
+c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:138: Undefined control sequence.
+l.138 \section
               {4. Impactos de uma Migração Posterior (caso permaneçamos c...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -523,8 +532,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:154: Undefined control sequence.
-l.154 \section
+c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:156: Undefined control sequence.
+l.156 \section
               {5. Proposta de Solução Estratégica}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -532,8 +541,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:169: Undefined control sequence.
-l.169 \section
+c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:171: Undefined control sequence.
+l.171 \section
               {6. Governança e Compartilhamento de Acessos}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -545,13 +554,13 @@ and I'll forget about whatever was undefined.
 
 File: IRB.png Graphic file (type png)
 <use IRB.png>
-Package pdftex.def Info: IRB.png  used on input line 176.
+Package pdftex.def Info: IRB.png  used on input line 178.
 (pdftex.def)             Requested size: 298.7809pt x 67.72366pt.
 [3
 
 ]
-c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:177: Undefined control sequence.
-l.177 \section
+c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:179: Undefined control sequence.
+l.179 \section
               {7. Encaminhamentos e Deliberações}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -559,8 +568,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:186: Undefined control sequence.
-l.186 \section
+c:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/palta.tex:188: Undefined control sequence.
+l.188 \section
               {8. Encerramento}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -571,7 +580,7 @@ and I'll forget about whatever was undefined.
 <assiss.png, id=22, 1284.8pt x 722.7pt>
 File: assiss.png Graphic file (type png)
 <use assiss.png>
-Package pdftex.def Info: assiss.png  used on input line 188.
+Package pdftex.def Info: assiss.png  used on input line 190.
 (pdftex.def)             Requested size: 151.76744pt x 85.36386pt.
 
 Package transparent Warning: Rerun to get transparencies right.
@@ -580,7 +589,7 @@ Package transparent Warning: Rerun to get transparencies right.
 
 File: IRB.png Graphic file (type png)
 <use IRB.png>
-Package pdftex.def Info: IRB.png  used on input line 194.
+Package pdftex.def Info: IRB.png  used on input line 196.
 (pdftex.def)             Requested size: 298.7809pt x 67.72366pt.
 [4
 
