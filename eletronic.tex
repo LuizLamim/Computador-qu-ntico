@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} % Pacote para incluir imagens
+\usepackage[a4paper, margin=1in]{geometry} % Define o tamanho da página e as margens
+\usepackage{fancyhdr} % Pacote para cabeçalhos e rodapés personalizados
+\usepackage{lipsum} % Pacote para texto lorem ipsum (será substituído pelo seu conteúdo)
+
+% Configurações para a logo no cabeçalho
+\pagestyle{fancy}
+\fancyhf{} % Limpa configurações anteriores de cabeçalho/rodapé
+\fancyhead[L]{%
+    \includegraphics[width=2cm]{sua_logo.png}% % Substitua 'sua_logo.png' pelo nome do seu arquivo de imagem
+}
+\renewcommand{\headrulewidth}{0pt} % Remove a linha do cabeçalho, se não quiser
+
+\title{Introdução aos Circuitos Eletrônicos}
+\author{Seu Nome}
+\date{\today} % A data atual será gerada automaticamente
+
+\begin{document}
+
+\maketitle
+
+\section*{O que são Circuitos Eletrônicos?}
+\addcontentsline{toc}{section}{O que são Circuitos Eletrônicos?} % Adiciona ao sumário, se você decidir usá-lo
+Circuitos eletrônicos são a espinha dorsal de quase toda a tecnologia moderna que nos cerca. Desde o smartphone no seu bolso até os complexos sistemas que controlam aeronaves, todos eles dependem de circuitos eletrônicos para funcionar. Em sua essência, um circuito eletrônico é um caminho fechado através do qual a corrente elétrica pode fluir. Ele é composto por diversos componentes interconectados que manipulam essa corrente para realizar tarefas específicas.
+
+Os componentes básicos de um circuito incluem resistores, capacitores, indutores, diodos e transistores, entre muitos outros. Cada um desses elementos tem uma função única no controle do fluxo de elétrons, permitindo que os engenheiros projetem sistemas que podem amplificar sinais, armazenar energia, filtrar frequências ou realizar operações lógicas. A complexidade de um circuito pode variar desde um simples circuito de lanterna, com poucos componentes, até microprocessadores com bilhões de transistores.
+
+---
+
+\section*{Componentes Chave e Suas Funções}
+\addcontentsline{toc}{section}{Componentes Chave e Suas Funções} % Adiciona ao sumário
+Para entender como os circuitos eletrônicos operam, é fundamental conhecer as funções dos seus principais componentes:
+
+\subsection*{Resistores}
+O **resistor** é talvez o componente mais simples e fundamental. Sua principal função é opor-se ao fluxo de corrente elétrica, controlando a quantidade de corrente que passa por um determinado ponto do circuito. A resistência é medida em Ohms ($\Omega$). Resisores são usados para limitar corrente, dividir tensão e polarizar transistores, entre outras aplicações.
+
+\subsection*{Capacitores}
+Um **capacitor** é um dispositivo que armazena energia em um campo elétrico. Ele consiste em duas placas condutoras separadas por um material dielétrico (isolante). Capacitores podem ser usados para filtrar ruído em fontes de alimentação, acoplar sinais entre estágios de amplificação e sintonizar circuitos de rádio. A capacidade de armazenamento é medida em Farads (F).
+
+\newpage % Inicia uma nova página
+
+\subsection*{Indutores}
+Ao contrário do capacitor que armazena energia em um campo elétrico, o **indutor** armazena energia em um campo magnético quando a corrente elétrica flui através dele. Um indutor é tipicamente uma bobina de fio. Indutores são comumente usados em filtros, transformadores e osciladores. A indutância é medida em Henries (H).
+
+\subsection*{Diodos}
+Um **diodo** é um componente semicondutor que permite que a corrente elétrica flua em apenas uma direção. Ele atua como uma "válvula" unidirecional para a eletricidade. Diodos são amplamente utilizados em retificadores (para converter corrente alternada em corrente contínua), em circuitos de proteção e em LEDs (Diodos Emissores de Luz).
+
+\subsection*{Transistores}
+O **transistor** é um dos componentes mais importantes e revolucionários da eletrônica moderna. Ele pode atuar como um interruptor eletrônico, ligando ou desligando o fluxo de corrente, ou como um amplificador, aumentando a força de um sinal elétrico. Existem vários tipos de transistores, como BJT (Transistor de Junção Bipolar) e MOSFET (Transistor de Efeito de Campo Metal-Óxido Semicondutor), cada um com suas próprias características e aplicações. A invenção do transistor abriu caminho para a era da computação e da microeletrônica.
+
+Este documento é apenas uma introdução básica. O campo dos circuitos eletrônicos é vasto e fascinante, com inúmeras possibilidades e aplicações para explorar!
+
+\end{document}
