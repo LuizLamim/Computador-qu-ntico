@@ -1,0 +1,120 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{amsmath} % Para comandos matemáticos avançados
+\usepackage{amsfonts} % Para símbolos de conjuntos como R
+\usepackage{amssymb} % Para outros símbolos matemáticos
+
+\title{Regras Fundamentais de Derivação e Integração em Cálculo 1}
+\author{Seu Nome (Opcional)}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Este artigo apresenta um resumo conciso das regras essenciais de derivação e integração abordadas no curso de Cálculo 1. O objetivo é fornecer uma referência rápida para estudantes que buscam consolidar seu conhecimento sobre essas operações fundamentais. Serão cobertas as regras básicas, a regra da cadeia para derivação e a integração por substituição simples, além de algumas integrais imediatas comuns.
+\end{abstract}
+
+\section{Introdução}
+O Cálculo Diferencial e Integral é um ramo fundamental da matemática que estuda as variações e acumulações de quantidades. As operações de derivação e integração são as pedras angulares dessa disciplina, permitindo-nos analisar taxas de mudança e áreas sob curvas, respectivamente. Este documento serve como um guia rápido para as regras mais importantes dessas operações, cruciais para a compreensão do Cálculo 1.
+
+\section{Regras de Derivação}
+A derivada de uma função $f(x)$, denotada por $f'(x)$ ou $\frac{df}{dx}$, representa a taxa de variação instantânea de $f$ em relação a $x$.
+
+\subsection{Regras Básicas de Derivação}
+\begin{enumerate}
+    \item \textbf{Derivada de uma Constante:}
+    Se $f(x) = c$, onde $c$ é uma constante, então $f'(x) = 0$.
+    $$ \frac{d}{dx}(c) = 0 $$
+
+    \item \textbf{Derivada da Função Potência:}
+    Se $f(x) = x^n$, onde $n$ é qualquer número real, então $f'(x) = nx^{n-1}$.
+    $$ \frac{d}{dx}(x^n) = nx^{n-1} $$
+
+    \item \textbf{Regra da Soma/Diferença:}
+    Se $f(x) = g(x) \pm h(x)$, então $f'(x) = g'(x) \pm h'(x)$.
+    $$ \frac{d}{dx}[g(x) \pm h(x)] = \frac{d}{dx}[g(x)] \pm \frac{d}{dx}[h(x)] $$
+
+    \item \textbf{Regra do Múltiplo Constante:}
+    Se $f(x) = c \cdot g(x)$, onde $c$ é uma constante, então $f'(x) = c \cdot g'(x)$.
+    $$ \frac{d}{dx}[c \cdot g(x)] = c \frac{d}{dx}[g(x)] $$
+
+    \item \textbf{Regra do Produto:}
+    Se $f(x) = g(x) \cdot h(x)$, então $f'(x) = g'(x)h(x) + g(x)h'(x)$.
+    $$ \frac{d}{dx}[g(x)h(x)] = g'(x)h(x) + g(x)h'(x) $$
+
+    \item \textbf{Regra do Quociente:}
+    Se $f(x) = \frac{g(x)}{h(x)}$, onde $h(x) \neq 0$, então $f'(x) = \frac{g'(x)h(x) - g(x)h'(x)}{[h(x)]^2}$.
+    $$ \frac{d}{dx}\left[\frac{g(x)}{h(x)}\right] = \frac{g'(x)h(x) - g(x)h'(x)}{[h(x)]^2} $$
+\end{enumerate}
+
+\subsection{Regra da Cadeia}
+A Regra da Cadeia é utilizada para derivar funções compostas, ou seja, funções dentro de outras funções.
+Se $f(x) = g(h(x))$, então $f'(x) = g'(h(x)) \cdot h'(x)$.
+$$ \frac{d}{dx}[g(h(x))] = g'(h(x)) \cdot h'(x) $$
+
+\subsection{Derivadas de Funções Trigonométricas Comuns}
+\begin{itemize}
+    \item $ \frac{d}{dx}(\sin x) = \cos x $
+    \item $ \frac{d}{dx}(\cos x) = -\sin x $
+    \item $ \frac{d}{dx}(\tan x) = \sec^2 x $
+    \item $ \frac{d}{dx}(\cot x) = -\csc^2 x $
+    \item $ \frac{d}{dx}(\sec x) = \sec x \tan x $
+    \item $ \frac{d}{dx}(\csc x) = -\csc x \cot x $
+\end{itemize}
+
+\subsection{Derivadas de Funções Exponenciais e Logarítmicas}
+\begin{itemize}
+    \item $ \frac{d}{dx}(e^x) = e^x $
+    \item $ \frac{d}{dx}(a^x) = a^x \ln a $, para $a > 0, a \neq 1$
+    \item $ \frac{d}{dx}(\ln x) = \frac{1}{x} $, para $x > 0$
+    \item $ \frac{d}{dx}(\log_a x) = \frac{1}{x \ln a} $, para $x > 0, a > 0, a \neq 1$
+\end{itemize}
+
+\section{Regras de Integração}
+A integração é a operação inversa da derivação, ou seja, encontrar a antiderivada de uma função. A integral indefinida de $f(x)$ é denotada por $\int f(x) dx$.
+
+\subsection{Integrais Imediatas e Regras Básicas}
+\begin{enumerate}
+    \item \textbf{Integral de uma Constante:}
+    $$ \int c \, dx = cx + C $$
+
+    \item \textbf{Integral da Função Potência:}
+    Para $n \neq -1$:
+    $$ \int x^n \, dx = \frac{x^{n+1}}{n+1} + C $$
+    Para $n = -1$:
+    $$ \int \frac{1}{x} \, dx = \ln|x| + C $$
+
+    \item \textbf{Regra da Soma/Diferença:}
+    $$ \int [f(x) \pm g(x)] \, dx = \int f(x) \, dx \pm \int g(x) \, dx $$
+
+    \item \textbf{Regra do Múltiplo Constante:}
+    $$ \int c \cdot f(x) \, dx = c \int f(x) \, dx $$
+\end{enumerate}
+
+\subsection{Integrais de Funções Trigonométricas Comuns}
+\begin{itemize}
+    \item $ \int \cos x \, dx = \sin x + C $
+    \item $ \int \sin x \, dx = -\cos x + C $
+    \item $ \int \sec^2 x \, dx = \tan x + C $
+    \item $ \int \csc^2 x \, dx = -\cot x + C $
+    \item $ \int \sec x \tan x \, dx = \sec x + C $
+    \item $ \int \csc x \cot x \, dx = -\csc x + C $
+\end{itemize}
+
+\subsection{Integrais de Funções Exponenciais}
+\begin{itemize}
+    \item $ \int e^x \, dx = e^x + C $
+    \item $ \int a^x \, dx = \frac{a^x}{\ln a} + C $, para $a > 0, a \neq 1$
+\end{itemize}
+
+\subsection{Técnicas de Integração: Substituição Simples}
+A técnica de substituição (ou mudança de variável) é o equivalente da regra da cadeia para a integração. É usada quando o integrando contém uma função e sua derivada.
+Para calcular $\int f(g(x))g'(x) \, dx$, fazemos $u = g(x)$, então $du = g'(x) \, dx$. A integral se torna $\int f(u) \, du$.
+
+\section{Conclusão}
+As regras de derivação e integração apresentadas neste artigo são a base para a resolução de uma vasta gama de problemas em matemática, física, engenharia, economia e outras áreas. Dominar essas regras é essencial para qualquer estudante de Cálculo 1. É importante praticar exaustivamente para desenvolver fluência e reconhecimento de padrões.
+
+\end{document}
