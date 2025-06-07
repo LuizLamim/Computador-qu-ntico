@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath} % Necessário para ambientes matemáticos como 'align*'
+
+\title{Relações Trigonométricas}
+\author{} % Você pode adicionar seu nome aqui
+
+\date{} % Para remover a data, ou use \today para a data atual
+
+\begin{document}
+
+\maketitle
+
+\section*{Definições Básicas}
+Considere um triângulo retângulo com um ângulo $\theta$. Os lados são definidos como:
+\begin{itemize}
+    \item \textbf{Oposto}: O lado em frente ao ângulo $\theta$.
+    \item \textbf{Adjacente}: O lado próximo ao ângulo $\theta$ que não é a hipotenusa.
+    \item \textbf{Hipotenusa}: O lado mais longo, oposto ao ângulo reto.
+\end{itemize}
+
+As relações trigonométricas fundamentais são:
+\begin{align*}
+    \sin(\theta) &= \frac{\text{Oposto}}{\text{Hipotenusa}} \\
+    \cos(\theta) &= \frac{\text{Adjacente}}{\text{Hipotenusa}} \\
+    \tan(\theta) &= \frac{\text{Oposto}}{\text{Adjacente}}
+\end{align*}
+
+---
+
+\section*{Relações Recíprocas}
+As relações recíprocas são os inversos das relações trigonométricas básicas:
+\begin{align*}
+    \csc(\theta) &= \frac{1}{\sin(\theta)} = \frac{\text{Hipotenusa}}{\text{Oposto}} \\
+    \sec(\theta) &= \frac{1}{\cos(\theta)} = \frac{\text{Hipotenusa}}{\text{Adjacente}} \\
+    \cot(\theta) &= \frac{1}{\tan(\theta)} = \frac{\text{Adjacente}}{\text{Oposto}}
+\end{align*}
+
+---
+
+\section*{Identidades Pitagóricas}
+As identidades pitagóricas são derivadas do Teorema de Pitágoras:
+\begin{align*}
+    \sin^2(\theta) + \cos^2(\theta) &= 1 \\
+    1 + \tan^2(\theta) &= \sec^2(\theta) \\
+    1 + \cot^2(\theta) &= \csc^2(\theta)
+\end{align*}
+
+---
+
+\section*{Relações de Quociente}
+\begin{align*}
+    \tan(\theta) &= \frac{\sin(\theta)}{\cos(\theta)} \\
+    \cot(\theta) &= \frac{\cos(\theta)}{\sin(\theta)}
+\end{align*}
+
+---
+
+\section*{Sinais das Funções Trigonométricas nos Quadrantes}
+\begin{itemize}
+    \item \textbf{Quadrante I (0° a 90°)}: Todas as funções são positivas.
+    \item \textbf{Quadrante II (90° a 180°)}: $\sin(\theta)$ e $\csc(\theta)$ são positivas.
+    \item \textbf{Quadrante III (180° a 270°)}: $\tan(\theta)$ e $\cot(\theta)$ são positivas.
+    \item \textbf{Quadrante IV (270° a 360°)}: $\cos(\theta)$ e $\sec(\theta)$ são positivas.
+\end{itemize}
+
+\end{document}
