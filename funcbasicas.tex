@@ -1,0 +1,197 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath} % Para comandos matemáticos como \texttt
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[brazil]{babel} % Para hifenização e outras configurações em português
+
+\title{Funções Básicas em Assembly}
+\author{} % Você pode adicionar seu nome aqui se desejar
+\date{} % Você pode colocar a data ou deixar em branco para a data atual
+
+\begin{document}
+
+\maketitle
+
+\section{Funções Básicas em Assembly}
+
+Assembly é uma linguagem de programação de baixo nível que interage diretamente com a arquitetura do processador. É frequentemente utilizada para tarefas que exigem alto desempenho, controle preciso sobre o hardware, ou em sistemas embarcados. A seguir, apresentamos algumas funções básicas e conceitos fundamentais.
+
+---
+
+\subsection{Registradores}
+
+Os \textbf{registradores} são pequenas áreas de armazenamento de dados dentro da CPU, usados para operações rápidas. Alguns dos registradores mais comuns na arquitetura x86 incluem:
+
+\begin{itemize}
+    \item \texttt{EAX}, \texttt{EBX}, \texttt{ECX}, \texttt{EDX}: Registradores de propósito geral, frequentemente usados para armazenar dados e resultados de cálculos.
+    \item \texttt{ESI}, \texttt{EDI}: Usados como registradores de índice para operações de memória, como cópia de blocos de dados.
+    \item \texttt{EBP}, \texttt{ESP}: Respectivamente, o \textbf{ponteiro de base} (base pointer) e o \textbf{ponteiro de pilha} (stack pointer), cruciais para o gerenciamento da pilha de chamadas de função.
+    \item \texttt{EIP}: O \textbf{ponteiro de instrução} (instruction pointer), que armazena o endereço da próxima instrução a ser executada.
+\end{itemize}
+
+---
+
+\subsection{Movimentação de Dados (\texttt{MOV})}
+
+A instrução $\texttt{MOV}$ é uma das mais fundamentais, utilizada para copiar dados entre registradores, entre registradores e memória, ou para carregar valores imediatos em registradores.
+
+Sintaxe geral: \texttt{MOV destino, origem}
+
+Exemplos:
+
+\begin{itemize}
+    \item \texttt{MOV EAX, 10}: Move o valor imediato 10 para o registrador \texttt{EAX}.
+    \item \texttt{MOV EBX, EAX}: Copia o conteúdo de \texttt{EAX} para \texttt{EBX}.
+    \item \texttt{MOV [minha\_variavel], EAX}: Copia o conteúdo de \texttt{EAX} para o endereço de memória rotulado como \texttt{minha\_variavel}.
+    \item \texttt{MOV EAX, [minha\_variavel]}: Copia o conteúdo da memória em \texttt{minha\_variavel} para \texttt{EAX}.
+\end{itemize}
+
+---
+
+\subsection{Operações Aritméticas}
+
+Assembly oferece instruções para as operações aritméticas básicas.
+
+\subsubsection{Adição (\texttt{ADD})}
+
+A instrução $\texttt{ADD}$ realiza a soma de dois operandos e armazena o resultado no primeiro operando.
+
+Sintaxe: \texttt{ADD destino, origem}
+
+Exemplo:
+
+\begin{itemize}
+    \item \texttt{ADD EAX, EBX}: Soma o conteúdo de \texttt{EBX} a \texttt{EAX}, e o resultado é armazenado em \texttt{EAX}.
+\end{itemize}
+
+\subsubsection{Subtração (\texttt{SUB})}
+
+A instrução $\texttt{SUB}$ realiza a subtração do segundo operando do primeiro, armazenando o resultado no primeiro.
+
+Sintaxe: \texttt{SUB destino, origem}
+
+Exemplo:
+
+\begin{itemize}
+    \item \texttt{SUB EAX, 5}: Subtrai 5 de \texttt{EAX}, e o resultado é armazenado em \texttt{EAX}.
+\end{itemize}
+
+\subsubsection{Multiplicação (\texttt{MUL} e \texttt{IMUL})}
+
+$\texttt{MUL}$ (multiplicação sem sinal) e $\texttt{IMUL}$ (multiplicação com sinal) são usadas para multiplicar. A forma de uso pode variar dependendo do tamanho dos operandos.
+
+Exemplo (multiplicação de 32 bits por 32 bits em \texttt{EAX}):
+
+\begin{verbatim}
+MOV EAX, 10
+MOV EBX, 5
+IMUL EBX ; Multiplica EAX por EBX. O resultado (50) é armazenado em EAX (se couber) ou EDX:EAX para resultados maiores.
+\end{verbatim}
+
+\subsubsection{Divisão (\texttt{DIV} e \texttt{IDIV})}
+
+$\texttt{DIV}$ (divisão sem sinal) e $\texttt{IDIV}$ (divisão com sinal) são usadas para dividir.
+
+Exemplo (divisão de 32 bits em \texttt{EAX} por um registrador):
+
+\begin{verbatim}
+MOV EAX, 100
+MOV EBX, 10
+CDQ ; Estende o sinal de EAX para EDX para prepará-lo para a divisão de 64 bits por 32 bits.
+IDIV EBX ; Divide EDX:EAX por EBX. O quociente (10) é armazenado em EAX e o resto (0) em EDX.
+\end{verbatim}
+
+---
+
+\subsection{Comparação e Salto Condicional}
+
+As instruções de comparação e salto são essenciais para controlar o fluxo do programa.
+
+\subsubsection{Comparação (\texttt{CMP})}
+
+A instrução $\texttt{CMP}$ compara dois operandos, definindo \textit{flags} no registrador de \textit{flags} (como ZF - Zero Flag, CF - Carry Flag, SF - Sign Flag) que podem ser testados por instruções de salto condicional.
+
+Sintaxe: \texttt{CMP operando1, operando2}
+
+Exemplo:
+
+\begin{itemize}
+    \item \texttt{CMP EAX, EBX}: Compara o conteúdo de \texttt{EAX} com \texttt{EBX}.
+\end{itemize}
+
+\subsubsection{Saltos Condicionais (\texttt{JGE}, \texttt{JE}, \texttt{JNE}, etc.)}
+
+Instruções de salto condicional alteram o fluxo de execução com base no estado dos \textit{flags} após uma comparação.
+
+Exemplos:
+
+\begin{itemize}
+    \item \texttt{JE label}: Salta para \texttt{label} se os operandos forem \textbf{iguais} (Zero Flag = 1).
+    \item \texttt{JNE label}: Salta para \texttt{label} se os operandos forem \textbf{diferentes} (Zero Flag = 0).
+    \item \texttt{JG label}: Salta para \texttt{label} se o primeiro operando for \textbf{maior} que o segundo (com sinal).
+    \item \texttt{JGE label}: Salta para \texttt{label} se o primeiro operando for \textbf{maior ou igual} ao segundo (com sinal).
+    \item \texttt{JL label}: Salta para \texttt{label} se o primeiro operando for \textbf{menor} que o segundo (com sinal).
+    \item \texttt{JLE label}: Salta para \texttt{label} se o primeiro operando for \textbf{menor ou igual} ao segundo (com sinal).
+\end{itemize}
+
+Exemplo de uso:
+
+\begin{verbatim}
+    CMP EAX, EBX
+    JG maior_que_EBX
+    ; Código a ser executado se EAX <= EBX
+    JMP fim_do_bloco
+
+maior_que_EBX:
+    ; Código a ser executado se EAX > EBX
+
+fim_do_bloco:
+    ; Continuação do programa
+\end{verbatim}
+
+---
+
+\subsection{Pilha (\texttt{PUSH} e \texttt{POP})}
+
+A \textbf{pilha} é uma estrutura de dados LIFO (Last-In, First-Out) usada para armazenar temporariamente dados, como endereços de retorno de funções e parâmetros.
+
+\begin{itemize}
+    \item \texttt{PUSH}: Coloca um valor no topo da pilha, decrementando o \texttt{ESP}.
+    \item \texttt{POP}: Remove um valor do topo da pilha, incrementando o \texttt{ESP}.
+\end{itemize}
+
+Exemplos:
+
+\begin{itemize}
+    \item \texttt{PUSH EAX}: Coloca o conteúdo de \texttt{EAX} na pilha.
+    \item \texttt{POP EBX}: Remove o valor do topo da pilha e o armazena em \texttt{EBX}.
+\end{itemize}
+
+---
+
+\subsection{Chamada e Retorno de Função (\texttt{CALL} e \texttt{RET})}
+
+As instruções $\texttt{CALL}$ e $\texttt{RET}$ são usadas para gerenciar chamadas de sub-rotinas (funções).
+
+\begin{itemize}
+    \item \texttt{CALL nome\_da\_funcao}: Empurra o endereço da próxima instrução para a pilha e salta para \texttt{nome\_da\_funcao}.
+    \item \texttt{RET}: Remove o endereço de retorno da pilha e salta para ele, retornando da função.
+\end{itemize}
+
+Exemplo:
+
+\begin{verbatim}
+; Função de exemplo
+minha_funcao:
+    ; Código da função
+    RET
+
+; Bloco principal
+    CALL minha_funcao
+    ; Código após o retorno da função
+\end{verbatim}
+
+Este texto fornece uma introdução básica às funções de assembly. O domínio completo dessa linguagem requer um estudo aprofundado da arquitetura do processador e das convenções de chamada de sistema.
+
+\end{document}
