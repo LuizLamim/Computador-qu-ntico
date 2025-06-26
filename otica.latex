@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath} % Para comandos matemáticos como \theta
+
+\title{Princípios Fundamentais da Óptica}
+\author{Seu Nome (Opcional)}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Este documento apresenta uma introdução aos princípios fundamentais da óptica, a área da física que estuda o comportamento e as propriedades da luz. Abordaremos a natureza da luz, os fenômenos de reflexão, refração e difração, bem como a formação de imagens.
+\end{abstract}
+
+\section{Introdução à Óptica}
+
+A óptica é o ramo da física que se dedica ao estudo da luz e sua interação com a matéria. A luz é uma forma de energia que nos permite ver o mundo ao nosso redor. Ao longo da história, diferentes teorias foram propostas para explicar a natureza da luz, culminando no entendimento moderno de que a luz possui uma **natureza dual**, comportando-se tanto como uma onda eletromagnética quanto como um fluxo de partículas, os fótons.
+
+\section{Natureza da Luz}
+
+A luz visível é apenas uma pequena parte do **espectro eletromagnético**, que inclui ondas de rádio, micro-ondas, infravermelho, ultravioleta, raios-X e raios gama. Todas essas ondas viajam no vácuo a uma velocidade constante, $c \approx 3 \times 10^8$ m/s.
+
+A **teoria ondulatória da luz** explica fenômenos como a difração e a interferência. A luz é caracterizada por seu comprimento de onda ($\lambda$) e frequência ($f$), relacionados pela equação:
+$$c = \lambda f$$
+Onde $c$ é a velocidade da luz.
+
+A **teoria corpuscular (ou de partículas)**, exemplificada pelo conceito de fóton, explica fenômenos como o efeito fotoelétrico. Cada fóton possui uma energia $E$ dada por:
+$$E = hf$$
+Onde $h$ é a constante de Planck ($h \approx 6.626 \times 10^{-34}$ J$\cdot$s).
+
+\section{Fenômenos Ópticos Fundamentais}
+
+\subsection{Reflexão da Luz}
+
+A **reflexão** ocorre quando a luz incide sobre uma superfície e retorna ao meio original. Existem dois tipos principais de reflexão:
+\begin{itemize}
+    \item **Reflexão especular:** Acontece em superfícies lisas (como espelhos), onde os raios de luz são refletidos em uma única direção. As **leis da reflexão** são:
+    \begin{enumerate}
+        \item O raio incidente, o raio refletido e a normal à superfície no ponto de incidência estão no mesmo plano.
+        \item O ângulo de incidência ($\theta_i$) é igual ao ângulo de reflexão ($\theta_r$), medidos em relação à normal: $\theta_i = \theta_r$.
+    \end{enumerate}
+    \item **Reflexão difusa:** Ocorre em superfícies ásperas, onde a luz é refletida em várias direções. É o que nos permite ver objetos não luminosos de diferentes ângulos.
+\end{itemize}
+
+\subsection{Refração da Luz}
+
+A **refração** é a mudança na direção da luz quando ela passa de um meio para outro com diferente índice de refração. O **índice de refração** ($n$) de um meio é uma medida de quão rápido a luz viaja através dele, sendo $n = c/v$, onde $v$ é a velocidade da luz nesse meio.
+
+As **leis da refração (Lei de Snell-Descartes)** são:
+\begin{enumerate}
+    \item O raio incidente, o raio refratado e a normal à superfície no ponto de incidência estão no mesmo plano.
+    \item A relação entre os ângulos de incidência ($\theta_1$) e refração ($\theta_2$) e os índices de refração dos meios ($n_1$ e $n_2$) é dada por:
+    $$n_1 \sin(\theta_1) = n_2 \sin(\theta_2)$$
+\end{enumerate}
+Um fenômeno importante relacionado à refração é a **reflexão total interna**, que ocorre quando a luz passa de um meio mais refringente para um menos refringente em um ângulo de incidência maior que o ângulo crítico.
+
+\subsection{Difração da Luz}
+
+A **difração** é o fenômeno em que as ondas de luz se espalham ao contornar obstáculos ou ao passar por pequenas aberturas. Este efeito é mais pronunciado quando o tamanho do obstáculo ou da abertura é comparável ao comprimento de onda da luz. A difração é uma evidência crucial da natureza ondulatória da luz.
+
+\section{Formação de Imagens}
+
+A óptica também estuda a formação de imagens por meio de lentes e espelhos.
+
+\subsection{Espelhos}
+\begin{itemize}
+    \item **Espelhos planos:** Formam imagens virtuais, direitas e do mesmo tamanho do objeto, com inversão lateral.
+    \item **Espelhos esféricos:** Podem ser côncavos ou convexos.
+    \begin{itemize}
+        \item **Espelhos côncavos:** Podem formar imagens reais ou virtuais, dependendo da posição do objeto. Usados em telescópios e faróis.
+        \item **Espelhos convexos:** Sempre formam imagens virtuais, direitas e menores que o objeto. Usados como espelhos retrovisores em veículos.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Lentes}
+Lentes são dispositivos que usam a refração para focar ou divergir a luz.
+\begin{itemize}
+    \item **Lentes convergentes (ou convexas):** Focam a luz em um ponto. Usadas em lupas, óculos para hipermetropia e câmeras fotográficas.
+    \item **Lentes divergentes (ou côncavas):** Espalham a luz. Usadas em óculos para miopia.
+\end{itemize}
+A formação de imagens por lentes é descrita pelas equações das lentes e pelo traçado de raios, considerando o foco principal e o centro óptico da lente.
+
+\section{Conclusão}
+
+Os princípios da óptica são fundamentais para entender uma vasta gama de fenômenos naturais e tecnológicos, desde a visão humana e a formação de arco-íris até o funcionamento de lasers, fibras ópticas e microscópios. A compreensão desses conceitos nos permite manipular a luz para diversas aplicações práticas, impulsionando avanços em áreas como medicina, telecomunicações e astronomia.
+
+\end{document}
