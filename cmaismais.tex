@@ -1,0 +1,175 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{amsmath} % Para equações e símbolos matemáticos (se necessário)
+\usepackage{amsfonts} % Para fontes matemáticas (se necessário)
+\usepackage{amssymb} % Para símbolos matemáticos adicionais (se necessário)
+\usepackage{graphicx} % Para incluir imagens (se necessário)
+\usepackage{listings} % Para formatar blocos de código
+\usepackage{xcolor} % Para cores no listings
+
+% Configuração para o listings (para blocos de código C++)
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.98,0.98,0.98}
+
+\lstset{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegray},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    language=C++, % Linguagem do código
+    morekeywords={std,cout,cin,endl,if,else,for,while,int,float,double,char,bool,void,return,include,main},
+    identifierstyle=\color{black}
+}
+
+\title{Noções Básicas de Programação em C++}
+\author{Seu Nome / Autor Desconhecido}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Este documento apresenta uma introdução às funções e conceitos básicos da linguagem de programação C++. Ele aborda a estrutura fundamental de um programa, tipos de dados, variáveis, operadores, entrada e saída, e estruturas de controle de fluxo, fornecendo exemplos práticos para facilitar a compreensão.
+\end{abstract}
+
+\section{Introdução ao C++}
+C++ é uma linguagem de programação de propósito geral, orientada a objetos e multi-paradigma, derivada da linguagem C. É amplamente utilizada em desenvolvimento de sistemas, jogos, aplicações de alto desempenho e sistemas embarcados devido à sua performance e flexibilidade.
+
+\section{Estrutura Básica de um Programa C++}
+Todo programa C++ possui uma estrutura fundamental. Abaixo, um exemplo simples:
+
+\begin{lstlisting}[caption={Estrutura Básica}]
+#include <iostream> // Inclui a biblioteca de entrada/saída
+
+int main() { // Função principal, ponto de entrada do programa
+    std::cout << "Olá, Mundo!" << std::endl; // Imprime texto na tela
+    return 0; // Indica que o programa terminou com sucesso
+}
+\end{lstlisting}
+
+\begin{itemize}
+    \item \textbf{\texttt{\#include <iostream>}}: Esta linha é uma diretiva de pré-processador que inclui a biblioteca \texttt{iostream}. Ela fornece as funcionalidades para operações de entrada e saída, como imprimir dados no console (\texttt{std::cout}) e ler dados do teclado (\texttt{std::cin}).
+    \item \textbf{\texttt{int main()}}: Esta é a função principal do programa. A execução de qualquer programa C++ sempre começa a partir desta função. O \texttt{int} indica que a função retorna um valor inteiro (geralmente \texttt{0} para sucesso).
+    \item \textbf{\texttt{std::cout << "Olá, Mundo!" << std::endl;}}: Esta linha é responsável por imprimir a frase "Olá, Mundo!" no console.
+    \begin{itemize}
+        \item \texttt{std::cout}: Objeto usado para saída padrão (console).
+        \item \texttt{<<}: Operador de inserção, usado para enviar dados para \texttt{std::cout}.
+        \item \texttt{"Olá, Mundo!"}: A string de texto a ser impressa.
+        \item \texttt{std::endl}: Insere uma nova linha e limpa o buffer de saída.
+    \end{itemize}
+    \item \textbf{\texttt{return 0;}}: Esta linha indica que a função \texttt{main} terminou sua execução e retornou um valor \texttt{0} para o sistema operacional, que geralmente significa que o programa foi executado com sucesso.
+\end{itemize}
+
+\section{Variáveis e Tipos de Dados}
+\textbf{Variáveis} são "contêineres" para armazenar dados. Cada variável possui um \textbf{tipo de dado} que define o tipo de informação que ela pode conter (números inteiros, números decimais, caracteres, etc.) e a quantidade de memória que ela ocupará.
+
+Alguns tipos de dados básicos em C++ incluem:
+\begin{itemize}
+    \item \textbf{\texttt{int}}: Armazena números inteiros (ex: -5, 0, 100).
+    \item \textbf{\texttt{float}}: Armazena números de ponto flutuante de precisão simples (ex: 3.14, -0.5).
+    \item \textbf{\texttt{double}}: Armazena números de ponto flutuante de precisão dupla (mais preciso que \texttt{float}).
+    \item \textbf{\texttt{char}}: Armazena um único caractere (ex: 'a', 'Z', '5').
+    \item \textbf{\texttt{bool}}: Armazena valores booleanos (\texttt{true} ou \texttt{false}).
+\end{itemize}
+
+\begin{lstlisting}[caption={Exemplo de Declaração de Variáveis}]
+int idade = 30;
+double preco = 19.99;
+char inicial = 'J';
+bool estaAtivo = true;
+\end{lstlisting}
+
+\section{Operadores Básicos}
+Operadores são símbolos que realizam operações em variáveis e valores.
+\begin{itemize}
+    \item \textbf{Aritméticos}: \texttt{+}, \texttt{-}, \texttt{*}, \texttt{/}, \texttt{\%} (módulo).
+    \item \textbf{Atribuição}: \texttt{=} (atribui um valor), \texttt{+=}, \texttt{-=}, \texttt{*=}, \texttt{/=}.
+    \item \textbf{Comparação}: \texttt{==} (igual a), \texttt{!=} (diferente de), \texttt{<}, \texttt{>}, \texttt{<=}, \texttt{>=}.
+    \item \textbf{Lógicos}: \texttt{&&} (E lógico), \texttt{||} (OU lógico), \texttt{!} (NÃO lógico).
+\end{itemize}
+
+\begin{lstlisting}[caption={Exemplo de Operadores}]
+int a = 10, b = 3;
+int soma = a + b; // soma = 13
+int resto = a % b; // resto = 1
+bool maior = (a > b); // maior = true
+\end{lstlisting}
+
+\section{Entrada e Saída (Input/Output)}
+Além do \texttt{std::cout} para saída, usamos \texttt{std::cin} para entrada de dados do usuário.
+
+\begin{lstlisting}[caption={Exemplo de Entrada/Saída}]
+#include <iostream>
+
+int main() {
+    int numero;
+    std::cout << "Digite um número: ";
+    std::cin >> numero; // Lê o número digitado pelo usuário
+    std::cout << "Você digitou: " << numero << std::endl;
+    return 0;
+}
+\end{lstlisting}
+\begin{itemize}
+    \item \texttt{std::cin}: Objeto usado para entrada padrão (teclado).
+    \item \texttt{>>}: Operador de extração, usado para obter dados de \texttt{std::cin} e armazená-los em uma variável.
+\end{itemize}
+
+\section{Estruturas de Controle de Fluxo}
+As estruturas de controle permitem que você defina a ordem em que as instruções são executadas.
+
+\subsection{Condicionais (\texttt{if}, \texttt{else if}, \texttt{else})}
+Executam blocos de código diferentes com base em uma condição.
+
+\begin{lstlisting}[caption={Exemplo de Condicional}]
+int idade = 18;
+if (idade >= 18) {
+    std::cout << "Você é maior de idade." << std::endl;
+} else {
+    std::cout << "Você é menor de idade." << std::endl;
+}
+\end{lstlisting}
+
+\subsection{Loops (\texttt{for}, \texttt{while})}
+Repetem um bloco de código várias vezes.
+
+\subsubsection{\texttt{for} Loop}
+Ideal quando o número de iterações é conhecido.
+
+\begin{lstlisting}[caption={\texttt{for} Loop}]
+// Imprime números de 0 a 4
+for (int i = 0; i < 5; ++i) {
+    std::cout << i << " ";
+}
+std::cout << std::endl; // Saída: 0 1 2 3 4
+\end{lstlisting}
+
+\subsubsection{\texttt{while} Loop}
+Ideal quando o número de iterações é desconhecido e o loop continua enquanto uma condição é verdadeira.
+
+\begin{lstlisting}[caption={\texttt{while} Loop}]
+int contador = 0;
+while (contador < 3) {
+    std::cout << "Contador: " << contador << std::endl;
+    contador++;
+}
+\end{lstlisting}
+
+\section{Conclusão}
+Este documento forneceu uma visão geral das funções básicas e da sintaxe do C++. Dominar esses conceitos fundamentais é o primeiro passo crucial para construir programas mais complexos e explorar os recursos avançados que C++ oferece. A prática contínua é essencial para solidificar o aprendizado.
+
+\end{document}
