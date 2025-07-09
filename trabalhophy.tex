@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath} % Necessário para ambientes matemáticos como align
+
+\title{Trabalho em Física}
+\author{Seu Nome (Opcional)}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Este documento explora o conceito de trabalho em física, definindo-o em termos de força e deslocamento, apresentando suas unidades, as condições para sua ocorrência e sua relação com a energia.
+\end{abstract}
+
+\section{Introdução ao Conceito de Trabalho}
+No dia a dia, a palavra "trabalho" tem muitos significados, como o esforço mental ou físico em uma tarefa. No entanto, em \textbf{física}, o termo "trabalho" possui uma definição muito específica e quantitativa. Não basta aplicar uma força; para que haja trabalho no sentido físico, essa força precisa causar um deslocamento no objeto na direção da força (ou ter uma componente nessa direção).
+
+\section{Definição Matemática do Trabalho}
+O \textbf{trabalho} ($W$) realizado por uma força constante sobre um objeto é definido como o produto escalar da magnitude da força pelo deslocamento do objeto na direção da força. Matematicamente, para uma força constante e um deslocamento retilíneo, o trabalho é expresso como:
+$$ W = F \cdot d \cdot \cos(\theta) $$
+Onde:
+\begin{itemize}
+    \item $W$ é o trabalho realizado.
+    \item $F$ é a magnitude da força aplicada.
+    \item $d$ é a magnitude do deslocamento do objeto.
+    \item $\theta$ é o ângulo entre o vetor força ($\vec{F}$) e o vetor deslocamento ($\vec{d}$).
+\end{itemize}
+Se a força e o deslocamento estão na mesma direção ($\theta = 0^\circ$, então $\cos(0^\circ) = 1$), a equação se simplifica para $W = F \cdot d$. Se a força é perpendicular ao deslocamento ($\theta = 90^\circ$, então $\cos(90^\circ) = 0$), o trabalho realizado é zero.
+
+\section{Unidades de Trabalho}
+No Sistema Internacional de Unidades (SI), a força é medida em Newtons (N) e o deslocamento em metros (m). Portanto, a unidade de trabalho é \textbf{Newton metro (N$\cdot$m)}, que recebe um nome especial: o \textbf{Joule (J)}.
+$$ 1 \text{ Joule} = 1 \text{ Newton} \cdot 1 \text{ metro} \quad (1\text{ J} = 1\text{ N}\cdot\text{m}) $$
+
+\section{Tipos de Trabalho}
+O trabalho pode ser positivo, negativo ou nulo:
+\begin{itemize}
+    \item \textbf{Trabalho Positivo:} Ocorre quando a força atua na mesma direção ou em uma direção que tem uma componente na direção do deslocamento ($\theta < 90^\circ$). A força contribui para aumentar a energia cinética do objeto. Exemplo: empurrar um carrinho na direção em que ele se move.
+    \item \textbf{Trabalho Negativo:} Ocorre quando a força atua em uma direção oposta ao deslocamento ($\theta > 90^\circ$, como $\theta = 180^\circ$). A força retira energia do objeto, diminuindo sua energia cinética. Exemplo: a força de atrito que atua contra o movimento de um objeto.
+    \item \textbf{Trabalho Nulo:} Ocorre quando a força é perpendicular ao deslocamento ($\theta = 90^\circ$) ou quando não há deslocamento ($d=0$). Exemplo: carregar uma mochila e andar na horizontal (a força para segurar a mochila é vertical, o deslocamento é horizontal); empurrar uma parede que não se move.
+\end{itemize}
+
+\section{Trabalho e Energia}
+O trabalho está intrinsecamente ligado à \textbf{energia}. O \textbf{Teorema Trabalho-Energia Cinética} estabelece que o trabalho líquido (ou trabalho total) realizado sobre um objeto é igual à variação de sua energia cinética.
+$$ W_{\text{líquido}} = \Delta K = K_f - K_i $$
+Onde $K_f$ é a energia cinética final e $K_i$ é a energia cinética inicial. Isso significa que, se trabalho positivo é realizado sobre um objeto, sua energia cinética aumenta; se trabalho negativo é realizado, sua energia cinética diminui.
+
+\section{Conclusão}
+Em resumo, o trabalho em física é uma medida da energia transferida para ou de um objeto por meio da aplicação de uma força que causa um deslocamento. É um conceito fundamental para entender como as forças afetam o movimento e a energia dos sistemas físicos, sendo a base para muitos outros princípios da mecânica e termodinâmica.
+
+\end{document}
