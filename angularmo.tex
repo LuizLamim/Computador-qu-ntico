@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath} % Para ambientes matemáticos como align
+\usepackage{amssymb} % Para símbolos matemáticos adicionais
+\usepackage{graphicx} % Para incluir imagens (se quiser adicionar no futuro)
+
+\title{Princípio da Conservação do Momento Angular}
+\author{Seu Nome/Nome da Instituição}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Este documento explora o princípio fundamental da conservação do momento angular, uma das leis de conservação mais importantes da física. Aborda sua definição, a formulação matemática em diferentes contextos e discute exemplos práticos que ilustram sua aplicação em sistemas físicos, desde o movimento planetário até o comportamento de patinadores no gelo.
+\end{abstract}
+
+\section{Introdução}
+O princípio da \textbf{conservação do momento angular} é uma lei fundamental da física que afirma que o momento angular de um sistema isolado permanece constante ao longo do tempo, a menos que um torque externo atue sobre ele. Juntamente com a conservação de energia e a conservação do momento linear, é uma das pedras angulares da mecânica clássica. Este princípio é crucial para entender o comportamento de sistemas rotacionais, desde o movimento de planetas e estrelas até o funcionamento de giroscópios e o desempenho de atletas.
+
+\section{Definição de Momento Angular}
+
+O \textbf{momento angular} ($\vec{L}$) é uma grandeza vetorial que descreve a "quantidade de rotação" de um corpo. Para uma partícula de massa $m$ com vetor posição $\vec{r}$ (em relação a uma origem) e vetor momento linear $\vec{p} = m\vec{v}$, o momento angular é definido como o produto vetorial:
+
+$$ \vec{L} = \vec{r} \times \vec{p} = \vec{r} \times (m\vec{v}) $$
+
+Para um corpo rígido em rotação em torno de um eixo fixo, o momento angular pode ser expresso como:
+
+$$ L = I\omega $$
+Onde $I$ é o \textbf{momento de inércia} do corpo em relação ao eixo de rotação (uma medida da resistência do corpo a mudanças em seu estado de rotação) e $\omega$ é a \textbf{velocidade angular} (velocidade de rotação).
+
+\section{Torque e a Variação do Momento Angular}
+A relação entre o torque e a variação do momento angular é análoga à segunda lei de Newton para o movimento linear. Assim como uma força líquida causa uma variação no momento linear, um \textbf{torque líquido} ($\vec{\tau}$) causa uma variação no momento angular. O torque é definido como o produto vetorial entre o vetor posição $\vec{r}$ e a força $\vec{F}$:
+
+$$ \vec{\tau} = \vec{r} \times \vec{F} $$
+
+A segunda lei de Newton para rotação estabelece que a taxa de variação do momento angular de um sistema é igual ao torque líquido externo atuando sobre ele:
+
+$$ \frac{d\vec{L}}{dt} = \vec{\tau}_{ext} $$
+
+\section{Princípio da Conservação do Momento Angular}
+O princípio da conservação do momento angular surge diretamente da equação acima. Se o torque líquido externo ($\vec{\tau}_{ext}$) atuando sobre um sistema for nulo, então a taxa de variação do momento angular será zero, o que implica que o momento angular do sistema permanece constante.
+
+$$ \text{Se } \vec{\tau}_{ext} = 0 \Rightarrow \frac{d\vec{L}}{dt} = 0 \Rightarrow \vec{L} = \text{constante} $$
+
+Este é o cerne do princípio: \textbf{o momento angular total de um sistema isolado (ou seja, um sistema sobre o qual não atuam torques externos) é conservado}.
+
+\subsection{Implicações da Conservação}
+A conservação do momento angular tem implicações importantes, especialmente em sistemas onde o momento de inércia pode mudar. Se $L = I\omega = \text{constante}$, então:
+\begin{itemize}
+    \item Se $I$ aumenta, $\omega$ deve diminuir para que $L$ permaneça constante.
+    \item Se $I$ diminui, $\omega$ deve aumentar para que $L$ permaneça constante.
+\end{itemize}
+
+\section{Exemplos Práticos da Conservação do Momento Angular}
+
+\subsection{Patinadores no Gelo}
+Um exemplo clássico é o de um patinador no gelo que está girando. Quando o patinador puxa os braços para perto do corpo, seu momento de inércia ($I$) diminui. Para conservar o momento angular ($L$), sua velocidade angular ($\omega$) aumenta, fazendo-o girar mais rapidamente. Ao estender os braços, $I$ aumenta, e $\omega$ diminui, reduzindo a velocidade de giro.
+
+\subsection{Corpos Celestes}
+A conservação do momento angular desempenha um papel crucial no movimento de corpos celestes.
+\begin{itemize}
+    \item \textbf{Órbitas Planetárias:} As leis de Kepler podem ser compreendidas em parte pela conservação do momento angular. Quando um planeta está mais próximo do Sol (periélio), sua velocidade orbital aumenta para compensar a diminuição do raio, mantendo o momento angular constante.
+    \item \textbf{Formação Estelar:} Nuvens de gás e poeira que colapsam para formar estrelas e planetas giram mais rapidamente à medida que encolhem, devido à conservação do momento angular.
+\end{itemize}
+
+\subsection{Giroscópios}
+Giroscópios, que são rodas giratórias montadas de forma a poderem girar livremente em qualquer direção, demonstram a conservação do momento angular. Uma vez que o giroscópio está girando, seu momento angular é conservado, o que o torna resistente a mudanças em sua orientação, sendo usado em sistemas de navegação e estabilização.
+
+\section{Conclusão}
+O princípio da conservação do momento angular é uma lei fundamental da natureza que governa o comportamento de sistemas rotacionais. Sua simplicidade e ampla aplicabilidade o tornam uma ferramenta poderosa para a análise e compreensão de uma vasta gama de fenômenos físicos, desde o microscópico até o cosmológico. Compreender este princípio é essencial para qualquer estudo aprofundado da mecânica e suas aplicações.
+
+\end{document}
