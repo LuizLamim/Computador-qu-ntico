@@ -1,0 +1,28 @@
+def is_prime(n):
+    """
+    Verifica se um número é primo.
+    """
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+def sum_first_n_primes(n):
+    """
+    Soma os primeiros n números primos.
+    """
+    prime_numbers = []
+    num = 2
+    while len(prime_numbers) < n:
+        if is_prime(num):
+            prime_numbers.append(num)
+        num += 1
+    return sum(prime_numbers)
+
+number_of_primes = 50
+
+total_sum = sum_first_n_primes(number_of_primes)
+
+print(f"A soma dos primeiros {number_of_primes} números primos é: {total_sum}")
