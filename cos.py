@@ -20,7 +20,6 @@ def animate_cosine_wave():
     ax.set_ylabel("Amplitude")
     ax.grid(True)
 
-    # Inicializa a linha que será atualizada na animação
     line, = ax.plot([], [], lw=2)
 
     # Função de inicialização para a animação
