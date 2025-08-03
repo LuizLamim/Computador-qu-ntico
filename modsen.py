@@ -22,8 +22,8 @@ plt.plot(x, y, color='blue', label='|sen(x)|')
 # 5. Adicionar rótulos e título
 # Isso torna o gráfico mais fácil de entender.
 plt.title('Gráfico da função f(x) = |sen(x)|', fontsize=16)
-plt.xlabel('Eixo x', fontsize=12)
-plt.ylabel('Eixo y', fontsize=12)
+plt.xlabel('Eixo x', fontsize=13)
+plt.ylabel('Eixo y', fontsize=13)
 plt.legend()
 plt.grid(True)
 
