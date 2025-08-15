@@ -49,7 +49,7 @@ def update(frame):
     return point_left, point_right
 
 # Criando e executando a animação
-ani = FuncAnimation(fig, update, frames=np.arange(0, 100), init_func=init, blit=True)
+ani = FuncAnimation(fig, update, frames=np.arange(0, 90), init_func=init, blit=True)
 
 # Salvando a animação como um arquivo GIF ou MP4 (opcional)
 # Certifique-se de ter o ffmpeg ou ImageMagick instalado se quiser salvar como vídeo ou gif
