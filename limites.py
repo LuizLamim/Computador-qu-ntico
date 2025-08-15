@@ -7,7 +7,7 @@ def f(x):
     return (x**2 - 1) / (x - 1)
 
 # Gerando os dados para o gráfico da função
-x_vals = np.linspace(0, 2, 400)
+x_vals = np.linspace(0, 2, 200)
 y_vals = f(x_vals)
 
 # Configurando o gráfico
