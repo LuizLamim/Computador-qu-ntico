@@ -37,7 +37,7 @@ int main() {
 /**
  * @brief Calcula a curvatura da Terra (queda vertical) para uma determinada distancia.
  * @param distancia_km A distancia em quilometros.
- * @return A queda vertical em metros.
+ * @return 
  */
 double calcular_curvatura(double distancia_km) {
     // Calcula a queda vertical em quilômetros.
