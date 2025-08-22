@@ -5,7 +5,6 @@ int main() {
     // Cria uma matriz 4x4 de zeros usando std::vector
     std::vector<std::vector<int>> matriz(4, std::vector<int>(4, 0));
 
-    // Imprime a matriz
     std::cout << "Matriz 4x4 de Zeros:" << std::endl;
     for (const auto& linha : matriz) {
         for (const auto& elemento : linha) {
