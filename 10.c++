@@ -13,7 +13,7 @@ int main() {
         return 1;
     }
 
-    int num_pontos = 100;
+    int num_pontos = 80;
     double inicio = 0.1;
     double fim = 10.0;
     double passo = (fim - inicio) / (num_pontos - 1);
