@@ -19,6 +19,11 @@ pygame.display.set_caption("Jogo 2D Simples")
 # Relógio para controlar a taxa de quadros
 relogio = pygame.time.Clock()
 
+# Variável da pontuação
+pontuacao = 0
+# Configuração da fonte para a pontuação
+fonte = pygame.font.Font(None, 36)
+
 # --- Classe do Jogador ---
 class Jogador(pygame.sprite.Sprite):
     def __init__(self):
@@ -28,10 +33,9 @@ class Jogador(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = LARGURA_TELA // 2 - 25
         self.rect.y = ALTURA_TELA - 60
-        self.velocidade_x = 0  # Nova variável para controlar a velocidade horizontal
+        self.velocidade_x = 0
 
     def update(self):
-        # Move o jogador com base na velocidade_x
         self.rect.x += self.velocidade_x
         
         # Limita o jogador dentro da tela
@@ -53,9 +57,6 @@ class Inimigo(pygame.sprite.Sprite):
 
     def update(self):
         self.rect.y += self.velocidade_y
-        if self.rect.y > ALTURA_TELA:
-            self.rect.x = random.randrange(LARGURA_TELA - self.rect.width)
-            self.rect.y = random.randrange(-100, -40)
 
 # --- Grupos de Sprites ---
 lista_sprites_ativos = pygame.sprite.Group()
@@ -82,14 +83,14 @@ while not feito:
         # Lida com pressionar de tecla
         elif evento.type == pygame.KEYDOWN:
             if evento.key == pygame.K_LEFT:
-                jogador.velocidade_x = -5  # Move para a esquerda
+                jogador.velocidade_x = -5
             elif evento.key == pygame.K_RIGHT:
-                jogador.velocidade_x = 5   # Move para a direita
+                jogador.velocidade_x = 5
 
         # Lida com soltar de tecla
         elif evento.type == pygame.KEYUP:
             if evento.key == pygame.K_LEFT or evento.key == pygame.K_RIGHT:
-                jogador.velocidade_x = 0   # Para o movimento
+                jogador.velocidade_x = 0
 
     # --- Lógica do jogo ---
     lista_sprites_ativos.update()
@@ -99,9 +100,21 @@ while not feito:
     if colisoes:
         feito = True  # Encerra o jogo se houver colisão
 
+    # Verifica se os inimigos saíram da tela e atualiza a pontuação
+    for inimigo in lista_inimigos:
+        if inimigo.rect.y > ALTURA_TELA:
+            pontuacao += 1
+            # Reposiciona o inimigo no topo da tela
+            inimigo.rect.x = random.randrange(LARGURA_TELA - inimigo.rect.width)
+            inimigo.rect.y = random.randrange(-100, -40)
+
     # --- Renderização ---
     tela.fill(PRETO)  # Preenche o fundo com preto
     lista_sprites_ativos.draw(tela)  # Desenha todos os sprites
+
+    # Desenha a pontuação na tela
+    texto_pontuacao = fonte.render(f"Pontuação: {pontuacao}", True, BRANCO)
+    tela.blit(texto_pontuacao, (10, 10))
 
     # Atualiza a tela
     pygame.display.flip()
