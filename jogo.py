@@ -28,11 +28,17 @@ class Jogador(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = LARGURA_TELA // 2 - 25
         self.rect.y = ALTURA_TELA - 60
+        self.velocidade_x = 0  # Nova variável para controlar a velocidade horizontal
 
     def update(self):
-        # Move o jogador com base na posição do mouse
-        pos = pygame.mouse.get_pos()
-        self.rect.x = pos[0]
+        # Move o jogador com base na velocidade_x
+        self.rect.x += self.velocidade_x
+        
+        # Limita o jogador dentro da tela
+        if self.rect.x < 0:
+            self.rect.x = 0
+        if self.rect.x > LARGURA_TELA - self.rect.width:
+            self.rect.x = LARGURA_TELA - self.rect.width
 
 # --- Classe do Inimigo ---
 class Inimigo(pygame.sprite.Sprite):
@@ -72,6 +78,18 @@ while not feito:
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             feito = True
+        
+        # Lida com pressionar de tecla
+        elif evento.type == pygame.KEYDOWN:
+            if evento.key == pygame.K_LEFT:
+                jogador.velocidade_x = -5  # Move para a esquerda
+            elif evento.key == pygame.K_RIGHT:
+                jogador.velocidade_x = 5   # Move para a direita
+
+        # Lida com soltar de tecla
+        elif evento.type == pygame.KEYUP:
+            if evento.key == pygame.K_LEFT or evento.key == pygame.K_RIGHT:
+                jogador.velocidade_x = 0   # Para o movimento
 
     # --- Lógica do jogo ---
     lista_sprites_ativos.update()
