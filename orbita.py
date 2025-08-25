@@ -24,7 +24,7 @@ dt = 0.1         # Passo de tempo da simulação
 
 # --- Criando os objetos ---
 # Círculo 1 (maior, central)
-circulo1 = Circulo(x=5, y=5, r=1.5, cor='blue')
+circulo1 = Circulo(x=5, y=5, r=1.3, cor='blue')
 
 # Círculo 2 (menor, em órbita)
 circulo2 = Circulo(x=5, y=7, r=0.5, cor='green')
