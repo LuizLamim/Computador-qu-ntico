@@ -24,7 +24,7 @@ dt = 0.1         # Passo de tempo da simulação
 
 # --- Criando os objetos ---
 # Círculo 1 (maior, central)
-circulo1 = Circulo(x=5, y=5, r=1.5, cor='red')
+circulo1 = Circulo(x=5, y=5, r=1.5, cor='blue')
 
 # Círculo 2 (menor, em órbita)
 circulo2 = Circulo(x=5, y=7, r=0.5, cor='green')
@@ -72,7 +72,6 @@ for i in range(500):
     circulo2_velocidade += aceleracao * dt
     circulo2.x += circulo2_velocidade * dt
 
-    # Atualiza a posição do círculo na animação
     circulo2_patch.set_center(circulo2.x)
 
 plt.show()
