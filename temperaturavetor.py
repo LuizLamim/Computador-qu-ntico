@@ -30,7 +30,7 @@ def plotar_gradiente_temperatura():
     # Plotar o campo do vetor gradiente com setas vermelhas
     # Usamos o 'slice' [::3, ::3] para reduzir a quantidade de setas e
     # não sobrecarregar o gráfico, facilitando a visualização.
-    plt.quiver(X[::3, ::3], Y[::3, ::3], dZ_dx[::3, ::3], dZ_dy[::3, ::3], color='red', scale=20, label='Vetor Gradiente')
+    plt.quiver(X[::3, ::3], Y[::3, ::3], dZ_dx[::3, ::3], dZ_dy[::3, ::3], color='orange', scale=20, label='Vetor Gradiente')
 
     # 4. Adicionar rótulos e título
     plt.title('Mapa de Calor e Vetor Gradiente de Temperatura')
