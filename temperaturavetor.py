@@ -21,7 +21,7 @@ def plotar_gradiente_temperatura():
     dZ_dx, dZ_dy = np.gradient(Z, x[1] - x[0], y[1] - y[0])
     
     # 3. Criar a visualização
-    plt.figure(figsize=(10, 8))
+    plt.figure(figsize=(11, 9))
     
     # Plotar o mapa de calor (superfície de temperatura)
     plt.imshow(Z, extent=[x.min(), x.max(), y.min(), y.max()], origin='lower', cmap='plasma')
