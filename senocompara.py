@@ -10,7 +10,7 @@ y_seno = np.sin(x)
 y_abs_seno = np.abs(np.sin(x))
 
 # Criar a figura e o eixo do plot
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(11, 7))
 
 # Plotar a função seno(x)
 plt.plot(x, y_seno, label='sin(x)', color='blue')
