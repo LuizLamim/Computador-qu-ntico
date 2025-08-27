@@ -16,7 +16,7 @@ plt.figure(figsize=(10, 6))
 plt.plot(x, y_seno, label='sin(x)', color='blue')
 
 # Plotar a função |seno(x)|
-plt.plot(x, y_abs_seno, label='|sin(x)|', color='orange')
+plt.plot(x, y_abs_seno, label='|sin(x)|', color='red')
 
 # Adicionar título e rótulos aos eixos
 plt.title('Gráfico de $sin(x)$ e $|sin(x)|$')
