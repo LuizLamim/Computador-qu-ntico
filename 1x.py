@@ -22,7 +22,7 @@ def plotar_funcao_1_sobre_x():
     plt.figure(figsize=(10, 8))
     
     # Plota a parte negativa do gráfico.
-    plt.plot(x_negativo, y_negativo, label=r'$f(x) = 1/x$', color='blue')
+    plt.plot(x_negativo, y_negativo, label=r'$f(x) = 1/x$', color='red')
     
     # Plota a parte positiva do gráfico.
     plt.plot(x_positivo, y_positivo, color='blue')
