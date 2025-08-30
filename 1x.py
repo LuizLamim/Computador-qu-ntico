@@ -19,7 +19,7 @@ def plotar_funcao_1_sobre_x():
     y_positivo = 1 / x_positivo
 
     # Configura a figura e os eixos do gráfico.
-    plt.figure(figsize=(10, 8))
+    plt.figure(figsize=(11, 8))
     
     # Plota a parte negativa do gráfico.
     plt.plot(x_negativo, y_negativo, label=r'$f(x) = 1/x$', color='red')
