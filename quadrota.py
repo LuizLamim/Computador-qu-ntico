@@ -6,7 +6,7 @@ import math
 pygame.init()
 
 # Configurações da janela
-largura, altura = 800, 600
+largura, altura = 800, 800
 tela = pygame.display.set_mode((largura, altura))
 pygame.display.set_caption("Quadrado Rotacionando")
 
