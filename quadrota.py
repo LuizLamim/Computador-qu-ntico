@@ -21,7 +21,7 @@ tamanho_lado = 100
 
 # Variáveis para a rotação
 angulo = 0
-velocidade_rotacao = 2  # em graus por frame
+velocidade_rotacao = 1  # em graus por frame
 
 # Loop principal da animação
 rodando = True
