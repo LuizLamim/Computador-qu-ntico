@@ -39,7 +39,7 @@ ax.set_ylim(-2, 2)
 ax.axis('off')
 
 # Cria um objeto de linha para o pentágono. Inicialmente ele é vazio.
-linha, = ax.plot([], [], lw=2, color='b')
+linha, = ax.plot([], [], lw=2, color='r')
 
 # Função de inicialização para a animação
 def init():
