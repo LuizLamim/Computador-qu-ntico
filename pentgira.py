@@ -69,7 +69,7 @@ def animar(i):
 ani = animation.FuncAnimation(
     fig, 
     animar, 
-    frames=200, 
+    frames=180, 
     init_func=init, 
     interval=20, 
     blit=True
