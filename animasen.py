@@ -41,7 +41,7 @@ ani = FuncAnimation(
     fig,
     animate,
     init_func=init,
-    frames=100,  # Número de quadros (frames) da animação
+    frames=80,  # Número de quadros (frames) da animação
     interval=50,  # Intervalo de tempo entre os quadros em milissegundos
     blit=True  # Otimiza o desenho atualizando apenas o que mudou
 )
