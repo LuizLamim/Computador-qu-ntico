@@ -5,7 +5,7 @@ from matplotlib.animation import FuncAnimation
 # Configura a figura e os eixos do plot
 fig, ax = plt.subplots()
 # Define os limites do eixo x de -2π a 2π
-x_data = np.linspace(-2 * np.pi, 2 * np.pi, 400)
+x_data = np.linspace(-2 * np.pi, 2 * np.pi, 390)
 # Define os limites do eixo y de -1.1 a 1.1
 ax.set_ylim(-1.1, 1.1)
 # Configura o rótulo do eixo x
