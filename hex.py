@@ -20,7 +20,7 @@ ax.set_ylim(-1.5, 1.5)
 
 # --- Geração do Hexágono ---
 # Define o número de lados (6 para um hexágono)
-n_lados = 6
+n_lados = 7
 
 # Gera os ângulos para os vértices do hexágono
 # np.linspace cria 6 pontos entre 0 e 2*pi
