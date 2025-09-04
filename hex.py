@@ -70,7 +70,7 @@ ani = animation.FuncAnimation(fig,                 # Figura que a animação ser
 
 # Salva a animação como um arquivo GIF
 # Você pode remover esta linha se quiser apenas exibir a animação
-ani.save('hexagono_girando.gif', writer='pillow', fps=50)
+ani.save('hexagono_girando.gif', writer='pillow', fps=40)
 
 # Exibe a animação na tela
 plt.show()
