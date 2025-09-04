@@ -15,6 +15,6 @@ def animate(i):
     return circle,
 
 ani = animation.FuncAnimation(
-    fig, animate, init_func=init, frames=100, interval=20, blit=True)
+    fig, animate, init_func=init, frames=100, interval=15, blit=True)
 
 plt.show()
