@@ -16,7 +16,7 @@ x = np.linspace(-3 * np.pi, 3 * np.pi, 1000)
 y = f(x)
 
 # Plota o gráfico.
-plt.figure(figsize=(10, 6))  # Define o tamanho da figura
+plt.figure(figsize=(11, 7))  # Define o tamanho da figura
 plt.plot(x, y, label='tan(x) + 37x', color='red')
 
 # Adiciona título e rótulos aos eixos
