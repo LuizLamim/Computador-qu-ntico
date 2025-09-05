@@ -17,7 +17,7 @@ y = f(x)
 
 # Plota o gráfico.
 plt.figure(figsize=(10, 6))  # Define o tamanho da figura
-plt.plot(x, y, label='tan(x) + 37x', color='blue')
+plt.plot(x, y, label='tan(x) + 37x', color='red')
 
 # Adiciona título e rótulos aos eixos
 plt.title('Gráfico da função $f(x) = \\tan(x) + 37x$')
