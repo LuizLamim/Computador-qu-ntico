@@ -16,7 +16,7 @@ plt.figure(figsize=(8, 6)) # Define o tamanho da figura (opcional)
 plt.plot(x, y, label='y = 33x + 3', color='blue')
 
 # Adiciona título e rótulos aos eixos
-plt.title('Gráfico da Função Linear y = 33x + 3', fontsize=16)
+plt.title('Gráfico da Função Linear y = 33x + 3', fontsize=17)
 plt.xlabel('Eixo X', fontsize=12)
 plt.ylabel('Eixo Y', fontsize=12)
 
