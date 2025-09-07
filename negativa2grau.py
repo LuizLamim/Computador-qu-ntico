@@ -13,7 +13,7 @@ y_vals = f(x_vals)
 
 # Configura a plotagem
 plt.figure(figsize=(8, 6))
-plt.plot(x_vals, y_vals, label='y = -3x + 3x + 3  ou  y = 3', color='blue')
+plt.plot(x_vals, y_vals, label='y = -3x + 3x + 3  ou  y = 3', color='red')
 
 # Adiciona título e rótulos
 plt.title('Gráfico da função f(x) = 3')
