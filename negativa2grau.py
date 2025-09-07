@@ -12,7 +12,7 @@ x_vals = np.linspace(-10, 10, 400)
 y_vals = f(x_vals)
 
 # Configura a plotagem
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(9, 6))
 plt.plot(x_vals, y_vals, label='y = -3x + 3x + 3  ou  y = 3', color='red')
 
 # Adiciona título e rótulos
