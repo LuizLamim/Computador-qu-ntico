@@ -15,7 +15,7 @@ def plotar_funcao_exponencial():
     plt.figure(figsize=(10, 6))
 
     # Plota a função
-    plt.plot(x, y, label='$y = e^x + x$', color='blue')
+    plt.plot(x, y, label='$y = e^x + x$', color='red')
 
     # Adiciona título e rótulos aos eixos
     plt.title('Gráfico da função $y = e^x + x$', fontsize=16)
