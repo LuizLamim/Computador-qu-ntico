@@ -12,7 +12,7 @@ def plotar_funcao_exponencial():
     y = np.exp(x) + x
 
     # Cria o gráfico
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(11, 6))
 
     # Plota a função
     plt.plot(x, y, label='$y = e^x + x$', color='red')
