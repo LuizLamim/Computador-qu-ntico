@@ -13,7 +13,7 @@ pygame.display.set_caption('Coração Animado')
 # Cores
 preto = (0, 0, 0)
 vermelho = (255, 0, 0)
-rosa = (255, 105, 180) # Cor de coração para o fundo
+rosa = (255, 255, 255) # Cor de coração para o fundo
 
 # Posição e tamanho inicial do coração
 centro_x = largura // 2
