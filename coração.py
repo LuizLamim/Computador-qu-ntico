@@ -54,7 +54,7 @@ while rodando:
     pygame.display.flip()
     
     # Controla a taxa de quadros (FPS)
-    clock.tick(60)
+    clock.tick(50)
 
 # Sair do Pygame
 pygame.quit()
