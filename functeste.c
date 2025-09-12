@@ -22,3 +22,12 @@ int main() {
         // O formato "%.2f %.2f\n" garante duas casas decimais e uma nova linha.
         fprintf(fp, "%.2f %.2f\n", x, y);
     }
+
+    // Fecha o arquivo
+    fclose(fp);
+
+    printf("Arquivo 'dados.dat' gerado com sucesso!\n");
+    printf("Agora, use o Gnuplot para plotar o gráfico.\n");
+
+    return 0;
+}
