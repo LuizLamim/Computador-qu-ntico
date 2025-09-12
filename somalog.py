@@ -12,7 +12,7 @@ y = 3*x + 2
 plt.figure(figsize=(8, 6))
 
 # 4. Plotar o gráfico
-plt.plot(x, y, label='y = 3x + 1 + log(10)  (ou seja, y = 3x + 2)', color='blue')
+plt.plot(x, y, label='y = 3x + 1 + log(10)  (ou seja, y = 3x + 2)', color='red')
 
 # 5. Adicionar título e rótulos aos eixos
 plt.title('Gráfico da Função Linear', fontsize=16)
