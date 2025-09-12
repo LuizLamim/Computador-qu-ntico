@@ -9,7 +9,7 @@ x = np.linspace(-10, 10, 100)
 y = 3*x + 2
 
 # 3. Criar a figura e os eixos do gráfico
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(9, 7))
 
 # 4. Plotar o gráfico
 plt.plot(x, y, label='y = 3x + 1 + log(10)  (ou seja, y = 3x + 2)', color='red')
