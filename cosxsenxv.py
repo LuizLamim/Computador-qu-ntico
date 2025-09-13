@@ -11,7 +11,7 @@ y = np.cos(x) * np.sin(x)
 
 # Plota o gráfico
 plt.figure(figsize=(10, 6))  # Define o tamanho da figura (largura, altura)
-plt.plot(x, y, label=r'$y = \cos(x) \cdot \sin(x)$', color='blue')
+plt.plot(x, y, label=r'$y = \cos(x) \cdot \sin(x)$', color='red')
 
 # Adiciona título e rótulos aos eixos
 plt.title('Gráfico da Função $y = \cos(x) \cdot \sin(x)$')
