@@ -10,7 +10,7 @@ x = np.linspace(-2 * np.pi, 2 * np.pi, 400)
 y = np.cos(x) * np.sin(x)
 
 # Plota o gráfico
-plt.figure(figsize=(10, 6))  # Define o tamanho da figura (largura, altura)
+plt.figure(figsize=(11, 8))  # Define o tamanho da figura (largura, altura)
 plt.plot(x, y, label=r'$y = \cos(x) \cdot \sin(x)$', color='red')
 
 # Adiciona título e rótulos aos eixos
