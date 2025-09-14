@@ -27,3 +27,14 @@ plt.grid(True)
 
 # Adiciona a legenda
 plt.legend()
+
+# Define os limites dos eixos para uma visualização clara
+plt.xlim(0, 100)
+plt.ylim(-1, 2)
+
+# Adiciona os eixos x e y em 0 para referência
+plt.axhline(0, color='black', linewidth=0.5)
+plt.axvline(0, color='black', linewidth=0.5)
+
+# Exibe o gráfico
+plt.show()
