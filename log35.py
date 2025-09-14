@@ -12,3 +12,18 @@ x_valores = np.linspace(0.1, 100, 400)
 
 # Calcula os valores correspondentes de y para cada x
 y_valores = log_base_35(x_valores)
+
+# Cria o gráfico
+plt.figure(figsize=(10, 6)) # Define o tamanho da figura
+plt.plot(x_valores, y_valores, label=r'$f(x) = \log_{35}(x)$', color='blue')
+
+# Adiciona título e rótulos
+plt.title('Gráfico da função $f(x) = \log_{35}(x)$')
+plt.xlabel('Eixo x')
+plt.ylabel('Eixo y')
+
+# Adiciona uma grade para melhor visualização
+plt.grid(True)
+
+# Adiciona a legenda
+plt.legend()
