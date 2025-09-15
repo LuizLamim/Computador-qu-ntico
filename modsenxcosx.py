@@ -11,3 +11,23 @@ plt.figure(figsize=(10, 6))
 
 # Plota a função
 plt.plot(x, y, label=r'$|sen(x)cos(x)|$')
+
+plt.title(r'Gráfico da função $|sen(x)cos(x)|$', fontsize=16)
+plt.xlabel('x', fontsize=12)
+plt.ylabel('y', fontsize=12)
+
+# Adiciona uma grade para facilitar a leitura
+plt.grid(True, linestyle='--', alpha=0.6)
+
+# Adiciona uma legenda
+plt.legend()
+
+# Define os limites do eixo y para uma melhor visualização
+plt.ylim(0, 1.1)
+
+# Plota os eixos x e y em 0 para referência
+plt.axhline(0, color='black', linewidth=0.5)
+plt.axvline(0, color='black', linewidth=0.5)
+
+# Mostra o gráfico
+plt.show()
