@@ -7,7 +7,7 @@ x = np.linspace(-2 * np.pi, 2 * np.pi, 1000)
 y = np.abs(np.sin(x) * np.cos(x))
 
 # Cria a figura e os eixos
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(11, 7))
 
 # Plota a função
 plt.plot(x, y, label=r'$|sen(x)cos(x)|$')
