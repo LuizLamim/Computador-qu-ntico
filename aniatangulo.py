@@ -60,7 +60,7 @@ while rodando:
     pygame.display.flip()
 
     # --- Controla o FPS ---
-    clock.tick(60) # Define 60 quadros por segundo
+    clock.tick(59) # Define 60 quadros por segundo
 
 # --- Finaliza o Pygame ---
 pygame.quit()
