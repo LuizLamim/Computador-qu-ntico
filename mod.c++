@@ -30,3 +30,12 @@ int main() {
 
     // Encerra o envio de dados
     fprintf(gnuplotPipe, "e\n");
+
+    // Fecha o pipe
+    fflush(gnuplotPipe);
+    pclose(gnuplotPipe);
+
+    std::cout << "Gráfico gerado com sucesso!" << std::endl;
+
+    return 0;
+}
