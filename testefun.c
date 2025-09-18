@@ -9,3 +9,10 @@
 int main() {
     FILE *fp;
     double x, y;
+
+    // Abrir o arquivo para escrita
+    fp = fopen(FILENAME, "w");
+    if (fp == NULL) {
+        printf("Erro ao abrir o arquivo %s\n", FILENAME);
+        return 1;
+    }
