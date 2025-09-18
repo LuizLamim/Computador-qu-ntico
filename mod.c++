@@ -16,3 +16,17 @@ int main() {
     fprintf(gnuplotPipe, "set ylabel 'y'\n");
     fprintf(gnuplotPipe, "set grid\n");
     fprintf(gnuplotPipe, "plot '-' with lines title '| sen(x) + 10 |'\n");
+
+    // Loop para calcular e enviar os pontos para o gnuplot
+    const double PI = 3.14159265358979323846;
+    const double startX = -10.0;
+    const double endX = 10.0;
+    const double step = 0.01;
+
+    for (double x = startX; x <= endX; x += step) {
+        double y = std::abs(std::sin(x) + 10);
+        fprintf(gnuplotPipe, "%f %f\n", x, y);
+    }
+
+    // Encerra o envio de dados
+    fprintf(gnuplotPipe, "e\n");
