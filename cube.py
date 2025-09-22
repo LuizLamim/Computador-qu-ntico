@@ -94,3 +94,9 @@ while running:
         (4, 5), (5, 6), (6, 7), (7, 4),  # Arestas traseiras
         (0, 4), (1, 5), (2, 6), (3, 7)   # Arestas de conexão
     ]
+
+    for edge in edges:
+        connect_points(edge[0], edge[1], projected_points)
+
+    # Atualiza a tela
+    pygame.display.flip()
