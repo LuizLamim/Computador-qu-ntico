@@ -100,3 +100,6 @@ while running:
 
     # Atualiza a tela
     pygame.display.flip()
+
+    # Encerra o Pygame
+pygame.quit()
