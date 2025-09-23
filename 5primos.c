@@ -26,3 +26,6 @@ int main() {
 
         num++; // Passa para o próximo número
     }
+
+    return 0;
+}
