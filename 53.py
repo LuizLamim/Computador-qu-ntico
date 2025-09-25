@@ -19,3 +19,17 @@ fig, ax = plt.subplots()
 # 'b-' é para uma linha azul contínua (Blue line)
 # 'o' é para adicionar um círculo em cada ponto (Optional marker)
 ax.plot(numeros, numeros, 'bo-', label='Números de 1 a 53')
+
+# 4. Adicionar rótulos e título para clareza
+ax.set_title(f'Gráfico dos Primeiros {NUM_ELEMENTOS} Números Inteiros')
+ax.set_xlabel('Índice/Posição (Eixo X)')
+ax.set_ylabel('Valor do Número (Eixo Y)')
+
+# 5. Adicionar grade (opcional, mas útil)
+ax.grid(True)
+
+# 6. Adicionar legenda
+ax.legend()
+
+# 7. Exibir o gráfico
+plt.show()
