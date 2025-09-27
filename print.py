@@ -43,3 +43,7 @@ def plotar_primeiras_letras():
 
     # Mostra o gráfico
     plt.show()
+
+# Executa a função
+if __name__ == "__main__":
+    plotar_primeiras_letras()
