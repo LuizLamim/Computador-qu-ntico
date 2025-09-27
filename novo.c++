@@ -7,4 +7,5 @@ int main() {
         std::cout << i << std::endl; // Imprime o valor atual de 'i' e pula para a próxima linha
     }
 
-    
+    return 0; // Indica que o programa terminou com sucesso
+}
