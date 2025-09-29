@@ -42,4 +42,8 @@ def somar_equacoes_primeiro_grau():
     print(f"A Equação Soma é: y_soma = {a_soma}x {sinal_b} {b_abs}")
     print(f"Coeficiente 'a' da soma: {a_soma}")
     print(f"Coeficiente 'b' da soma: {b_soma}")
-    print("---------------------------------------------------"
+    print("---------------------------------------------------")
+
+    # Executa a função
+if __name__ == "__main__":
+    somar_equacoes_primeiro_grau()
