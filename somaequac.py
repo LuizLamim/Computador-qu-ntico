@@ -28,3 +28,18 @@ def somar_equacoes_primeiro_grau():
     a_soma = a1 + a2
     # Soma dos coeficientes 'b'
     b_soma = b1 + b2
+
+    # Exibição dos resultados
+    print("\n---------------------------------------------------")
+    print(f"Equação 1: y1 = {a1}x + {b1}")
+    print(f"Equação 2: y2 = {a2}x + {b2}")
+    print("---------------------------------------------------")
+
+    # Formatação da saída para melhor leitura (tratamento do sinal de 'b')
+    sinal_b = "+" if b_soma >= 0 else "-"
+    b_abs = abs(b_soma)
+
+    print(f"A Equação Soma é: y_soma = {a_soma}x {sinal_b} {b_abs}")
+    print(f"Coeficiente 'a' da soma: {a_soma}")
+    print(f"Coeficiente 'b' da soma: {b_soma}")
+    print("---------------------------------------------------"
