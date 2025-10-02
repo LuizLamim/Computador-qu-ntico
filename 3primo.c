@@ -31,4 +31,7 @@ int main() {
         numero_atual++;
     }
     
-  
+    printf("\n");
+
+    return 0;
+}
