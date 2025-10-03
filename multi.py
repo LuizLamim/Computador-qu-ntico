@@ -11,3 +11,5 @@ numero2 = 7
 
 produto = multiplicar_numeros(numero1, numero2)
 
+# Imprime o resultado
+print(f"O resultado da multiplicação de {numero1} por {numero2} é: {produto}")
