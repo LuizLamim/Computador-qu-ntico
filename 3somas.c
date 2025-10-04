@@ -25,3 +25,7 @@ int main() {
     // Exibe o resultado da soma
     printf("\n"); // Adiciona uma linha em branco para melhor formatação
     printf("A soma dos tres numeros e: %d\n", soma);
+
+    // Retorna 0 para indicar que o programa foi executado com sucesso
+    return 0;
+}
