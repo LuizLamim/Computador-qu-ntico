@@ -44,3 +44,9 @@ gradiente = calcular_gradiente_simples(T_inicial, x_inicial, T_final, x_final)
 print("\n" + "="*30 + "\n")
 T_A = 100.0  # Temperatura em uma extremidade de uma barra (K)
 x_A = 0.0    # Posição (cm)
+
+
+T_B = 50.0   # Temperatura na outra extremidade da barra (K)
+x_B = 10.0   # Posição (cm)
+
+gradiente_2 = calcular_gradiente_simples(T_A, x_A, T_B, x_B, unidade_T="K", unidade_x="cm")
