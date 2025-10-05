@@ -23,3 +23,24 @@ def calcular_gradiente_simples(T1, x1, T2, x2, unidade_T="°C", unidade_x="m"):
 
     # Calcula o gradiente
     gradiente = delta_T / delta_x
+
+    print(f"--- Detalhes do Cálculo ---")
+    print(f"Variação de Temperatura ($\Delta T$): {delta_T:.2f} {unidade_T}")
+    print(f"Variação de Posição ($\Delta x$): {delta_x:.2f} {unidade_x}")
+    print(f"Gradiente de Temperatura: {gradiente:.4f} {unidade_T}/{unidade_x}")
+
+    return gradiente
+
+# --- Exemplo de Uso ---
+T_inicial = 25.0  # Temperatura inicial em °C
+x_inicial = 0.0   # Posição inicial em metros (m)
+
+T_final = 40.0    # Temperatura final em °C
+x_final = 0.5     # Posição final em metros (m)
+
+gradiente = calcular_gradiente_simples(T_inicial, x_inicial, T_final, x_final)
+
+# Exemplo 2: Temperatura diminuindo ao longo da distância
+print("\n" + "="*30 + "\n")
+T_A = 100.0  # Temperatura em uma extremidade de uma barra (K)
+x_A = 0.0    # Posição (cm)
