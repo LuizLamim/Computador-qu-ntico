@@ -27,3 +27,7 @@ int main() {
     // Calcula o quadrado do segundo número (numero2 * numero2)
     // e exibe o resultado
     printf("O quadrado de %d é: %d\n", numero2, numero2 * numero2);
+
+    // Retorna 0 para indicar que o programa foi executado com sucesso
+    return 0;
+}
