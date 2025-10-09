@@ -13,3 +13,9 @@ int main() {
     printf("Digite o segundo número: ");
     // Lê o segundo número digitado e armazena em num2
     scanf("%d", &num2);
+
+    // Realiza a multiplicação e armazena o valor em 'resultado'
+    resultado = num1 * num2;
+
+    // Imprime o resultado formatado
+    printf("A multiplicação de %d por %d é: %d\n", num1, num2, resultado);
