@@ -19,3 +19,7 @@ int main() {
 
     // Imprime o resultado formatado
     printf("A multiplicação de %d por %d é: %d\n", num1, num2, resultado);
+
+    // Indica que o programa terminou com sucesso
+    return 0;
+}
