@@ -20,3 +20,14 @@ ax = fig.add_subplot(projection='3d')
 # 4. Plotar o gráfico de superfície
 # O 'cmap' define o esquema de cores. 'viridis' é um bom padrão.
 surf = ax.plot_surface(X, Y, Z, cmap='viridis', linewidth=0, antialiased=False)
+
+# 5. Adicionar rótulos e título
+ax.set_xlabel('Eixo X')
+ax.set_ylabel('Eixo Y')
+ax.set_zlabel('Eixo Z ($f(x,y) = 2xy$)')
+ax.set_title('Gráfico de Superfície da Função $f(x,y) = 2xy$')
+
+fig.colorbar(surf, shrink=0.5, aspect=5, label='Valor de Z')
+
+
+plt.show()
