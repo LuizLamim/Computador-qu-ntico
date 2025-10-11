@@ -39,4 +39,31 @@ def animate_circle():
     circle_turtle.dot(100, "red") # Desenhar um ponto grande no lugar do círculo
     circle_turtle.backward(radius) # Voltar ao centro
     
+   import math
+    circle_turtle.clear()
     
+    center_x, center_y = 0, 0
+    
+    # Calcula a posição x, y do círculo em sua órbita
+    x = center_x + radius * math.cos(math.radians(angle))
+    y = center_y + radius * math.sin(math.radians(angle))
+    
+    circle_turtle.penup()
+    circle_turtle.goto(x, y)
+    circle_turtle.pendown()
+    
+    # Desenha o círculo vermelho na nova posição
+    circle_turtle.dot(50, "red") # Tamanho do ponto/círculo
+    
+    angle += 5 # Incrementa o ângulo para a próxima atualização
+    if angle >= 360:
+        angle = 0
+        
+    screen.update() # Atualiza a tela
+    screen.ontimer(animate_circle, 20) # Chama a função novamente após 20 ms
+
+# Iniciar a animação
+animate_circle()
+
+# Manter a janela aberta até que seja fechada manualmente
+screen.mainloop() 
