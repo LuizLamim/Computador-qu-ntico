@@ -40,9 +40,9 @@ def animate_circle():
     circle_turtle.backward(radius) # Voltar ao centro
     
    import math
-    circle_turtle.clear()
+circle_turtle.clear()
     
-    center_x, center_y = 0, 0
+center_x, center_y = 0, 0
     
     # Calcula a posição x, y do círculo em sua órbita
     x = center_x + radius * math.cos(math.radians(angle))
