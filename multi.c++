@@ -24,3 +24,5 @@ int main() {
     std::cout << "O produto de " << numero1 << " e " << numero2 << " é: " << resultado << std::endl;
 
     // Retorna 0 para indicar que o programa foi executado com sucesso
+    return 0;
+}
