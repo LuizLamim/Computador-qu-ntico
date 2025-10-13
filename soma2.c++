@@ -15,3 +15,6 @@ int main() {
     soma = numero1 + numero2;
 
     std::cout << "A soma de " << numero1 << " e " << numero2 << " é: " << soma << std::endl;
+
+    return 0;
+}
