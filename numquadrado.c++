@@ -7,3 +7,15 @@ double quadrado_multiplicacao(double numero) {
 
 int main() {
     double num;
+
+    std::cout << "Digite um número: ";
+    
+    // Armazena a entrada do usuário na variável 'num'
+    if (!(std::cin >> num)) {
+        std::cerr << "Entrada inválida. Por favor, digite um número.\n";
+        return 1;
+    }
+    
+    // Calcula o quadrado
+    double resultado = quadrado_multiplicacao(num);
+    
