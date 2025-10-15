@@ -4,3 +4,5 @@ import string
 alfabeto = string.ascii_lowercase
 
 
+ultimas_3_letras = alfabeto[-3:]
+
