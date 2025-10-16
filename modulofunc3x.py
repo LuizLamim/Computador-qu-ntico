@@ -17,3 +17,7 @@ plt.grid(True, linestyle='--', alpha=0.7)
 
 plt.axhline(0, color='black', linewidth=0.5)
 plt.axvline(0, color='black', linewidth=0.5)
+
+plt.legend()
+
+plt.show()
