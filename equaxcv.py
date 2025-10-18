@@ -21,3 +21,10 @@ plt.grid(True)
 
 # Adiciona a legenda (importante se houver múltiplas linhas)
 plt.legend()
+
+# Define os eixos em (0,0) para melhor visualização da função linear
+plt.axhline(0, color='black', linewidth=0.5)
+plt.axvline(0, color='black', linewidth=0.5)
+
+# 5. Mostrar o gráfico
+plt.show()
