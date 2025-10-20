@@ -11,7 +11,3 @@ int main() {
         letra = letra + 1;
     }
 
-    printf("\n");
-
-    return 0;
-}
