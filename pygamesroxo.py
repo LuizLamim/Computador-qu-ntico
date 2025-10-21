@@ -31,3 +31,10 @@ while executando:
         if evento.type == pygame.KEYDOWN:
             if evento.key == pygame.K_ESCAPE:
                 executando = False
+tela.fill(ROXO)
+
+    pygame.display.flip()
+
+# 8. Finalização do Pygame
+pygame.quit()
+sys.exit()
