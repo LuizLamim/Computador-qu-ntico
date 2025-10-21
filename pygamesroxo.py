@@ -18,3 +18,16 @@ ROXO = (128, 0, 128)
 tela = pygame.display.set_mode(DIMENSOES)
 # Define o título da janela
 pygame.display.set_caption("Tela Roxo 1920x1080")
+
+executando = True
+while executando:
+    # 5. Tratamento de Eventos
+    for evento in pygame.event.get():
+        # Verifica se o usuário clicou no botão de fechar (X)
+        if evento.type == pygame.QUIT:
+            executando = False
+        
+        # Verifica se o usuário pressionou a tecla ESC para fechar
+        if evento.type == pygame.KEYDOWN:
+            if evento.key == pygame.K_ESCAPE:
+                executando = False
