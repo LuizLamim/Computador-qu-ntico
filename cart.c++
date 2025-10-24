@@ -10,3 +10,8 @@ int main() {
         
         std::cout << caractere_atual << " ";
     }
+
+    std::cout << "\n"; // Quebra de linha final para limpeza
+    
+    return 0;
+}
