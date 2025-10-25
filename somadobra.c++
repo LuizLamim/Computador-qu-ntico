@@ -27,3 +27,14 @@ int main() {
 
     // 4. Dobra o valor da soma
     resultado_dobrado = soma * 2;
+
+    // Exibe os resultados intermediários e o final
+    std::cout << "\n--- Resultados ---" << std::endl;
+    std::cout << "O primeiro número inserido foi: " << numero1 << std::endl;
+    std::cout << "O segundo número inserido foi: " << numero2 << std::endl;
+    std::cout << "A soma dos dois números é: " << soma << std::endl;
+    std::cout << "O resultado dobrado da soma é: " << resultado_dobrado << std::endl;
+
+    // Indica que o programa terminou com sucesso
+    return 0;
+}
