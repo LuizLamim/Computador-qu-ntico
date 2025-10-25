@@ -16,3 +16,14 @@ int main() {
     std::cout << "Por favor, insira o primeiro número: ";
     // Lê o primeiro número digitado pelo usuário
     std::cin >> numero1;
+
+    // 2. Pede a entrada do segundo número
+    std::cout << "Por favor, insira o segundo número: ";
+    // Lê o segundo número digitado pelo usuário
+    std::cin >> numero2;
+
+    // 3. Calcula a soma dos dois números
+    soma = numero1 + numero2;
+
+    // 4. Dobra o valor da soma
+    resultado_dobrado = soma * 2;
