@@ -9,3 +9,8 @@ int main() {
 
     // Calcula a soma
     int soma = primeiro_primo + segundo_primo + terceiro_primo;
+
+    std::cout << "Os 3 primeiros números primos são: "
+              << primeiro_primo << ", "
+              << segundo_primo << " e "
+              << terceiro_primo << std::endl;
