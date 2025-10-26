@@ -15,8 +15,8 @@ int main() {
               << segundo_primo << " e "
               << terceiro_primo << std::endl;
 
-std::cout << "A soma dos 3 primeiros números primos é: "
+    std::cout << "A soma dos 3 primeiros números primos é: "
               << soma << std::endl;
 
-    return 0;
+        return 0;
 }
