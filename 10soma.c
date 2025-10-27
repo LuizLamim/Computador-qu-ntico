@@ -5,4 +5,6 @@ int main() {
     int soma = 0;        
     int i;               
 
-  
+    for (i = 1; i <= n; i++) {
+        soma = soma + i; 
+    }
