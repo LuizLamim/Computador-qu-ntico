@@ -8,3 +8,8 @@ int main() {
     for (i = 1; i <= n; i++) {
         soma = soma + i; 
     }
+
+    printf("A soma dos primeiros %d numeros inteiros positivos e: %d\n", n, soma);
+
+    return 0;
+}
