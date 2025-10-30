@@ -61,3 +61,37 @@ def atualizar_particulas(posicoes, velocidades, dt):
     velocidades[:] *= FATOR_AMORTECIMENTO
 
 # --- Configuração da Animação ---
+
+fig, ax = plt.subplots(figsize=(6, 6))
+
+# Configurações do gráfico
+ax.set_xlim(LIMITE_X)
+ax.set_ylim(LIMITE_Y)
+ax.set_aspect('equal', adjustable='box')
+ax.set_title("Simulação Básica de Partículas - Água")
+ax.set_xlabel("Posição X")
+ax.set_ylabel("Posição Y")
+
+# Criação inicial dos pontos (sc é o "scatter" do Matplotlib)
+sc = ax.scatter(posicoes[:, 0], posicoes[:, 1], s=10, color='blue', alpha=0.7)
+
+# Função chamada a cada quadro (frame) da animação
+def animate(frame):
+    """Função de atualização para a animação."""
+    
+    # Roda a lógica da física
+    atualizar_particulas(posicoes, velocidades, TEMPO_PASSO)
+    
+    # Atualiza os dados do scatter plot com as novas posições
+    sc.set_offsets(posicoes)
+    
+    return sc, # Retorna a lista de objetos gráficos modificados
+
+# Cria a animação
+ani = animation.FuncAnimation(fig, animate, frames=200, interval=50, blit=True, repeat=True)
+
+# Exibe a animação
+plt.show()
+
+# Se você quiser salvar a animação como GIF ou vídeo (pode demorar):
+# ani.save('simulacao_agua.gif', writer='imagemagick', fps=20)
