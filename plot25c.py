@@ -17,3 +17,10 @@ plt.title('Gráfico dos 25 Primeiros Números Inteiros', fontsize=16)
 plt.xlabel('Ordem do Número (Eixo X)', fontsize=12)
 plt.ylabel('Valor do Número (Eixo Y)', fontsize=12)
 
+plt.grid(True, linestyle='--', alpha=0.6) 
+plt.legend()                              
+plt.xticks(numeros[::2])                  
+plt.yticks(numeros[::2])                  
+
+plt.show()
+
