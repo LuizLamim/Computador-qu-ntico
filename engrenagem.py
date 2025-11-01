@@ -20,3 +20,13 @@ def create_gear_points(num_teeth=12, outer_radius=1.0, inner_radius=0.7, tooth_w
             current_angle = angle
         else:
             current_angle = angle + (2 * np.pi / (num_teeth * 4)) * tooth_width_factor
+
+        points.append((r * np.cos(current_angle), r * np.sin(current_angle)))
+    return np.array(points)
+
+# Configuração da figura e dos eixos
+fig, ax = plt.subplots(figsize=(6, 6))
+ax.set_xlim(-1.5, 1.5)
+ax.set_ylim(-1.5, 1.5)
+ax.set_aspect('equal')
+ax.axis('off')
