@@ -7,3 +7,7 @@ function imprimirDezPrimeirosPositivos() {
     for (let i = 1; i <= limite; i++) {
         console.log(i);
     }
+}
+
+// Chamamos a função para executar o programa
+imprimirDezPrimeirosPositivos();
