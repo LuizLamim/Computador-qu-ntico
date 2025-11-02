@@ -3,3 +3,7 @@ function imprimirDezPrimeirosPositivos() {
     const limite = 10;
 
     console.log("Os 10 primeiros números positivos são:")
+
+    for (let i = 1; i <= limite; i++) {
+        console.log(i);
+    }
