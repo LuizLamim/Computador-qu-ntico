@@ -35,3 +35,32 @@ def animate(i):
     
     x_data = x[:i+1]
     y_data = base_exponencial**x_data
+
+    # 2. Atualize os dados da linha.
+    line.set_data(x_data, y_data)
+    
+    # 3. Atualize o texto (opcional)
+    time_text.set_text(f'x atual: {x[i]:.2f}')
+    
+    # Retorne os objetos (artistas) modificados que precisam ser redesenhados
+    return line, time_text
+
+# --- 4. Criação do Objeto Animação ---
+# FuncAnimation(figura, função de animação, função de inicialização, frames, intervalo, blit)
+num_frames = len(x)
+
+ani = animation.FuncAnimation(
+    fig, 
+    animate, 
+    init_func=init,
+    frames=num_frames, 
+    interval=20, # Intervalo entre frames em milissegundos (20ms = 50 FPS)
+    blit=True    # Otimiza o desenho, desenhando apenas o que mudou
+)
+
+# --- 5. Exibir ou Salvar a Animação ---
+
+# Para exibir em uma janela interativa:
+plt.show() 
+
+
