@@ -19,3 +19,19 @@ ax.grid(True)
 ax.set_title(f'Animação da Curva Exponencial: y = {base_exponencial}^x')
 ax.set_xlabel('x')
 ax.set_ylabel('y')
+
+
+line, = ax.plot([], [], color='blue', lw=2)
+
+
+time_text = ax.text(0.05, 0.9, '', transform=ax.transAxes) 
+
+def init():
+    line.set_data([], [])
+    time_text.set_text('')
+    return line, time_text
+
+def animate(i):
+    
+    x_data = x[:i+1]
+    y_data = base_exponencial**x_data
