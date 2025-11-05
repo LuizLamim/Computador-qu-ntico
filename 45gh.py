@@ -13,3 +13,15 @@ function verificarParImpar(numero) {
     return "O número " + numero + " é Ímpar.";
   }
 }
+
+function converterParaMaiusculas(texto) {
+  // O método .toUpperCase() é um método embutido (built-in) de strings em JS.
+  return texto.toUpperCase();
+}
+
+// ==========================================================
+// --- Exemplos de Uso das Funções ---
+
+// 1. Chamando a função de soma
+let resultadoSoma = somarNumeros(15, 7);
+console.log("Resultado da Soma (15 + 7):", resultadoSoma); // Saída: 22
