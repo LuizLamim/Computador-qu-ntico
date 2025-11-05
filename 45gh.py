@@ -25,3 +25,15 @@ function converterParaMaiusculas(texto) {
 // 1. Chamando a função de soma
 let resultadoSoma = somarNumeros(15, 7);
 console.log("Resultado da Soma (15 + 7):", resultadoSoma); // Saída: 22
+
+// 2. Chamando a função de verificação
+let verificacao1 = verificarParImpar(10);
+let verificacao2 = verificarParImpar(13);
+console.log(verificacao1); // Saída: O número 10 é Par.
+console.log(verificacao2); // Saída: O número 13 é Ímpar.
+
+// 3. Chamando a função de conversão
+let textoOriginal = "programação javascript";
+let textoConvertido = converterParaMaiusculas(textoOriginal);
+console.log("Texto Original:", textoOriginal);
+console.log("Texto em Maiúsculas:", textoConvertido); // Saída: PROGRAMAÇÃO JAVASCRIPT
