@@ -6,3 +6,5 @@ clock = pygame.time.Clock()
 running = True
 
 screen.fill("red")
+
+pygame.display.flip()
