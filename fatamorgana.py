@@ -93,3 +93,67 @@ img_aparente, = ax.plot([], [], 'x', color='blue', markersize=10, label='Imagem 
 # Adiciona uma legenda para a estratificação (inversão térmica)
 ax.text(X_OBJETO / 2, ALTURA_MAX * 0.9, 'Camada de Ar Quente (n Baixo)', color='red', ha='center')
 ax.text(X_OBJETO / 2, ALTURA_MAX * 0.1, 'Camada de Ar Frio (n Alto)', color='blue', ha='center')
+
+# --- 4. Função de Animação ---
+
+# Frame 0: Inicialização (Apenas o setup)
+def init():
+    trajetoria.set_data([], [])
+    linha_aparente.set_data([], [])
+    img_aparente.set_data([], [])
+    return trajetoria, linha_aparente, img_aparente
+
+# Função de atualização (Não precisamos de animação quadro a quadro, 
+# apenas mostrar o estado final da luz curvada)
+def animate(frame):
+    # A animação é estática, focada na explicação geométrica
+    
+    # 1. Trajetória REAL (Curvada)
+    x_real, y_real = calcular_trajetoria_curva(X_OBJETO, Y_OBJETO, NUM_SEGMENTOS)
+    trajetoria.set_data(x_real, y_real)
+    
+    # 2. Imagem Aparente
+    
+    # O observador vê a luz chegando em (OBS_X, OBS_Y) com um certo ângulo.
+    # Ângulo = inclinação do último segmento do raio antes de chegar ao observador.
+    
+    # A luz chega no observador em (x_real[0], y_real[0]). O observador está em (OBS_X, OBS_Y)
+    # Usamos os dois pontos mais próximos para calcular a tangente:
+    x_chegada = x_real[1]
+    y_chegada = y_real[1]
+    
+    # Calcula a inclinação (m) do raio ao chegar ao observador
+    if (x_chegada - OBS_X) != 0:
+        inclinacao = (y_chegada - OBS_Y) / (x_chegada - OBS_X)
+    else:
+        inclinacao = 0 # Evita divisão por zero
+        
+    # Ponto de Interceptação da linha reta aparente
+    # A luz parece vir de onde esta linha reta (tangente) se origina
+    # Equação da reta: y - y1 = m(x - x1)
+    
+    # O ponto onde a linha aparente atinge a distância do objeto real (X_OBJETO)
+    y_aparente_na_distancia = OBS_Y + inclinacao * (X_OBJETO - OBS_X)
+    
+    # 3. Linha de Visão Aparente (Reta Tangente)
+    x_aparente_line = np.array([OBS_X, X_OBJETO])
+    y_aparente_line = np.array([OBS_Y, y_aparente_na_distancia])
+    linha_aparente.set_data(x_aparente_line, y_aparente_line)
+    
+    # 4. Posição da Imagem Aparente
+    img_aparente.set_data(X_OBJETO, y_aparente_na_distancia)
+    
+    # Texto Explicativo (Mostra que o objeto parece estar mais alto)
+    ax.text(X_OBJETO + 50, Y_OBJETO, f'Real: {Y_OBJETO:.1f} m', color='red')
+    ax.text(X_OBJETO + 50, y_aparente_na_distancia, f'Aparente: {y_aparente_na_distancia:.1f} m', color='blue')
+    
+    # O frame é fixo, mas a função 'animate' executa o cálculo
+    return trajetoria, linha_aparente, img_aparente
+
+# Cria a animação (usando interval=1 para que o cálculo estático seja executado)
+ani = FuncAnimation(fig, animate, frames=1, init_func=init, blit=False, interval=1)
+
+# Adiciona a legenda
+ax.legend(loc='lower left')
+
+plt.show()
