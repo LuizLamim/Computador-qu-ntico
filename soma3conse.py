@@ -13,3 +13,9 @@ while True:
         break  
     except ValueError:
         print("Entrada inválida. Por favor, digite um número inteiro.")
+
+resultado, n1, n2, n3 = somar_tres_consecutivos(num_inicial)
+
+print("\n--- Resultado ---")
+print(f"Os três números consecutivos são: **{n1}**, **{n2}** e **{n3}**")
+print(f"A soma de {n1} + {n2} + {n3} é: **{resultado}**")
