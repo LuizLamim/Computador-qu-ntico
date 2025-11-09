@@ -3,4 +3,4 @@ def imprimir_numero():
 
     print(f"O número que você digitou é: {entrada}")
 
-    imprimir_numero()
+imprimir_numero()
