@@ -13,7 +13,7 @@ x_curve = np.linspace(x_min - 1, x_max + 1, 400)
 y_curve = f(x_curve)
 
 # 2. Configuração inicial da figura e do eixo
-fig, ax = plt.subplots(figsize=(10, 6))
+fig, ax = plt.subplots(figsize=(11, 6))
 ax.plot(x_curve, y_curve, color='blue', linewidth=2, label=r'$f(x) = -x^2 + 10x - 10$')
 ax.fill_between(x_curve, y_curve, color='lightblue', alpha=0.3, label='Área real (aprox.)') # Área real para comparação
 ax.set_title('Aproximação da Área sob a Curva (Integração)')
