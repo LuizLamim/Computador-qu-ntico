@@ -80,7 +80,7 @@ def update(frame):
 # `frames` define o número de passos da animação
 # `interval` é o atraso entre os frames em milissegundos
 # `blit=True` otimiza a renderização, redesenhando apenas o que mudou
-ani = FuncAnimation(fig, update, frames=np.arange(1, 60), init_func=init, blit=True, interval=100)
+ani = FuncAnimation(fig, update, frames=np.arange(1, 60), init_func=init, blit=True, interval=99)
 
 
 plt.show()
