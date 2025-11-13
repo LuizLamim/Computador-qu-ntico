@@ -12,4 +12,4 @@ def somar_numeros():
         print("\nErro: Por favor, digite apenas números válidos.")
 
 if __name__ == "__main__":
-    
+    somar_numeros()
