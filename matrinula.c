@@ -13,4 +13,7 @@ int main() {
             printf("%d ", matriz_nula[i][j]);
         }
         printf("\n");
+    }
+
+    return 0;
 }
