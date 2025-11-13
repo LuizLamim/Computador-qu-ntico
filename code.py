@@ -11,3 +11,5 @@ def somar_numeros():
     except ValueError:
         print("\nErro: Por favor, digite apenas números válidos.")
 
+if __name__ == "__main__":
+    
