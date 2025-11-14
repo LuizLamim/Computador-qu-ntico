@@ -15,3 +15,9 @@ plt.title('Gráfico da Função f(x) = -x', fontsize=16)
 plt.xlabel('Eixo X', fontsize=12)
 plt.ylabel('Eixo Y / f(x)', fontsize=12)
 
+plt.legend(fontsize=12)
+
+plt.axhline(0, color='black', linewidth=0.5)
+plt.axvline(0, color='black', linewidth=0.5)
+
+plt.show()
