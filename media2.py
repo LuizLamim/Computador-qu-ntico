@@ -32,3 +32,6 @@ def main():
     except Exception as e:
         # Trata outros erros inesperados
         print(f"\nOcorreu um erro inesperado: {e}")
+
+    if __name__ == "__main__":
+    main()
