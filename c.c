@@ -4,3 +4,6 @@ int main() {
     int numeros_pares[] = {2, 4, 6, 8};
     int total_numeros = sizeof(numeros_pares) / sizeof(numeros_pares[0]);
     int i, j;
+
+    printf("--- Plotagem Simples dos 4 Primeiros Números Pares ---\n");
+    printf("(Cada '*' representa uma unidade)\n\n");
