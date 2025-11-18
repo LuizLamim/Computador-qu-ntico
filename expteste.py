@@ -14,3 +14,14 @@ ax.set_title("Crescimento Exponencial")
 ax.set_xlabel("Tempo")
 ax.set_ylabel("Valor")
 line, = ax.plot([], [], 'r-') # Linha vermelha para a animação
+
+# Função de inicialização: plotar um fundo vazio
+def init():
+    line.set_data([], [])
+    return line,
+
+# Função de animação: atualizar os dados
+def animate(i):
+    # 'i' representa o índice do frame, controlando quantos pontos mostrar
+    line.set_data(x[:i], y[:i])
+    return line,
