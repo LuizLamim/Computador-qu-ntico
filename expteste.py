@@ -25,3 +25,10 @@ def animate(i):
     # 'i' representa o índice do frame, controlando quantos pontos mostrar
     line.set_data(x[:i], y[:i])
     return line,
+
+# Criar a animação
+ani = animation.FuncAnimation(fig, animate, init_func=init,
+                               frames=len(x), interval=50, blit=True)
+
+plt.grid(True)
+plt.show()
