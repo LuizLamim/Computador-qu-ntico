@@ -24,4 +24,41 @@ ax.set_ylim(-AMPLITUDE/3, AMPLITUDE/3)
 ax.set_aspect('equal', adjustable='box')
 ax.axis('off') 
 
+x_rest = np.linspace(-N_PENDULUMS/2, N_PENDULUMS/2, N_PENDULUMS)
+
+pendulum_dots, = ax.plot(
+    x_rest, np.zeros(N_PENDULUMS), 
+    'o', markersize=15, 
+    color='deepskyblue',
+    markeredgecolor='white',
+    markeredgewidth=1.5
+)
+
+time_text = ax.text(
+    0.01, 0.05, 
+    '', 
+    transform=ax.transAxes, 
+    ha='left', 
+    fontsize=12, 
+    color='white'
+)
+
+def animate(frame):
+    """Calcula a posição dos pêndulos a cada quadro (frame) e atualiza a plotagem."""
+    
+    t = frame / FPS 
+    
+    displacement = AMPLITUDE * np.cos(angular_frequencies * t)
+    
+    new_x = x_rest + displacement
+    
+    new_y = np.zeros(N_PENDULUMS) 
+
+    pendulum_dots.set_data(new_x, new_y)
+    
+    time_text.set_text(f'Tempo: {t:.2f}s (Ciclo: {(t / T_SYSTEM) * 100:.1f}%)')
+    
+    return pendulum_dots, time_text
+
+
 
