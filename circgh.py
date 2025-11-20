@@ -16,3 +16,24 @@ def init():
     circle.set_data([], [])
     return circle,
 
+# Função de animação: será chamada em cada quadro
+def animate(i):
+    # Calcula o raio do círculo com base no quadro atual
+    radius = i * 0.05
+    if radius > 1.5: # Limita o tamanho máximo do círculo
+        radius = 1.5
+
+    # Cria os dados para desenhar um círculo
+    theta = np.linspace(0, 2*np.pi, 100)
+    x = radius * np.cos(theta)
+    y = radius * np.sin(theta)
+
+    circle.set_data(x, y)
+    circle.set_markersize(0) # Não queremos marcadores, apenas a linha
+
+    return circle,
+
+# Cria a animação
+ani = animation.FuncAnimation(fig, animate, init_func=init,
+                               frames=60, interval=50, blit=True)
+
