@@ -60,5 +60,14 @@ def animate(frame):
     
     return pendulum_dots, time_text
 
+ani = animation.FuncAnimation(
+    fig,                 
+    animate,            
+    frames=NUM_FRAMES,   
+    interval=1000/FPS,   
+    blit=True,           
+    repeat=True         
+)
 
+plt.show()
 
