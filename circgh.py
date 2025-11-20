@@ -37,3 +37,5 @@ def animate(i):
 ani = animation.FuncAnimation(fig, animate, init_func=init,
                                frames=60, interval=50, blit=True)
 
+plt.title("Animação de um Círculo Sendo Gerado")
+plt.show()
