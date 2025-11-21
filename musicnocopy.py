@@ -40,3 +40,5 @@ with open("minha_musica_viral.mid", "wb") as output_file:
     MyMIDI.writeFile(output_file)
 
 print("Arquivo 'minha_musica_viral.mid' gerado com sucesso!")
+
+erro
