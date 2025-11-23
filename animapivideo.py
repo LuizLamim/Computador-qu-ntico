@@ -67,3 +67,10 @@ def update(frame):
     line_approx.set_data(x_data, y_approx_data)
     
     return line_real, line_approx
+
+# Criar animação
+# interval=50 significa 50ms entre cada frame (velocidade)
+ani = FuncAnimation(fig, update, frames=len(x_vals), init_func=init, blit=True, interval=50)
+
+plt.tight_layout()
+plt.show()
