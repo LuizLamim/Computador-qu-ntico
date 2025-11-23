@@ -44,3 +44,10 @@ ax.legend(loc='upper right')
 
 # --- Lógica da Animação ---
 
+# Definir o caminho que a partícula vai percorrer (um círculo neste exemplo)
+frames = 100
+theta = np.linspace(0, 2*np.pi, frames)
+raio = 1.0
+caminho_x = raio * np.cos(theta)
+caminho_y = raio * np.sin(theta)
+
