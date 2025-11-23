@@ -51,3 +51,32 @@ raio = 1.0
 caminho_x = raio * np.cos(theta)
 caminho_y = raio * np.sin(theta)
 
+def init():
+    ponto.set_data([], [])
+    vetor_seta.set_UVC([], [])
+    return ponto, vetor_seta
+
+def update(frame):
+    # Pega a posição atual
+    x_atual = caminho_x[frame]
+    y_atual = caminho_y[frame]
+    
+    # Atualiza a posição do ponto
+    ponto.set_data([x_atual], [y_atual])
+    
+    # Calcula o gradiente nessa posição
+    grad = calcula_gradiente(x_atual, y_atual)
+    dx, dy = grad[0], grad[1]
+    
+    # Atualiza a posição e a direção da seta
+    # set_offsets define onde a seta começa (x, y)
+    vetor_seta.set_offsets([x_atual, y_atual])
+    # set_UVC define as componentes do vetor (dx, dy)
+    vetor_seta.set_UVC(dx, dy)
+    
+    return ponto, vetor_seta
+
+# Criar a animação
+anim = FuncAnimation(fig, update, frames=frames, init_func=init, blit=False, interval=50)
+
+plt.show()
