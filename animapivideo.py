@@ -43,3 +43,27 @@ ax.set_title(r'Função de Contagem de Primos $\pi(x)$ vs $x/\ln(x)$', color='wh
 ax.tick_params(axis='x', colors='white')
 ax.tick_params(axis='y', colors='white')
 ax.grid(color='gray', linestyle='--', linewidth=0.3, alpha=0.5)
+
+# Linhas iniciais
+line_real, = ax.plot([], [], color='#00ffcc', lw=2, label=r'Real $\pi(x)$')
+line_approx, = ax.plot([], [], color='#ff0066', linestyle='--', lw=2, label=r'Aproximação $x/\ln(x)$')
+
+# Legenda
+legend = ax.legend(loc='upper left')
+plt.setp(legend.get_texts(), color='black')
+
+def init():
+    line_real.set_data([], [])
+    line_approx.set_data([], [])
+    return line_real, line_approx
+
+def update(frame):
+    # Atualiza até o frame atual
+    x_data = x_vals[:frame]
+    y_real_data = y_pi[:frame]
+    y_approx_data = y_approx[:frame]
+    
+    line_real.set_data(x_data, y_real_data)
+    line_approx.set_data(x_data, y_approx_data)
+    
+    return line_real, line_approx
