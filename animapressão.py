@@ -77,3 +77,38 @@ def update(frame):
         vibra = np.random.randn() * 0.05 * (frame/FRAME_PARADA_AUMENTO)
         ax.set_xlim(0 - vibra, TAM_CAIXA + vibra)
         ax.set_ylim(0 - vibra, TAM_CAIXA + vibra)
+
+        elif frame == FRAME_PARADA_AUMENTO:
+         titulo_texto.set_text("Sistema Isotrópico: Pressão Alta (Estabilizada)")
+         titulo_texto.set_color("darkred")
+         estado_pressao = "ALTA E ESTÁVEL"
+         # Reseta as paredes
+         ax.set_xlim(0, TAM_CAIXA)
+         ax.set_ylim(0, TAM_CAIXA)
+    else:
+         estado_pressao = "ALTA E ESTÁVEL"
+
+    # 4. Atualização Visual
+    # Calcula a velocidade escalar ao quadrado (proporcional à energia cinética)
+    velocidade_escalar_sq = np.sum(vel**2, axis=1)
+    energia_atual = np.mean(velocidade_escalar_sq)
+    
+    # Normaliza para usar no colormap (para mudar de azul para vermelho/amarelo)
+    # O fator de divisão 60 é um ajuste empírico para a escala de cores ficar bonita
+    cores_normalizadas = np.clip(velocidade_escalar_sq / 60.0, 0, 1)
+    
+    particulas.set_offsets(pos)
+    particulas.set_array(cores_normalizadas) # Atualiza as cores baseadas na velocidade
+
+    # Atualiza o texto de informação
+    fator_pressao = energia_atual / energia_media_inicial
+    info_texto.set_text(f"Status da Pressão: {estado_pressao}\nFator de Pressão Relativa: {fator_pressao:.2f}x")
+    
+    return particulas, titulo_texto, info_texto
+
+# --- Criação e Execução da Animação ---
+# interval=30 significa 30ms entre cada quadro (aprox 33 fps)
+ani = animation.FuncAnimation(fig, update, frames=FRAMES, interval=30, blit=False)
+
+plt.tight_layout()
+plt.show()
