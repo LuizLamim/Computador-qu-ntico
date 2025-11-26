@@ -57,3 +57,10 @@ def update(frame):
     line_spring.set_data(xs, ys)
     
     return line_spring, point_mass
+
+# --- 5. Executar Animação ---
+ani = FuncAnimation(fig, update, frames=200, interval=20, blit=True)
+
+plt.xlabel("Posição X")
+plt.ylabel("Posição Y")
+plt.show()
