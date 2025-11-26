@@ -9,4 +9,8 @@ def calcular_potencia():
 
         print(f"\nResultado: {base} elevado a {expoente} é igual a {resultado}")
         
-    
+    except ValueError:
+        print("Erro: Por favor, digite apenas números.")
+
+if __name__ == "__main__":
+    calcular_potencia()
