@@ -78,7 +78,7 @@ def update(frame):
         ax.set_xlim(0 - vibra, TAM_CAIXA + vibra)
         ax.set_ylim(0 - vibra, TAM_CAIXA + vibra)
 
-        elif frame == FRAME_PARADA_AUMENTO:
+    elif frame == FRAME_PARADA_AUMENTO:
          titulo_texto.set_text("Sistema Isotrópico: Pressão Alta (Estabilizada)")
          titulo_texto.set_color("darkred")
          estado_pressao = "ALTA E ESTÁVEL"
