@@ -39,3 +39,21 @@ ax.set_title("Simulação: Oscilador Massa-Mola")
 line_spring, = ax.plot([], [], 'k-', lw=2)  # Linha da mola (preta)
 point_mass, = ax.plot([], [], 'ro', markersize=25, markeredgecolor='black') # Massa (bola vermelha)
 ax.plot([-2, 2], [0, 0], 'k-', lw=5) # Teto fixo
+
+# --- 4. Função de Atualização da Animação ---
+def update(frame):
+    t = frame * 0.05  # Passo de tempo
+    
+    # Equação do Movimento Harmônico Simples: y(t) = -L_eq + A * cos(omega * t)
+    # L_eq é o comprimento de equilíbrio (para centralizar a animação visualmente)
+    L_eq = 3.0
+    y_pos = -L_eq + A * np.cos(omega * t)
+    
+    # Atualiza a posição da massa
+    point_mass.set_data([0], [y_pos])
+    
+    # Atualiza o desenho da mola (do teto até a massa)
+    xs, ys = get_spring_coords(0, 0, 0, y_pos)
+    line_spring.set_data(xs, ys)
+    
+    return line_spring, point_mass
