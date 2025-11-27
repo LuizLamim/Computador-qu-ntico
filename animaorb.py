@@ -29,3 +29,14 @@ ax.set_ylim(-2.5, 2.5)
 ax.set_aspect('equal') # Garante que os círculos não pareçam ovais
 ax.grid(True, alpha=0.3)
 ax.set_title("Simulação de Órbita de Duas Partículas")
+
+# Elementos visuais
+particle1, = ax.plot([], [], 'o', color='blue', ms=10, label='Massa 1')
+particle2, = ax.plot([], [], 'o', color='red', ms=10, label='Massa 2')
+trail1, = ax.plot([], [], '-', color='blue', alpha=0.3, lw=1)
+trail2, = ax.plot([], [], '-', color='red', alpha=0.3, lw=1)
+ax.legend()
+
+# Histórico para o rastro (trail)
+x1_trail, y1_trail = [], []
+x2_trail, y2_trail = [], []
