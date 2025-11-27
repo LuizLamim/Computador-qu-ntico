@@ -40,3 +40,58 @@ ax.legend()
 # Histórico para o rastro (trail)
 x1_trail, y1_trail = [], []
 x2_trail, y2_trail = [], []
+
+# --- Função de Atualização (Física) ---
+def update(frame):
+    global p1, p2, v1, v2
+    
+    # 1. Calcular o vetor distância (r) e a magnitude da distância
+    r_vec = p2 - p1
+    distance = np.linalg.norm(r_vec)
+    
+    # Evitar divisão por zero (colisão)
+    if distance < 0.1: distance = 0.1
+        
+    # 2. Calcular a Força Gravitacional (Newton)
+    # F = G * m1 * m2 / r^2
+    force_mag = G * m1 * m2 / (distance**2)
+    
+    # Direção da força (vetor unitário)
+    force_dir = r_vec / distance
+    
+    # Vetor Força (atração mútua)
+    F_on_1 = force_mag * force_dir  # Puxa 1 em direção a 2
+    F_on_2 = -F_on_1                # Puxa 2 em direção a 1 (3ª Lei de Newton)
+    
+    # 3. Atualizar Velocidades (F = ma -> a = F/m)
+    # v_nova = v_atual + (a * dt)
+    v1 += (F_on_1 / m1) * dt
+    v2 += (F_on_2 / m2) * dt
+    
+    # 4. Atualizar Posições
+    # p_nova = p_atual + (v * dt)
+    p1 += v1 * dt
+    p2 += v2 * dt
+    
+    # 5. Atualizar os Rastros
+    x1_trail.append(p1[0])
+    y1_trail.append(p1[1])
+    x2_trail.append(p2[0])
+    y2_trail.append(p2[1])
+    
+    # Limitar o tamanho do rastro (opcional, para não ficar muito pesado)
+    limit = 50
+    
+    # 6. Atualizar os dados do gráfico
+    particle1.set_data([p1[0]], [p1[1]])
+    particle2.set_data([p2[0]], [p2[1]])
+    
+    trail1.set_data(x1_trail[-limit:], y1_trail[-limit:])
+    trail2.set_data(x2_trail[-limit:], y2_trail[-limit:])
+    
+    return particle1, particle2, trail1, trail2
+
+# --- Criar Animação ---
+ani = FuncAnimation(fig, update, frames=total_frames, interval=20, blit=True)
+
+plt.show()
