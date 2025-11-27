@@ -23,7 +23,7 @@ v1 = np.array([0.0, -v_mag]) # Partícula 1 vai para baixo
 v2 = np.array([0.0, v_mag])  # Partícula 2 vai para cima
 
 # --- Preparação do Gráfico ---
-fig, ax = plt.subplots(figsize=(6, 6))
+fig, ax = plt.subplots(figsize=(8, 8))
 ax.set_xlim(-2.5, 2.5)
 ax.set_ylim(-2.5, 2.5)
 ax.set_aspect('equal') # Garante que os círculos não pareçam ovais
