@@ -3,15 +3,15 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 # --- Configurações da Simulação ---
-G = 1.0           # Constante gravitacional (simplificada)
-m1 = 1.0          # Massa da partícula 1 (azul)
-m2 = 1.0          # Massa da partícula 2 (vermelha)
+G = 3.0           # Constante gravitacional (simplificada)
+m1 = 5.0          # Massa da partícula 1 (azul)
+m2 = 5.0          # Massa da partícula 2 (vermelha)
 dt = 0.05         # Passo de tempo (velocidade da simulação)
 total_frames = 400 # Quantidade de quadros
 
 # --- Condições Iniciais ---
 # Posições iniciais (x, y) - separadas no eixo X
-p1 = np.array([-1.0, 0.0])
+p1 = np.array([-0.5, 0.0])
 p2 = np.array([1.0, 0.0])
 
 # Velocidades iniciais (vx, vy) 
