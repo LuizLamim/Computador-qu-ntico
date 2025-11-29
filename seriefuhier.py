@@ -17,3 +17,35 @@ def fourier_square_wave(x, n_terms):
     for k in range(1, n_terms * 2, 2):
         y += np.sin(k * x) / k
     return (4 / np.pi) * y
+
+# Linha que será atualizada na animação (a aproximação)
+line, = ax.plot([], [], lw=2, color='cyan', label='Aproximação de Fourier')
+
+# Linha de referência (a onda quadrada perfeita) para comparação
+y_ideal = np.sign(np.sin(x))
+ax.plot(x, y_ideal, color='white', alpha=0.3, linestyle='--', label='Onda Quadrada Ideal')
+
+# Configuração dos eixos
+ax.set_xlim(0, 4 * np.pi)
+ax.set_ylim(-1.5, 1.5)
+ax.set_title('Convergência da Série de Fourier (Onda Quadrada)', fontsize=14)
+ax.legend(loc='upper right')
+ax.grid(True, alpha=0.2)
+
+# Função de inicialização da animação
+def init():
+    line.set_data([], [])
+    return line,
+
+# Função de atualização (chamada a cada frame)
+def update(frame):
+    # O frame representa o número de termos (harmônicos) adicionados
+    # Vamos acelerar um pouco multiplicando o frame
+    num_termos = frame + 1
+    
+    y = fourier_square_wave(x, num_termos)
+    line.set_data(x, y)
+    
+    # Atualiza o título com o número atual de termos
+    ax.set_title(f'Série de Fourier - Termos somados: {num_termos}', fontsize=14)
+    return line,
