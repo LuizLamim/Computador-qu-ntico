@@ -49,3 +49,11 @@ def update(frame):
     # Atualiza o título com o número atual de termos
     ax.set_title(f'Série de Fourier - Termos somados: {num_termos}', fontsize=14)
     return line,
+
+# Criar a animação
+# frames=50: vai somar até 50 termos
+# interval=200: 200 milissegundos entre cada frame
+anim = FuncAnimation(fig, update, init_func=init, frames=50, interval=200, blit=True)
+
+plt.tight_layout()
+plt.show()
