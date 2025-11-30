@@ -66,3 +66,41 @@ class ConceitoDeDerivada(Scene):
             color=ORANGE, buff=0.1
         ))
         label_h = always_redraw(lambda: brace_h.get_text("$h$", buff=0.1, font_size=24, color=ORANGE))
+
+
+        self.play(Create(secant_line), Write(secant_label))
+        self.play(Create(brace_h), Write(label_h))
+        self.wait(2)
+
+        # 4. A Animação do Limite (h tendendo a 0)
+        title_anim = Text("O Limite: h tende a 0", font_size=30).to_edge(UP)
+        self.play(Write(title_anim))
+
+        # Animamos o valor de x de Q para se aproximar de x de P (de 4 até 2.001)
+        # Não vamos exatamente até 2.0 para evitar problemas numéricos na reta secante dinâmica
+        self.play(
+            x_q_tracker.animate.set_value(x_p + 0.001),
+            run_time=6,
+            rate_func=easeInOutCubic
+        )
+        self.wait(1)
+
+        # 5. Transformação para Reta Tangente (A Derivada)
+        # Agora que Q está praticamente sobre P, a reta verde É visualmente a tangente.
+        
+        # Vamos criar a reta tangente "real" matematicamente no ponto P (x=2)
+        # A derivada de 0.5x^2 é x. Em x=2, a inclinação é 2.
+        tangent_line = axes.get_tangent_line(func_equation, x_p, length=6, line_config={"color": RED_E, "stroke_width": 4})
+        tangent_label = Text("Reta Tangente (Derivada)", font_size=20, color=RED_E).to_corner(UR)
+
+        # Limpamos os elementos móveis e mostramos a tangente final
+        self.play(
+            FadeOut(dot_q), FadeOut(label_q), 
+            FadeOut(brace_h), FadeOut(label_h),
+            FadeOut(secant_label), FadeOut(title_anim),
+            # Substituímos visualmente a reta secante dinâmica pela tangente estática
+            ReplacementTransform(secant_line, tangent_line),
+            Write(tangent_label)
+        )
+
+       
