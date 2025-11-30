@@ -103,4 +103,11 @@ class ConceitoDeDerivada(Scene):
             Write(tangent_label)
         )
 
-       
+ # Foco final no ponto P e sua tangente
+        final_text = MarkupText(
+            f"Inclinação em P = {2 * 0.5 * x_p:.1f}", 
+            font_size=24
+        ).next_to(dot_p, DOWN*2)
+        self.play(Write(final_text))
+
+        self.wait(3)
