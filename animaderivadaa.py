@@ -1,4 +1,5 @@
-from manim import *
+import numpy as np
+import matplotlib.pyplot as plt
 
 class ConceitoDeDerivada(Scene):
     def construct(self):
@@ -40,7 +41,6 @@ class ConceitoDeDerivada(Scene):
         dot_q = always_redraw(lambda: Dot(
             axes.coords_to_point(x_q_tracker.get_value(), func_equation(x_q_tracker.get_value())),
             color=YELLOW, radius=0.1
-
         ))
         label_q = always_redraw(lambda: Text("Q", font_size=24, color=YELLOW).next_to(dot_q, UP+RIGHT))
 
@@ -66,7 +66,6 @@ class ConceitoDeDerivada(Scene):
             color=ORANGE, buff=0.1
         ))
         label_h = always_redraw(lambda: brace_h.get_text("$h$", buff=0.1, font_size=24, color=ORANGE))
-
 
         self.play(Create(secant_line), Write(secant_label))
         self.play(Create(brace_h), Write(label_h))
@@ -103,7 +102,7 @@ class ConceitoDeDerivada(Scene):
             Write(tangent_label)
         )
 
- # Foco final no ponto P e sua tangente
+        # Foco final no ponto P e sua tangente
         final_text = MarkupText(
             f"Inclinação em P = {2 * 0.5 * x_p:.1f}", 
             font_size=24
