@@ -1,5 +1,4 @@
-import numpy as np
-import matplotlib.pyplot as plt
+from manim import *
 
 class ConceitoDeDerivada(Scene):
     def construct(self):
