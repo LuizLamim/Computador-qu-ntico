@@ -2,19 +2,25 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
+# --- 1. Configuração dos Dados (Modelo Físico) ---
+# Define o tempo total e a resolução (número de pontos)
 t_max = 10.0
 dt = 0.05
 t = np.arange(0, t_max, dt)
 
+# Parâmetros da Queda de Potência
 P0 = 100.0   # Potência Inicial (ex: 100 Watts ou %)
-k = 0.5
+k = 0.5      # Taxa de decaimento (quanto maior, mais rápida a queda)
 
+# Cálculo da Potência (Decaimento Exponencial)
 potencia = P0 * np.exp(-k * t)
 
+# --- 2. Configuração do Gráfico ---
 fig, ax = plt.subplots(figsize=(8, 5))
 ax.set_xlim(0, t_max)
-ax.set_ylim(0, P0 + 10)
+ax.set_ylim(0, P0 + 10) # Um pouco de margem acima do P0
 
+# Estilização
 ax.set_title("Simulação de Queda de Potência (Decaimento Exponencial)")
 ax.set_xlabel("Tempo (s)")
 ax.set_ylabel("Potência (W)")
@@ -56,12 +62,10 @@ def update(frame):
     
     return line, point, text_value
 
+# --- 4. Executar Animação ---
+# interval=30 significa 30 milissegundos entre cada frame
 ani = FuncAnimation(fig, update, frames=len(t), 
                     init_func=init, blit=True, interval=30, repeat=False)
-
-
-
-[Image of exponential decay graph]
 
 
 plt.show()
