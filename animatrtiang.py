@@ -42,3 +42,21 @@ def aplicar_rotacao(vertices, angulo_graus):
 def init():
     triangulo_line.set_data([], [])
     return triangulo_line,
+
+# 5. Função de Atualização (Chamada a cada frame)
+def update(frame):
+    # O 'frame' aqui representa o ângulo atual
+    novos_vertices = aplicar_rotacao(vertices_iniciais, frame)
+    
+    # Separa X e Y para o plot
+    x = novos_vertices[:, 0]
+    y = novos_vertices[:, 1]
+    
+    triangulo_line.set_data(x, y)
+    return triangulo_line,
+
+# Cria a animação
+# frames=np.arange(0, 360, 2) -> Vai de 0 a 360 graus, pulando de 2 em 2
+# interval=20 -> 20 milissegundos entre cada frame
+anim = FuncAnimation(fig, update, frames=np.arange(0, 360, 2),
+                     init_func=init, blit=True, interval=20)
