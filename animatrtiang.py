@@ -60,3 +60,5 @@ def update(frame):
 # interval=20 -> 20 milissegundos entre cada frame
 anim = FuncAnimation(fig, update, frames=np.arange(0, 360, 2),
                      init_func=init, blit=True, interval=20)
+
+plt.show()
