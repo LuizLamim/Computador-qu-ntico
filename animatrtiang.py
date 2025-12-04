@@ -18,3 +18,27 @@ vertices_iniciais = np.array([
     [0.866, -0.5],  # Canto direito
     [0, 1]     # Fechando no topo
 ])
+
+# Cria o objeto de linha que será atualizado na animação
+triangulo_line, = ax.plot([], [], 'b-', lw=2, color='purple')
+
+# 3. Função de Rotação (Matemática)
+def aplicar_rotacao(vertices, angulo_graus):
+    angulo_rad = np.radians(angulo_graus)
+    cos_a = np.cos(angulo_rad)
+    sin_a = np.sin(angulo_rad)
+    
+    # Matriz de rotação 2D
+    matriz_rotacao = np.array([
+        [cos_a, -sin_a],
+        [sin_a, cos_a]
+    ])
+    
+    # Aplica a rotação (multiplicação de matrizes)
+    # Transpomos (.T) para multiplicar corretamente e transpomos de volta
+    return np.dot(vertices, matriz_rotacao.T)
+
+# 4. Função de Inicialização da Animação
+def init():
+    triangulo_line.set_data([], [])
+    return triangulo_line,
