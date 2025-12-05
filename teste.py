@@ -1,1 +1,5 @@
-s - input ("enter: ")
+s = input ("enter: ")
+
+try:
+    i = int(s)
+    print
