@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/media/videos/spaghetti/480p15/partial_movie_files/Spaghettification/1584795214_2574473371_3922925773.mp4'
+file 'file:C:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/media/videos/spaghetti/480p15/partial_movie_files/Spaghettification/4072820271_4264566409_1816849487.mp4'
+file 'file:C:/Users/luizb/OneDrive/Área de Trabalho/Computador quântico/media/videos/spaghetti/480p15/partial_movie_files/Spaghettification/4072820271_4217992463_3197763053.mp4'
