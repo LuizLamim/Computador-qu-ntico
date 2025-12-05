@@ -2,4 +2,4 @@ s = input ("enter: ")
 
 try:
     i = int(s)
-    print
+    print("validar:", i)
