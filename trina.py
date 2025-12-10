@@ -5,3 +5,4 @@ print(f"Lista original: {numeros}")
 numeros.sort()
 
 print(f"Lista ordenada: {numeros}")
+
