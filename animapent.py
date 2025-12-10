@@ -41,3 +41,13 @@ while executando:
         x = centro_x + raio * math.cos(theta)
         y = centro_y + raio * math.sin(theta)
         pontos.append((x, y))
+
+        
+    tela.fill(PRETO) 
+    
+    pygame.draw.polygon(tela, NEON_CYAN, pontos, 3)
+
+    pygame.display.flip() 
+    clock.tick(60) 
+
+pygame.quit()
