@@ -3,7 +3,11 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-lass Produto(BaseModel):
+class Produto(BaseModel):
     nome: str
     preco: float
     em_estoque: bool = True
+
+    @app.get("/")
+def home():
+    return {"mensagem": "API rodando com sucesso no VS Code!"}
