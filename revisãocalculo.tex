@@ -1,0 +1,36 @@
+\documentclass[a4paper,11pt]{article}
+
+% --- Pacotes Fundamentais ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath, amssymb, amsthm} % Símbolos matemáticos
+\usepackage{geometry} % Margens
+\usepackage{xcolor} % Cores para destaque
+\usepackage{enumitem} % Personalização de listas
+\usepackage{hyperref} % Links e metadados
+\usepackage{titlesec} % Formatação de títulos
+
+% --- Configuração de Página ---
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+% --- Cores Personalizadas ---
+\definecolor{primaryBlue}{RGB}{0, 51, 102}
+\definecolor{accentRed}{RGB}{153, 0, 0}
+
+% --- Formatação dos Títulos ---
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{primaryBlue}}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\large\bfseries\color{primaryBlue}}{\thesubsection}{1em}{}
+
+% --- Metadados do PDF ---
+\hypersetup{
+    pdftitle={Plano de Revisão de Cálculo - Stewart},
+    pdfauthor={Usuário},
+    colorlinks=true,
+    linkcolor=primaryBlue,
+    urlcolor=primaryBlue
+}
+
+% --- Título e Cabeçalho ---
