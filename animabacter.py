@@ -68,3 +68,8 @@ def animate(i):
     note_text.set_text(note)
 
     return line, point, time_text, pop_text, note_text
+
+ani = animation.FuncAnimation(fig, animate, init_func=init, frames=len(t_vals), interval=50, blit=True, repeat=False)
+
+plt.tight_layout()
+plt.show()
