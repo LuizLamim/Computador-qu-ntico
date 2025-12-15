@@ -1,5 +1,7 @@
 #include <stdio.h>
 
-mian{
+main{
+    scanf("digite um número");
     printf("Ol");
 }
+
