@@ -88,3 +88,32 @@ HTML
         
         <div id="resultado"></div>
     </div>
+    <script>
+        function somar() {
+            // 1. Captura os elementos do HTML pelo ID
+            const input1 = document.getElementById('num1');
+            const input2 = document.getElementById('num2');
+            const displayResultado = document.getElementById('resultado');
+
+            // 2. Converte os valores (que vêm como texto) para números
+            // Usamos Number() para converter. Se fosse texto, "1" + "1" daria "11".
+            const n1 = Number(input1.value);
+            const n2 = Number(input2.value);
+
+            // 3. Verifica se os campos não estão vazios (opcional, mas boa prática)
+            if (input1.value === '' || input2.value === '') {
+                displayResultado.style.color = 'red';
+                displayResultado.innerText = "Por favor, preencha os dois campos.";
+                return;
+            }
+
+            // 4. Realiza a soma
+            const soma = n1 + n2;
+
+            // 5. Exibe o resultado na tela
+            displayResultado.style.color = '#28a745'; // Garante que a cor seja verde
+            displayResultado.innerText = `Resultado: ${soma}`;
+        }
+    </script>
+</body>
+</html>
