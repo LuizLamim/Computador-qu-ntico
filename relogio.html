@@ -1,2 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio Analógico JS</title>
+    <style>
+        /* Reset básico e centralização */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #282c34;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        /* A face do relógio */
+        .clock {
+            width: 300px;
+            height: 300px;
+            background-color: #ececec;
+            border: 15px solid #333;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        /* Ponto central */
+        .clock::after {
+            content: '';
+            position: absolute;
+            background-color: black;
+            z-index: 11;
+            width: 15px;
+            height: 15px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+
+        /* Estilo comum para todos os ponteiros */
+        .hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom; /* O ponto de rotação é a base do ponteiro */
+            transform: translateX(-50%) rotate(0deg);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            z-index: 10;
+        }
+
+        /* Ponteiro das Horas */
+        .hour {
+            width: 8px;
+            height: 25%; /* Mais curto */
+            background-color: black;
+        }
+
+        /* Ponteiro dos Minutos */
+        .minute {
+            width: 6px;
+            height: 35%; /* Médio */
+            background-color: #333;
+        }
+
+        /* Ponteiro dos Segundos */
+        .second {
+            width: 2px;
+            height: 40%; /* Longo */
+            background-color: red;
+        }
+
+        /* Marcadores de hora (1-12) */
+        .number {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transform: rotate(var(--rotation));
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            padding-top: 10px; /* Distância da borda */
+            box-sizing: border-box;
+        }
+        
+        /* Gira o número de volta para ficar em pé */
+        .number span {
+            display: inline-block;
+            transform: rotate(calc(var(--rotation) * -1)); 
+        }
+    </style>
+</head>
