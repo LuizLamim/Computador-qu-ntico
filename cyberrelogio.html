@@ -135,3 +135,56 @@
         }
     </style>
     </head>
+
+    <body>
+
+    <div class="clock" id="clock-face">
+        <div class="center-point"></div>
+        <div class="hand hour" id="hour-hand"></div>
+        <div class="hand minute" id="minute-hand"></div>
+        <div class="hand second" id="second-hand"></div>
+        </div>
+
+    <script>
+        // O JavaScript permanece EXATAMENTE o mesmo do exemplo anterior
+        
+        const hourHand = document.getElementById('hour-hand');
+        const minuteHand = document.getElementById('minute-hand');
+        const secondHand = document.getElementById('second-hand');
+        const clockFace = document.getElementById('clock-face');
+
+        function createNumbers() {
+            for (let i = 1; i <= 12; i++) {
+                const numberDiv = document.createElement('div');
+                numberDiv.classList.add('number');
+                numberDiv.style.setProperty('--rotation', `${i * 30}deg`);
+                
+                const span = document.createElement('span');
+                span.innerText = i;
+                
+                numberDiv.appendChild(span);
+                clockFace.appendChild(numberDiv);
+            }
+        }
+
+        function setClock() {
+            const currentDate = new Date();
+            const secondsRatio = currentDate.getSeconds() / 60;
+            const minutesRatio = (secondsRatio + currentDate.getMinutes()) / 60;
+            const hoursRatio = (minutesRatio + currentDate.getHours()) / 12;
+
+            setRotation(secondHand, secondsRatio);
+            setRotation(minuteHand, minutesRatio);
+            setRotation(hourHand, hoursRatio);
+        }
+
+        function setRotation(element, rotationRatio) {
+            element.style.transform = `translateX(-50%) rotate(${rotationRatio * 360}deg)`;
+        }
+
+        createNumbers();
+        setClock();
+        setInterval(setClock, 1000);
+    </script>
+</body>
+</html>
