@@ -7,3 +7,130 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Estética Geral --- */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* Fundo escuro com uma grade sutil */
+            background-color: #0a0a12;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            margin: 0;
+            font-family: 'Orbitron', sans-serif; /* Fonte tech */
+            overflow: hidden; /* Evita barras de rolagem se o brilho vazar */
+        }
+
+        /* --- A Face do Relógio (Reactor Core) --- */
+        .clock {
+            width: 350px;
+            height: 350px;
+            /* Gradiente radial para parecer um núcleo de energia */
+            background: radial-gradient(circle at center, #1a1a2e 0%, #05050a 70%);
+            border-radius: 50%;
+            position: relative;
+            /* Bordas e brilho de néon ciano */
+            border: 4px solid #0ff;
+            box-shadow: 
+                0 0 20px #0ff, 
+                inset 0 0 40px rgba(0, 255, 255, 0.3),
+                0 0 60px rgba(0, 255, 255, 0.2);
+        }
+
+        /* Um anel interno decorativo */
+        .clock::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85%; height: 85%;
+            border-radius: 50%;
+            border: 1px dashed rgba(255, 0, 255, 0.3); /* Linha tracejada magenta */
+        }
+
+        /* Ponto central brilhante */
+        .center-point {
+            position: absolute;
+            background-color: #fff;
+            z-index: 15;
+            width: 12px;
+            height: 12px;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            box-shadow: 0 0 10px #fff, 0 0 20px #0ff;
+        }
+
+        /* --- Ponteiros (Tubos de Luz) --- */
+        .hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom;
+            transform: translateX(-50%) rotate(0deg);
+            border-radius: 4px;
+            z-index: 10;
+            /* Adiciona um pequeno círculo na base do ponteiro para parecer mecânico */
+        }
+        .hand::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 50%;
+            transform: translateX(-50%);
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: inherit;
+            box-shadow: inherit;
+        }
+
+        /* Ponteiro das Horas (Ciano) */
+        .hour {
+            width: 6px;
+            height: 25%;
+            background-color: #0ff;
+            box-shadow: 0 0 15px #0ff;
+        }
+
+        /* Ponteiro dos Minutos (Magenta) */
+        .minute {
+            width: 4px;
+            height: 38%;
+            background-color: #f0f;
+            box-shadow: 0 0 15px #f0f;
+        }
+
+        /* Ponteiro dos Segundos (Amarelo Elétrico) */
+        .second {
+            width: 2px;
+            height: 42%;
+            background-color: #ff0;
+            box-shadow: 0 0 20px #ff0;
+            z-index: 12; /* Fica acima dos outros */
+        }
+
+        /* --- Marcadores de Hora --- */
+        .number {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transform: rotate(var(--rotation));
+            font-size: 1.5rem;
+            font-weight: 700;
+            /* Texto Ciano com brilho */
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        
+        .number span {
+            display: inline-block;
+            transform: rotate(calc(var(--rotation) * -1)); 
+        }
+    </style>
