@@ -24,7 +24,7 @@ clock = pygame.time.Clock()
 
 # Configurações da Cobra
 TAMANHO_BLOCO = 10
-VELOCIDADE_COBRA = 15
+VELOCIDADE_COBRA = 13
 
 # Fontes
 fonte_estilo = pygame.font.SysFont("bahnschrift", 25)
