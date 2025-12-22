@@ -1,0 +1,1 @@
+resultado = sum(range(1, 101))
