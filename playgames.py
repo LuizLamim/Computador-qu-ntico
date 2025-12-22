@@ -14,8 +14,8 @@ VERDE = (0, 255, 0)
 AZUL = (50, 153, 213)
 
 # Dimensões da tela
-LARGURA_TELA = 600
-ALTURA_TELA = 400
+LARGURA_TELA = 800
+ALTURA_TELA = 600
 
 tela = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))
 pygame.display.set_caption('Jogo da Cobrinha - Python')
@@ -24,7 +24,7 @@ clock = pygame.time.Clock()
 
 # Configurações da Cobra
 TAMANHO_BLOCO = 10
-VELOCIDADE_COBRA = 13
+VELOCIDADE_COBRA = 14
 
 # Fontes
 fonte_estilo = pygame.font.SysFont("bahnschrift", 25)
