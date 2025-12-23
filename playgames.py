@@ -14,8 +14,8 @@ VERDE = (0, 255, 0)
 AZUL = (50, 153, 213)
 
 # Dimensões da tela
-LARGURA_TELA = 800
-ALTURA_TELA = 600
+LARGURA_TELA = 600
+ALTURA_TELA = 400
 
 tela = pygame.display.set_mode((LARGURA_TELA, ALTURA_TELA))
 pygame.display.set_caption('Jogo da Cobrinha - Python')
