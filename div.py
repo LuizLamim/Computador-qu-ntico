@@ -4,7 +4,7 @@ import pygame
 base = 10
 expo = 30
 
-resultado = base * expo  
+resultado = base ** expo  
 
 print("resultado", resultado)
 
