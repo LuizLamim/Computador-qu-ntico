@@ -12,3 +12,8 @@ for i in range(1, 41):
     # É o mesmo que fazer: soma = soma + i
 
 print(f"A soma é: {soma}")
+
+n = 40
+soma = (n * (n + 1)) // 2  # Usamos // para garantir divisão inteira
+
+print(f"Calculado matematicamente: {soma}")
