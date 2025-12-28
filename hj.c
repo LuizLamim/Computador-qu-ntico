@@ -11,3 +11,5 @@ int main() {
     // 3. Solicita o segundo número
     printf("Digite o segundo número: ");
     scanf("%d", &numero2);
+
+    resultado = numero1 + numero2;
