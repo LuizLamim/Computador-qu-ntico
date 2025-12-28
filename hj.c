@@ -13,3 +13,8 @@ int main() {
     scanf("%d", &numero2);
 
     resultado = numero1 + numero2;
+
+    printf("A soma de %d + %d é igual a: %d\n", numero1, numero2, resultado);
+
+    return 0;
+}
