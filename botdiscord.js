@@ -8,3 +8,7 @@ const client = new Client({
         GatewayIntentBits.MessageContent    // Para ler o conteúdo das mensagens
     ]
 });
+
+client.once('ready', () => {
+    console.log(`✅ Bot online como: ${client.user.tag}`);
+});
