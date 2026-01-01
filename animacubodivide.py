@@ -62,7 +62,7 @@ ax.set_zlabel('Altura (Z)')
 ax.set_title('Simulação: Cubo Caindo e Dividindo')
 
 # Lista de objetos na cena
-cubes = [Cube(x=0, y=0, z=9, size=2.0, color='blue')]
+cubes = [Cube(x=0, y=0, z=9, size=2.0, color='green')]
 
 def draw_cube(ax, cube):
     corners = cube.get_draw_data()
