@@ -18,7 +18,7 @@ class Cube:
         self.is_fragment = is_fragment
         self.active = True
 
-        def update(self):
+    def update(self):
         # Aplicar gravidade (apenas no eixo Z)
         self.vel[2] += GRAVITY * DT
         
@@ -112,3 +112,8 @@ def update_scene(frame):
             draw_cube(ax, cube)
             
     cubes = new_cubes
+
+# Criar a animação
+ani = animation.FuncAnimation(fig, update_scene, frames=200, interval=50)
+
+plt.show()
