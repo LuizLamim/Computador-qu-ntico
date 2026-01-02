@@ -1,0 +1,98 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+
+% Configuração das Margens
+\geometry{top=2.5cm, bottom=2.5cm, left=3cm, right=3cm}
+
+% Título e Autor
+\title{\textbf{Resumo de Análise Combinatória}}
+\author{Guia de Estudo}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\section{Introdução}
+A \textbf{Análise Combinatória} é a área da matemática que estuda métodos de contagem. O objetivo é determinar o número de possibilidades de ocorrência de um evento sem a necessidade de enumerar cada caso individualmente.
+
+\section{Conceitos Fundamentais}
+
+\subsection{Princípio Fundamental da Contagem (PFC)}
+Também conhecido como Princípio Multiplicativo. Se um evento é composto por $k$ etapas independentes e sucessivas, onde:
+\begin{itemize}
+    \item A 1ª etapa pode ocorrer de $n_1$ maneiras;
+    \item A 2ª etapa pode ocorrer de $n_2$ maneiras;
+    \item ...
+    \item A $k$-ésima etapa pode ocorrer de $n_k$ maneiras.
+\end{itemize}
+Então, o número total de possibilidades é dado pelo produto:
+\begin{equation}
+    Total = n_1 \times n_2 \times \dots \times n_k
+\end{equation}
+
+\subsection{Fatorial}
+O fatorial de um número natural $n$, denotado por $n!$, é o produto de todos os inteiros positivos menores ou iguais a $n$.
+\begin{equation}
+    n! = n \times (n-1) \times (n-2) \times \dots \times 1
+\end{equation}
+\textbf{Definição importante:} $0! = 1$.
+
+\section{Agrupamentos}
+A principal distinção entre os tipos de agrupamento reside na resposta à pergunta: \textit{A ordem dos elementos importa?}
+
+\subsection{Permutações}
+Usado quando organizamos \textbf{todos} os $n$ elementos disponíveis. A ordem importa.
+
+\subsubsection*{Permutação Simples}
+Arranjo de $n$ elementos distintos.
+\begin{equation}
+    P_n = n!
+\end{equation}
+
+\subsubsection*{Permutação com Repetição}
+Quando alguns elementos do conjunto são iguais. Se temos $n$ elementos, onde um repete $\alpha$ vezes, outro $\beta$ vezes, etc.:
+\begin{equation}
+    P_n^{\alpha, \beta, \dots} = \frac{n!}{\alpha! \cdot \beta! \cdot \dots}
+\end{equation}
+
+\subsection{Arranjos Simples}
+Usado quando selecionamos $p$ elementos de um grupo de $n$ disponíveis ($p \le n$) e a \textbf{ordem importa} (ex: pódio de corrida, senhas).
+\begin{equation}
+    A_{n,p} = \frac{n!}{(n-p)!}
+\end{equation}
+
+\subsection{Combinações Simples}
+Usado quando selecionamos $p$ elementos de um grupo de $n$ disponíveis ($p \le n$) e a \textbf{ordem NÃO importa} (ex: sorteio de loteria, formar equipes).
+\begin{equation}
+    C_{n,p} = \binom{n}{p} = \frac{n!}{p!(n-p)!}
+\end{equation}
+
+\section{Quadro Resumo}
+
+\begin{center}
+\begin{tcolorbox}[colback=gray!10, colframe=black, title=Como escolher a fórmula?]
+\begin{enumerate}
+    \item \textbf{Estou usando todos os elementos?}
+    \begin{itemize}
+        \item Sim $\rightarrow$ \textbf{Permutação} ($P_n$ ou $P_n^{\alpha \dots}$).
+        \item Não (apenas uma parte) $\rightarrow$ Vá para a pergunta 2.
+    \end{itemize}
+    \item \textbf{A ordem importa?} (Trocar a posição muda o resultado?)
+    \begin{itemize}
+        \item Sim $\rightarrow$ \textbf{Arranjo} ($A_{n,p}$).
+        \item Não $\rightarrow$ \textbf{Combinação} ($C_{n,p}$).
+    \end{itemize}
+\end{enumerate}
+\end{tcolorbox}
+\end{center}
+
+\end{document}
