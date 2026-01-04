@@ -69,3 +69,39 @@
 
     </head>
 <body>
+
+    button id="meuBotao" class="btn-interativo">
+        Clique em mim!
+    </button>
+
+    <script>
+        // JavaScript - Lógica
+        const botao = document.getElementById('meuBotao');
+        let contador = 0;
+
+        botao.addEventListener('click', function(e) {
+            // 1. Lógica do Contador
+            contador++;
+            this.innerText = `Você clicou ${contador} vezes`;
+
+            // 2. Lógica do Efeito Visual (Ripple)
+            // Cria um elemento span para a bolinha
+            let ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+
+            // Calcula a posição do mouse dentro do botão
+            let x = e.clientX - e.target.offsetLeft;
+            let y = e.clientY - e.target.offsetTop;
+
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+
+            // Adiciona o elemento ao botão
+            this.appendChild(ripple);
+
+            // Remove o elemento do DOM após a animação (600ms) para não pesar a memória
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    </script>
