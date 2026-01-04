@@ -4,3 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Botão Interativo</title>
+
+    <style>
+        /* CSS - Estilização */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a1a; /* Fundo escuro para destaque */
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .btn-interativo {
+            position: relative;
+            padding: 15px 40px;
+            font-size: 18px;
+            color: white;
+            background: linear-gradient(45deg, #ff357a, #fff172);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            outline: none;
+            overflow: hidden; /* Importante para o efeito ripple não vazar */
+            transition: transform 0.1s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 53, 122, 0.4);
+        }
+
+        /* Efeito ao passar o mouse (Hover) */
+        .btn-interativo:hover {
+            box-shadow: 0 6px 20px rgba(255, 53, 122, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Efeito ao clicar (Active) */
+        .btn-interativo:active {
+            transform: scale(0.96); /* Diminui levemente */
+        }
+
+        /* A bolinha da animação de clique */
+        .ripple {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            border-radius: 50%;
+            animation: animateRipple 0.6s linear;
+        }
+
+        @keyframes animateRipple {
+            0% {
+                width: 0px;
+                height: 0px;
+                opacity: 0.5;
+            }
+            100% {
+                width: 300px;
+                height: 300px;
+                opacity: 0;
+            }
+        }
+    </style>
