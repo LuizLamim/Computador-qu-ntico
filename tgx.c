@@ -14,3 +14,26 @@ int main() {
 
     printf("Gráfico de tg(x) (Eixo X vertical, Eixo Y horizontal)\n");
     printf("----------------------------------------------------\n");
+
+    for (double x = -M_PI; x <= M_PI; x += passo) {
+        double y = tan(x);
+
+        // Mapeia o valor da tangente para uma coluna no terminal
+        // O '+ 0.5' serve para arredondamento
+        int pos = (int)(centro + (y * escala_y) + 0.5);
+
+        printf("%5.2f |", x); // Imprime o valor de X
+
+        // Verifica se a posição cabe na tela (filtra os infinitos/assíntotas)
+        if (pos >= 0 && pos < largura) {
+            // Imprime espaços até a posição do ponto
+            for (int i = 0; i < pos; i++) {
+                printf(" ");
+            }
+            printf("*\n"); // O ponto do gráfico
+        } else {
+            // Se o valor for muito alto (assíntota), indica com seta
+            if (y > 0) printf("  ---> +Infinito\n");
+            else       printf("  <--- -Infinito\n");
+        }
+    }
