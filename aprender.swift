@@ -9,3 +9,4 @@ for key in numeros.keys {
 }
 
 print(numeros["primes"]!)
+// Prints "[17, 13, 11, 7, 5, 3, 2]"
