@@ -26,3 +26,11 @@ while True:
     except ValueError:
         print("Isso não parece um número válido. Tente novamente.")
 
+# 4. Processa os resultados
+if len(numeros) > 0:
+    total = sum(numeros)  # A função sum() soma todos os itens da lista magicamente
+    print("-" * 30)
+    print(f"Você digitou os números: {numeros}")
+    print(f"A soma total é: {total}")
+else:
+    print("Nenhum número foi digitado.")
