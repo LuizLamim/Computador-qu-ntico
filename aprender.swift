@@ -7,3 +7,5 @@ var numeros = [
 for key in numeros.keys {
     numeros[key]?.sort(by: >)
 }
+
+print(numeros["primes"]!)
