@@ -37,3 +37,6 @@ int main() {
             else       printf("  <--- -Infinito\n");
         }
     }
+
+    return 0;
+}
