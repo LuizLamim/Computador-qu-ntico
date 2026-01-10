@@ -7,3 +7,7 @@ UPDATE - updates data in a database
 DELETE - deletes data from a database
 
 INSERT INTO - inserts new data into a database
+
+CREATE DATABASE - creates a new database
+
+ALTER DATABASE - modifies a database
