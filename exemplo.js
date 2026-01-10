@@ -6,5 +6,7 @@ frutas.splice(1, 2);
 console.log(frutas); 
 // Resultado: ["Maçã", "Uva"] -> (Banana e Laranja sumiram)
 
-if ()
+if (){
+    else
+}
 
