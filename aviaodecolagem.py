@@ -18,3 +18,46 @@ v_decolagem = 80   # Velocidade de rotação (m/s) (~290 km/h)
 tempos = []
 aceleracoes = []
 velocidades = []
+
+t = 0
+while v < v_decolagem:
+    # 1. Cálculo das forças aerodinâmicas
+    sustentacao = 0.5 * rho * v**2 * S * Cl
+    arrasto = 0.5 * rho * v**2 * S * Cd
+    
+    # 2. Atrito de rolamento (P = m*g. Força Normal = Peso - Sustentação)
+    forca_normal = max(0, (m * g) - sustentacao)
+    atrito = mu * forca_normal
+    
+    # 3. Segunda Lei de Newton (F_resultante = m * a)
+    # F_res = Empuxo - Arrasto - Atrito
+    forca_resultante = thrust - arrasto - atrito
+    a = forca_resultante / m
+    
+    # Armazenar dados
+    tempos.append(t)
+    aceleracoes.append(a)
+    velocidades.append(v)
+    
+    # Atualizar velocidade e tempo
+    v += a * dt
+    t += dt
+
+# Criação dos Gráficos
+plt.figure(figsize=(10, 8))
+
+# Gráfico de Aceleração
+plt.subplot(2, 1, 1)
+plt.plot(tempos, aceleracoes, 'r-', linewidth=2, label='Aceleração (m/s²)')
+plt.title('Dinâmica de Decolagem do Avião')
+plt.ylabel('Aceleração (m/s²)')
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend()
+
+# Gráfico de Velocidade
+plt.subplot(2, 1, 2)
+plt.plot(tempos, velocidades, 'b-', linewidth=2, label='Velocidade (m/s)')
+plt.xlabel('Tempo (s)')
+plt.ylabel('Velocidade (m/s)')
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.legend()
