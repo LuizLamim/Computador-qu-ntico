@@ -14,3 +14,7 @@ dt = 0.1           # Intervalo de tempo (segundos)
 v = 0.0            # Velocidade inicial
 x = 0.0            # Posição inicial
 v_decolagem = 80   # Velocidade de rotação (m/s) (~290 km/h)
+
+tempos = []
+aceleracoes = []
+velocidades = []
