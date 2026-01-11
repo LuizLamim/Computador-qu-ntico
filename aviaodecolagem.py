@@ -61,3 +61,6 @@ plt.xlabel('Tempo (s)')
 plt.ylabel('Velocidade (m/s)')
 plt.grid(True, linestyle='--', alpha=0.7)
 plt.legend()
+
+plt.tight_layout()
+plt.show()
