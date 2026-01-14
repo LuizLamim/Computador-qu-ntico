@@ -6,4 +6,49 @@
     <title>Relógio Digital Minimalista</title>
     <style>
         
+        /* Reset básico e centralização */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e0e5ec; /* Fundo cinza suave */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Container do Relógio (O 'corpo' arredondado) */
+        .clock-container {
+            background-color: #e0e5ec;
+            padding: 40px 60px;
+            border-radius: 50px; /* Bordas bem arredondadas */
+            
+            /* Efeito "Neumorfismo" (Sombra suave para dar volume) */
+            box-shadow: 
+                20px 20px 60px #bebebe, 
+                -20px -20px 60px #ffffff;
+            
+            text-align: center;
+            user-select: none; /* Impede seleção de texto */
+        }
+
+        /* Estilo das Horas */
+        #time {
+            font-size: 5rem;
+            font-weight: 700;
+            color: #4a4a4a;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo da Data */
+        #date {
+            font-size: 1.2rem;
+            color: #888;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
     </style>
