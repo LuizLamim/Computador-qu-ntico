@@ -16,3 +16,10 @@ VALUES
     ('Notebook Gamer', 'Eletrônicos', 4500.00, 10, '2024-01-15'),
     ('Mouse Sem Fio', 'Acessórios', 120.50, 50, '2024-01-16'),
     ('Cadeira de Escritório', 'Móveis', 850.00, 5, '2024-01-20');
+
+SELECT nome, quantidade 
+FROM Produtos 
+WHERE quantidade < 10;
+
+SELECT nome, (preco * quantidade) AS valor_total_estoque
+FROM Produtos;
