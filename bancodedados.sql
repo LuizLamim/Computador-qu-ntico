@@ -10,3 +10,9 @@ CREATE TABLE Produtos (
     quantidade INT DEFAULT 0,           -- Quantidade em estoque (número inteiro)
     data_cadastro DATE                  -- Data que o produto entrou
 );
+
+INSERT INTO Produtos (nome, categoria, preco, quantidade, data_cadastro)
+VALUES 
+    ('Notebook Gamer', 'Eletrônicos', 4500.00, 10, '2024-01-15'),
+    ('Mouse Sem Fio', 'Acessórios', 120.50, 50, '2024-01-16'),
+    ('Cadeira de Escritório', 'Móveis', 850.00, 5, '2024-01-20');
