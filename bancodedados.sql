@@ -23,3 +23,10 @@ WHERE quantidade < 10;
 
 SELECT nome, (preco * quantidade) AS valor_total_estoque
 FROM Produtos;
+
+UPDATE Produtos 
+SET quantidade = quantidade - 1 
+WHERE nome = 'Notebook Gamer';
+
+DELETE FROM Produtos 
+WHERE nome = 'Mouse Sem Fio';
