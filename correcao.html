@@ -1,0 +1,2659 @@
+<style>
+    /* 
+   BLINDAGEM JURÍDICA NA SAÚDE - CSS
+   Landing Page de Alta Conversão
+    */
+
+/* ========== 1. VARIÁVEIS CSS (Design Tokens) ========== */
+:root {
+  /* Cores */
+  --color-primary: #1A3A52;
+  --color-secondary: #D4AF37;
+  --color-accent: #FF6B35;
+  --color-success: #10B981;
+  --color-danger: #EF4444;
+  --color-neutral-light: #F5F7FA;
+  --color-neutral-dark: #2D3748;
+  --color-white: #FFFFFF;
+  --color-gradient-gold: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
+  --color-gradient-accent: linear-gradient(90deg, #D4AF37 0%, #FF6B35 100%);
+  
+  /* Tipografia */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Tamanhos de Fonte - Desktop */
+  --font-size-h1: 56px;
+  --font-size-h2: 42px;
+  --font-size-h3: 32px;
+  --font-size-h4: 24px;
+  --font-size-body: 18px;
+  --font-size-body-small: 16px;
+  --font-size-small: 14px;
+  
+  /* Espaçamentos */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 60px;
+  --spacing-3xl: 80px;
+  --spacing-4xl: 100px;
+  
+  /* Container */
+  --container-max-width: 1200px;
+  --container-padding: 40px;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 50px;
+  
+  /* Sombras */
+  --shadow-sm: 0 4px 12px rgba(26, 58, 82, 0.08);
+  --shadow-md: 0 10px 40px rgba(26, 58, 82, 0.08);
+  --shadow-lg: 0 20px 60px rgba(26, 58, 82, 0.15);
+  --shadow-cta: 0 8px 24px rgba(255, 107, 53, 0.4);
+  --shadow-cta-hover: 0 12px 32px rgba(255, 107, 53, 0.5);
+  
+  /* Transições */
+  --transition-base: all 0.3s ease;
+}
+
+/* ========== 2. RESET/BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: 1.7;
+  color: var(--color-neutral-dark);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ========== 3. TIPOGRAFIA GLOBAL ========== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  letter-spacing: -0.3px;
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+/* ========== 4. LAYOUT GLOBAL ========== */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+section {
+  padding: var(--spacing-4xl) 0;
+}
+
+/* ========== 5. COMPONENTES REUTILIZÁVEIS ========== */
+
+/* ----- Botão Primário (CTA Principal) ----- */
+.btn-primary {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 20px 48px;
+  border-radius: var(--radius-pill);
+  border: none;
+  box-shadow: var(--shadow-cta);
+  cursor: pointer;
+  transition: var(--transition-base);
+  text-align: center;
+  animation: pulse 2s infinite;
+}
+
+.btn-primary:hover {
+  background: #E55A2B;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-cta-hover);
+}
+
+.btn-primary--large {
+  font-size: 20px;
+  padding: 24px 56px;
+}
+
+.btn-primary--sticky {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: var(--shadow-cta);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(255, 107, 53, 0.6);
+  }
+}
+
+/* ----- Botão Secundário ----- */
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-primary);
+  cursor: pointer;
+  transition: var(--transition-base);
+  text-align: center;
+}
+
+.btn-secondary:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ----- Badge ----- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: rgba(16, 185, 129, 0.1);
+  border: 2px solid var(--color-success);
+  border-radius: 24px;
+  padding: 8px 16px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--font-size-small);
+  color: var(--color-success);
+  margin: 4px;
+}
+
+.badge--large {
+  font-size: var(--font-size-body-small);
+  padding: 10px 20px;
+}
+
+.badge--white {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+/* ----- Section Divider (Linha Decorativa) ----- */
+.section-divider {
+  height: 4px;
+  width: 120px;
+  background: var(--color-gradient-accent);
+  margin: 0 auto var(--spacing-lg);
+  border-radius: 2px;
+}
+
+/* ----- Section Headlines ----- */
+.section__headline {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.section__headline--white {
+  color: var(--color-white);
+}
+
+.section__headline--urgent {
+  color: var(--color-danger);
+}
+
+.section__subheadline {
+  text-align: center;
+  font-size: var(--font-size-body);
+  color: var(--color-neutral-dark);
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.section__subheadline-large {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+/* ----- Card Base ----- */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ========== 6. SEÇÕES ESPECÍFICAS ========== */
+
+/* ----- SEÇÃO 1: HERO ----- */
+.hero {
+  background: linear-gradient(135deg, var(--color-neutral-light) 0%, var(--color-white) 100%);
+  padding: var(--spacing-3xl) 0;
+  text-align: center;
+}
+
+.urgency-badge {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+  animation: shake 3s infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+.hero__headline {
+  max-width: 900px;
+  margin: 0 auto var(--spacing-md);
+}
+
+.hero__subheadline {
+  font-size: 20px;
+  color: var(--color-neutral-dark);
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.hero__pricing {
+  margin-bottom: var(--spacing-xl);
+}
+
+.price-old {
+  display: block;
+  font-size: 18px;
+  color: #999;
+  text-decoration: line-through;
+  margin-bottom: var(--spacing-xs);
+}
+
+.price-new {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-xs);
+}
+
+.price-highlight {
+  display: block;
+  font-weight: 600;
+  color: var(--color-danger);
+  font-size: 16px;
+}
+
+.hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-xl);
+}
+
+/* ----- SEÇÃO 2: PROBLEM ----- */
+.problem {
+  background: var(--color-neutral-light);
+}
+
+.problem__list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.problem__item {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.problem__icon {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-gradient-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.problem__content {
+  flex: 1;
+}
+
+.problem__title {
+  font-size: 22px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.problem__text {
+  margin-bottom: var(--spacing-sm);
+}
+
+.problem__consequence {
+  color: var(--color-danger);
+  font-weight: 500;
+}
+
+.problem__transition {
+  text-align: center;
+  font-size: 22px;
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----- SEÇÃO 3: SOLUTION ----- */
+.solution {
+  background: var(--color-white);
+}
+
+.solution__pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.pillar-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+  text-align: center;
+}
+
+.pillar-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.pillar__icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-md);
+  border-radius: 50%;
+  background: var(--color-gradient-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.pillar__title {
+  font-size: 20px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.pillar__subtitle {
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.pillar__text {
+  text-align: left;
+  font-size: var(--font-size-body-small);
+  margin-bottom: var(--spacing-md);
+}
+
+.pillar__result {
+  text-align: left;
+  font-size: var(--font-size-body-small);
+  color: var(--color-success);
+}
+
+.solution__authority {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-xl);
+  background: var(--color-neutral-light);
+  border-radius: var(--radius-lg);
+}
+
+.authority__image {
+  flex-shrink: 0;
+}
+
+.image-placeholder {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-weight: 600;
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.authority__content {
+  flex: 1;
+}
+
+.authority__title {
+  font-size: 28px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.authority__text {
+  font-size: var(--font-size-body-small);
+  margin-bottom: var(--spacing-md);
+}
+
+.authority__description {
+  font-size: var(--font-size-body-small);
+  color: var(--color-neutral-dark);
+}
+
+.solution .btn-secondary {
+  display: block;
+  margin: var(--spacing-xl) auto 0;
+  max-width: 400px;
+}
+
+/* ----- SEÇÃO 4: VALUE STACK ----- */
+.value-stack {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.value__list {
+  max-width: 900px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.value-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.value-item:last-child {
+  border-bottom: none;
+}
+
+.value-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: rgba(212, 175, 55, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.value-content h4 {
+  color: var(--color-white);
+  font-size: 20px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.value-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-body-small);
+}
+
+.value-sublist {
+  list-style: none;
+  margin: var(--spacing-md) 0;
+}
+
+.value-sublist li {
+  padding: 4px 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-body-small);
+}
+
+.value-price {
+  color: var(--color-secondary);
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: var(--spacing-sm);
+}
+
+.value__calculation {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
+  max-width: 700px;
+  margin: var(--spacing-xl) auto;
+}
+
+.calc-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  font-size: var(--font-size-body-small);
+}
+
+.calc-value {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.calc-divider {
+  height: 2px;
+  background: var(--color-secondary);
+  margin: var(--spacing-md) 0;
+}
+
+.calc-line--highlight {
+  font-size: 18px;
+  font-weight: 600;
+  padding: var(--spacing-md) 0;
+}
+
+.calc-value-main {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  text-align: right;
+  line-height: 1.3;
+}
+
+.calc-line--savings {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.calc-savings {
+  font-size: 32px;
+  color: var(--color-secondary);
+}
+
+.value__justification {
+  text-align: center;
+  max-width: 800px;
+  margin: var(--spacing-md) auto;
+  font-size: var(--font-size-body-small);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.value__justification--emphasis {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-top: var(--spacing-lg);
+}
+
+.value-stack .btn-primary {
+  display: block;
+  margin: var(--spacing-xl) auto var(--spacing-md);
+  max-width: 600px;
+}
+
+.value__cta-subtext {
+  text-align: center;
+  font-size: var(--font-size-small);
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+}
+
+/* ----- SEÇÃO 5: SOCIAL PROOF ----- */
+.social-proof {
+  background: var(--color-white);
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.testimonial-card {
+  background: var(--color-white);
+  border-left: 4px solid var(--color-secondary);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  transition: var(--transition-base);
+}
+
+.testimonial-card::before {
+  content: """;
+  font-size: 80px;
+  color: rgba(212, 175, 55, 0.2);
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  line-height: 1;
+  z-index: 0;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.testimonial__title {
+  font-size: 18px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial__text {
+  font-size: var(--font-size-body-small);
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial__highlight {
+  font-size: var(--font-size-body-small);
+  color: var(--color-secondary);
+  font-weight: 600;
+  margin-top: var(--spacing-md);
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial__author {
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: var(--spacing-md);
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.credibility-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-xl);
+}
+
+/* ----- SEÇÃO 6: COURSE BREAKDOWN ----- */
+.course-breakdown {
+  background: var(--color-neutral-light);
+}
+
+.modules {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.module-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+}
+
+.module-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.module__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-gradient-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.module__title {
+  font-size: 20px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.module__subtitle {
+  font-weight: 600;
+  color: var(--color-neutral-dark);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-body-small);
+}
+
+.module__list {
+  list-style: none;
+  margin: var(--spacing-md) 0;
+}
+
+.module__list li {
+  padding: 6px 0;
+  font-size: var(--font-size-body-small);
+  color: var(--color-neutral-dark);
+}
+
+.module__bonus {
+  background: rgba(16, 185, 129, 0.1);
+  border-left: 3px solid var(--color-success);
+  padding: var(--spacing-sm);
+  margin: var(--spacing-md) 0;
+  font-size: var(--font-size-body-small);
+  border-radius: 4px;
+}
+
+.module__result {
+  font-size: var(--font-size-body-small);
+  color: var(--color-success);
+  font-weight: 500;
+  margin-top: var(--spacing-md);
+}
+
+.course-breakdown .btn-primary {
+  display: block;
+  margin: var(--spacing-xl) auto 0;
+  max-width: 500px;
+}
+
+/* ----- SEÇÃO 7: GUARANTEE ----- */
+.guarantee {
+  background: var(--color-white);
+}
+
+.guarantee__content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xl);
+  max-width: 900px;
+  margin: var(--spacing-xl) auto;
+  padding: var(--spacing-xl);
+  background: var(--color-neutral-light);
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--color-success);
+}
+
+.guarantee__icon {
+  font-size: 80px;
+  flex-shrink: 0;
+}
+
+.guarantee__text {
+  flex: 1;
+}
+
+.guarantee__list {
+  list-style: none;
+  margin: var(--spacing-md) 0;
+}
+
+.guarantee__list li {
+  padding: 6px 0;
+  font-size: var(--font-size-body);
+}
+
+.guarantee__emphasis {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: var(--spacing-md);
+}
+
+.guarantee__reinforcement {
+  text-align: center;
+  font-size: 20px;
+  max-width: 700px;
+  margin: var(--spacing-lg) auto;
+}
+
+.guarantee__reinforcement--final {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+/* ----- SEÇÃO 8: URGENCY/SCARCITY ----- */
+.urgency {
+  background: rgba(255, 107, 53, 0.1);
+  border-top: 4px solid var(--color-danger);
+  border-bottom: 4px solid var(--color-danger);
+}
+
+.urgency__content {
+  max-width: 800px;
+  margin: var(--spacing-xl) auto;
+}
+
+.urgency__subtitle {
+  font-size: 24px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.urgency__text {
+  font-size: var(--font-size-body);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.urgency__text--emphasis {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-danger);
+}
+
+.urgency__list {
+  list-style: none;
+  margin: var(--spacing-md) 0;
+  text-align: left;
+}
+
+.urgency__list li {
+  padding: var(--spacing-sm) 0;
+  font-size: var(--font-size-body);
+}
+
+.urgency__final {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-danger);
+  margin-top: var(--spacing-xl);
+}
+
+/* Contador Regressivo */
+.countdown {
+  max-width: 700px;
+  margin: var(--spacing-xl) auto;
+  text-align: center;
+}
+
+.countdown__label {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.countdown__timer {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--color-white);
+  border: 3px solid var(--color-danger);
+  border-radius: var(--radius-md);
+}
+
+.countdown__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: var(--color-danger);
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+}
+
+.countdown__number {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.countdown__text {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-top: 4px;
+  letter-spacing: 1px;
+}
+
+/* ----- SEÇÃO 9: FAQ ----- */
+.faq {
+  background: var(--color-white);
+}
+
+.faq__list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--color-neutral-light);
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.faq-item.active {
+  background: var(--color-white);
+  border-color: var(--color-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 18px;
+}
+
+.faq-icon {
+  font-size: 24px;
+  color: var(--color-accent);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: var(--spacing-md);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  color: var(--color-neutral-dark);
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 1000px;
+  margin-top: var(--spacing-md);
+}
+
+.faq-answer p {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-body-small);
+}
+
+.faq-answer ul {
+  list-style: none;
+  margin: var(--spacing-sm) 0;
+}
+
+.faq-answer ul li {
+  padding: 4px 0;
+  font-size: var(--font-size-body-small);
+}
+
+/* ----- SEÇÃO 10: FINAL CTA ----- */
+.final-cta {
+  background: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.final-cta__summary {
+  font-size: 20px;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.final-cta__pricing {
+  margin: var(--spacing-xl) 0;
+}
+
+.final-cta__price-main {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.final-cta__price-alt {
+  font-size: 24px;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+}
+
+.final-cta__discount {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-danger);
+  background: var(--color-white);
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 24px;
+}
+
+.final-cta .btn-primary {
+  margin: var(--spacing-xl) auto var(--spacing-md);
+  max-width: 700px;
+}
+
+.final-cta__subtext {
+  font-size: var(--font-size-small);
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+  margin-bottom: var(--spacing-xl);
+}
+
+.final-cta__guarantees {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-xl) 0;
+}
+
+.final-cta__urgency {
+  font-size: 18px;
+  margin: var(--spacing-md) auto;
+  max-width: 700px;
+}
+
+.final-cta__urgency--emphasis {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.final-cta__emotional {
+  font-size: 20px;
+  font-style: italic;
+  color: var(--color-secondary);
+  margin-top: var(--spacing-xl);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----- SEÇÃO 11: FOOTER ----- */
+.footer {
+  background: var(--color-neutral-dark);
+  color: rgba(255, 255, 255, 0.8);
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  text-align: center;
+}
+
+.footer__logo h3 {
+  color: var(--color-white);
+  font-size: 24px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.footer__logo p {
+  color: var(--color-secondary);
+  font-size: var(--font-size-body-small);
+  margin-bottom: var(--spacing-lg);
+}
+
+.footer__links {
+  margin: var(--spacing-lg) 0;
+  font-size: var(--font-size-small);
+}
+
+.footer__links a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s ease;
+  margin: 0 var(--spacing-xs);
+}
+
+.footer__links a:hover {
+  color: var(--color-secondary);
+}
+
+.footer__support {
+  margin: var(--spacing-lg) 0;
+}
+
+.footer__support p {
+  font-size: var(--font-size-small);
+  margin-bottom: var(--spacing-xs);
+}
+
+.footer__support a {
+  color: var(--color-secondary);
+}
+
+.footer__disclaimer {
+  max-width: 800px;
+  margin: var(--spacing-lg) auto;
+  font-size: var(--font-size-small);
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+}
+
+.footer__copyright {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: var(--font-size-small);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ----- STICKY CTA BAR (Mobile) ----- */
+.sticky-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-sm);
+  z-index: 1000;
+  display: none;
+}
+
+/* ========== 7. RESPONSIVIDADE (Media Queries) ========== */
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) {
+  :root {
+    --font-size-h1: 42px;
+    --font-size-h2: 36px;
+    --font-size-h3: 28px;
+    --font-size-h4: 22px;
+    --container-padding: 30px;
+    --spacing-4xl: 60px;
+  }
+
+  .solution__pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .modules {
+    grid-template-columns: 1fr;
+  }
+
+  .solution__authority {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .countdown__timer {
+    gap: var(--spacing-sm);
+  }
+
+  .countdown__block {
+    width: 80px;
+    height: 80px;
+  }
+
+  .countdown__number {
+    font-size: 28px;
+  }
+}
+
+/* Mobile (até 767px) */
+@media (max-width: 767px) {
+  :root {
+    --font-size-h1: 36px;
+    --font-size-h2: 28px;
+    --font-size-h3: 24px;
+    --font-size-h4: 20px;
+    --font-size-body: 16px;
+    --font-size-body-small: 14px;
+    --container-padding: 20px;
+    --spacing-4xl: 40px;
+    --spacing-3xl: 40px;
+    --spacing-2xl: 32px;
+  }
+
+  section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .hero__headline {
+    font-size: 32px;
+  }
+
+  .hero__subheadline {
+    font-size: 18px;
+  }
+
+  .price-new {
+    font-size: 28px;
+  }
+
+  .hero__badges {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary {
+    font-size: 16px;
+    padding: 18px 32px;
+  }
+
+  .btn-primary--large {
+    font-size: 18px;
+    padding: 20px 40px;
+  }
+
+  .problem__item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .problem__icon {
+    margin: 0 auto var(--spacing-md);
+  }
+
+  .solution__pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .pillar__text,
+  .pillar__result {
+    text-align: center;
+  }
+
+  .solution__authority {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-placeholder {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .value-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .value-icon {
+    margin: 0 auto var(--spacing-sm);
+  }
+
+  .calc-line {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    text-align: center;
+  }
+
+  .calc-value-main {
+    text-align: center;
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .modules {
+    grid-template-columns: 1fr;
+  }
+
+  .guarantee__content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .guarantee__icon {
+    margin: 0 auto;
+  }
+
+  .countdown__timer {
+    gap: 8px;
+  }
+
+  .countdown__block {
+    width: 70px;
+    height: 70px;
+  }
+
+  .countdown__number {
+    font-size: 24px;
+  }
+
+  .countdown__text {
+    font-size: 10px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+  }
+
+  .final-cta__price-main {
+    font-size: 32px;
+  }
+
+  .final-cta__price-alt {
+    font-size: 20px;
+  }
+
+  /* Mostrar Sticky CTA Bar em Mobile */
+  .sticky-cta-bar {
+    display: block;
+  }
+
+  /* Adicionar padding no body para compensar sticky bar */
+  body {
+    padding-bottom: 80px;
+  }
+}
+
+/* Mobile Small (até 575px) */
+@media (max-width: 575px) {
+  :root {
+    --font-size-h1: 28px;
+    --font-size-h2: 24px;
+    --container-padding: 16px;
+  }
+
+  .urgency-badge {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .hero__headline {
+    font-size: 28px;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+    padding: 16px 24px;
+    width: 100%;
+  }
+
+  .countdown__block {
+    width: 60px;
+    height: 60px;
+  }
+
+  .countdown__number {
+    font-size: 20px;
+  }
+}
+
+/* ========== 8. ANIMAÇÕES ========== */
+
+/* Fade In ao Scroll (opcional - requer Intersection Observer) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Pulse para CTAs */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: var(--shadow-cta);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(255, 107, 53, 0.6);
+  }
+}
+
+/* Shake para Badge de Urgência */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+/* ========== FIM DO CSS ========== */
+</style>
+
+
+<body>
+
+  <!-- ========== SEÇÃO 1: HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      
+      <!-- Badge de Urgência -->
+      <div class="urgency-badge">
+         PROMOÇÃO INÍCIO DE ANO 2026
+      </div>
+      
+      <!-- Headline Principal -->
+      <h1 class="hero__headline">
+        Como Evitar Processos de R$ 50 Mil ou Mais e Atuar com Total Segurança Jurídica - Mesmo Sem Ser Advogado
+      </h1>
+      
+      <!-- Subheadline -->
+      <p class="hero__subheadline">
+        Mais de 200 profissionais da saúde já aplicam o Método de Blindagem Jurídica e dormem tranquilos, sabendo que estão protegidos contra denúncias nos Conselhos, fiscalizações e ações judiciais
+      </p>
+      
+      <!-- Preço Promocional -->
+      <div class="hero__pricing">
+        <span class="price-old">De R$ 997,00</span>
+        <span class="price-new">por apenas 12x de R$ 24,75</span>
+        <span class="price-highlight">Válido APENAS até 31/01/2026</span>
+      </div>
+      
+      <!-- CTA Principal -->
+      <a href="#checkout" class="btn-primary">
+        Quero me blindar agora com 70% de desconto
+      </a>
+      
+      <!-- Badges de Credibilidade -->
+      <div class="hero__badges">
+        <span class="badge"> Garantia incondicional de 7 dias</span>
+        <span class="badge"> Acesso vitalício ao curso</span>
+        <span class="badge"> +200 profissionais já formados</span>
+        <span class="badge"> Certificado de conclusão</span>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO 2: PROBLEM ========== -->
+  <section class="problem" id="problem">
+    <div class="container">
+      
+      <!-- Linha Decorativa -->
+      <div class="section-divider"></div>
+      
+      <!-- Headline da Seção -->
+      <h2 class="section__headline">
+        Você Está Cometendo Erros Jurídicos Todos os Dias... E Nem Sabe Disso
+      </h2>
+      
+      <!-- Subheadline -->
+      <p class="section__subheadline">
+        A maioria dos processos contra profissionais da saúde não acontece por erro técnico. Acontece por falta de proteção jurídica preventiva no dia a dia.
+      </p>
+      
+      <!-- Lista de Dores -->
+      <div class="problem__list">
+        
+        <!-- Dor #1 -->
+        <div class="problem__item">
+          <div class="problem__icon"></div>
+          <div class="problem__content">
+            <h3 class="problem__title">
+              "Seu prontuário está incompleto e pode te custar R$ 50 mil em um processo"
+            </h3>
+            <p class="problem__text">
+              Você registra tudo que deveria? Sabe exatamente o que NÃO pode faltar? Um prontuário mal feito é a principal causa de condenações em processos de responsabilidade civil.
+            </p>
+            <p class="problem__consequence">
+              <strong>A consequência?</strong> Um único erro de documentação pode destruir anos de reputação construída com tanto esforço. E pior: você pode estar cometendo esse erro AGORA, sem saber.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Dor #2 -->
+        <div class="problem__item">
+          <div class="problem__icon"></div>
+          <div class="problem__content">
+            <h3 class="problem__title">
+              "Você posta nas redes sociais com medo de ser denunciado ao Conselho"
+            </h3>
+            <p class="problem__text">
+              Toda vez que você vai fazer um post no Instagram, bate aquela insegurança: <em>"Será que posso falar isso? Será que essa imagem está certa? E se alguém me denunciar?"</em>
+            </p>
+            <p class="problem__consequence">
+              <strong>A consequência?</strong> Você perde oportunidades de crescer seu consultório, atrair novos pacientes e construir autoridade - tudo por medo de pisar em ovos com as regras de publicidade médica e LGPD.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Dor #3 -->
+        <div class="problem__item">
+          <div class="problem__icon"></div>
+          <div class="problem__content">
+            <h3 class="problem__title">
+              "Seus contratos são genéricos da internet e não te protegem de verdade"
+            </h3>
+            <p class="problem__text">
+              Você baixou um modelo pronto de contrato, colocou seu nome e achou que estava protegido. Mas a verdade é que contratos genéricos não consideram as especificidades da sua especialidade, não estão atualizados com a LGPD e podem até te prejudicar em uma disputa judicial.
+            </p>
+            <p class="problem__consequence">
+              <strong>A consequência?</strong> Pacientes inadimplentes, cancelamentos abusivos, exigências de reembolso sem fundamento - e você sem amparo legal para se defender.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Dor #4 -->
+        <div class="problem__item">
+          <div class="problem__icon"></div>
+          <div class="problem__content">
+            <h3 class="problem__title">
+              "Você não sabe como agir em uma fiscalização ou denúncia no Conselho"
+            </h3>
+            <p class="problem__text">
+              Imagine receber uma notificação do seu Conselho de Classe ou uma visita de fiscalização sem aviso prévio. Você saberia exatamente o que fazer? O que mostrar? Como se portar? O que falar (e o que NÃO falar)?
+            </p>
+            <p class="problem__consequence">
+              <strong>A consequência?</strong> Pânico, multas desnecessárias, processos ético-disciplinares que poderiam ser evitados - e até suspensão temporária da sua atividade profissional.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Dor #5 -->
+        <div class="problem__item">
+          <div class="problem__icon"></div>
+          <div class="problem__content">
+            <h3 class="problem__title">
+              "Você depende 100% do seu advogado, mas ele não está no consultório todo dia"
+            </h3>
+            <p class="problem__text">
+              Seu advogado é essencial. Mas ele não está ao seu lado quando você preenche o prontuário, conversa com um paciente difícil, responde uma mensagem no WhatsApp ou faz um post nas redes sociais.
+            </p>
+            <p class="problem__consequence">
+              <strong>A consequência?</strong> Os erros acontecem na linha de frente, no dia a dia do consultório - exatamente onde ninguém está te protegendo. E quando o problema chega ao advogado, muitas vezes já é tarde demais.
+            </p>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Frase de Transição -->
+      <p class="problem__transition">
+        <strong>Mas aqui está a boa notícia:</strong><br>
+        <em>Tudo isso pode ser evitado com o método certo de proteção jurídica preventiva...</em>
+      </p>
+      
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO 3: SOLUTION ========== -->
+  <section class="solution" id="solution">
+    <div class="container">
+      
+      <!-- Linha Decorativa -->
+      <div class="section-divider"></div>
+      
+      <!-- Headline da Seção -->
+      <h2 class="section__headline">
+        Apresentando: Blindagem Jurídica na Saúde
+      </h2>
+      <h3 class="section__subheadline-large">
+        O Único Método Preventivo que Te Protege na Linha de Frente
+      </h3>
+      
+      <!-- Subheadline -->
+      <p class="section__subheadline">
+        Não é consultoria jurídica cara que você usa uma vez e esquece. Não é curso genérico de gestão que ignora as nuances do Direito Médico. É um sistema prático de proteção que você aplica no dia a dia do seu consultório - e funciona mesmo que você nunca tenha estudado Direito.
+      </p>
+      
+      <!-- 3 Pilares do Método -->
+      <div class="solution__pillars">
+        
+        <!-- Pilar #1 -->
+        <div class="pillar-card">
+          <div class="pillar__icon"></div>
+          <h4 class="pillar__title">PILAR #1: DOCUMENTAÇÃO ESTRATÉGICA</h4>
+          <p class="pillar__subtitle">Prontuários à prova de processos + Consentimentos que realmente protegem</p>
+          <p class="pillar__text">
+            Aprenda exatamente o que registrar, como registrar e quando registrar. Receba modelos profissionais de consentimento informado (não aqueles genéricos da internet) e checklists completos de preenchimento de prontuário.
+          </p>
+          <p class="pillar__result">
+            <strong>Resultado:</strong> Sua documentação vira sua maior aliada em caso de questionamento judicial ou denúncia no Conselho.
+          </p>
+        </div>
+        
+        <!-- Pilar #2 -->
+        <div class="pillar-card">
+          <div class="pillar__icon"></div>
+          <h4 class="pillar__title">PILAR #2: COMUNICAÇÃO BLINDADA</h4>
+          <p class="pillar__subtitle">Como falar com pacientes, usar redes sociais e WhatsApp sem riscos jurídicos</p>
+          <p class="pillar__text">
+            Descubra as regras exatas do que pode e não pode nas redes sociais, como usar o WhatsApp profissionalmente sem violar a LGPD, e como se comunicar com pacientes de forma que previne conflitos e judicialização.
+          </p>
+          <p class="pillar__result">
+            <strong>Resultado:</strong> Você atrai mais pacientes com marketing ético, sem medo de denúncias ou processos.
+          </p>
+        </div>
+        
+        <!-- Pilar #3 -->
+        <div class="pillar-card">
+          <div class="pillar__icon"></div>
+          <h4 class="pillar__title">PILAR #3: OPERAÇÃO REGULARIZADA</h4>
+          <p class="pillar__subtitle">Contratos profissionais + Preparação para fiscalizações + Gestão de honorários</p>
+          <p class="pillar__text">
+            Receba contratos de prestação de serviços juridicamente válidos, aprenda a se preparar para fiscalizações do Conselho, e saiba como lidar com cancelamentos, inadimplência e reembolsos de forma profissional e segura.
+          </p>
+          <p class="pillar__result">
+            <strong>Resultado:</strong> Sua clínica ou consultório opera de forma blindada, protegendo você e sua equipe de riscos operacionais.
+          </p>
+        </div>
+        
+      </div>
+      
+      <!-- Autoridade -->
+      <div class="solution__authority">
+        <!-- Imagem: Foto profissional da Dra. Isabela Hamú -->
+        <div class="authority__image">
+          <div class="image-placeholder">
+            [FOTO DRA. ISABELA HAMÚ]
+          </div>
+        </div>
+        <div class="authority__content">
+          <h4 class="authority__title">Desenvolvido por Dra. Isabela Hamú</h4>
+          <p class="authority__text">
+            Advogada Especialista em Direito Médico e da Saúde, Direito do Consumidor, Direito Civil e Processo Civil, e Direito Empresarial.<br>
+            <strong>Vice-Presidente da Comissão de Direito Médico da OAB/DF</strong>
+          </p>
+          <p class="authority__description">
+            Com anos de experiência protegendo profissionais da saúde, Dra. Isabela traduziu todo o "juridiquês" para linguagem acessível e prática - feita para quem está na linha de frente do atendimento.
+          </p>
+        </div>
+      </div>
+      
+      <!-- CTA Secundário -->
+      <a href="#checkout" class="btn-secondary">
+        Quero conhecer o método completo
+      </a>
+      
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO 4: VALUE STACK ========== -->
+  <section class="value-stack" id="value-stack">
+    <div class="container">
+      
+      <!-- Headline da Seção -->
+      <h2 class="section__headline section__headline--white">
+        Tudo Que Você Recebe ao Garantir Sua Vaga Hoje:
+      </h2>
+      
+      <!-- Lista de Valor -->
+      <div class="value__list">
+        
+        <!-- Item Principal -->
+        <div class="value-item">
+          <div class="value-icon"></div>
+          <div class="value-content">
+            <h4>Curso Completo "Blindagem Jurídica na Saúde" - 6 Módulos Práticos</h4>
+            <ul class="value-sublist">
+              <li>Módulo 1: Fundamentos da Atuação Segura</li>
+              <li>Módulo 2: Documentação que Protege</li>
+              <li>Módulo 3: Ética, Atendimento Humanizado e Comunicação</li>
+              <li>Módulo 4: Redes Sociais, WhatsApp e LGPD</li>
+              <li>Módulo 5: Fiscalizações e Conselhos de Classe</li>
+              <li>Módulo 6: Contratos, Honorários e Relação com Pacientes</li>
+            </ul>
+            <p class="value-price">Valor: R$ 697,00</p>
+          </div>
+        </div>
+        
+        <!-- Bônus #1 -->
+        <div class="value-item">
+          <div class="value-icon"></div>
+          <div class="value-content">
+            <h4>BÔNUS #1: Modelo de Contrato de Prestação de Serviços Profissional</h4>
+            <p>Contrato completo, atualizado com a LGPD, personalizável para sua especialidade. Pronto para usar com seus pacientes.</p>
+            <p class="value-price">Valor: R$ 150,00</p>
+          </div>
+        </div>
+        
+        <!-- Bônus #2 -->
+        <div class="value-item">
+          <div class="value-icon"></div>
+          <div class="value-content">
+            <h4>BÔNUS #2: Modelo de Consentimento Informado Estratégico</h4>
+            <p>Não é aquele modelo genérico da internet. É um consentimento que realmente te defende em caso de questionamento judicial.</p>
+            <p class="value-price">Valor: R$ 100,00</p>
+          </div>
+        </div>
+        
+        <!-- Bônus #3 -->
+        <div class="value-item">
+          <div class="value-icon"></div>
+          <div class="value-content">
+            <h4>BÔNUS #3: Checklist Completo de Preenchimento de Prontuário</h4>
+            <p>Passo a passo do que você DEVE registrar em cada consulta para estar 100% protegido juridicamente.</p>
+            <p class="value-price">Valor: R$ 50,00</p>
+          </div>
+        </div>
+        
+        <!-- Bônus #4 -->
+        <div class="value-item">
+          <div class="value-icon"></div>
+          <div class="value-content">
+            <h4>BÔNUS #4: Guia Prático "O Que Pode e Não Pode nas Redes Sociais"</h4>
+            <p>Regras claras e objetivas para você usar Instagram, Facebook e outras redes sem medo de denúncias no Conselho.</p>
+            <p class="value-price">Valor: R$ 80,00</p>
+          </div>
+        </div>
+        
+        <!-- Bônus #5 -->
+        <div class="value-item">
+          <div class="value-icon"></div>
+          <div class="value-content">
+            <h4>BÔNUS #5: Roteiro de Preparação para Fiscalizações</h4>
+            <p>O que fazer (e o que NÃO fazer) quando receber uma fiscalização ou denúncia no Conselho de Classe.</p>
+            <p class="value-price">Valor: R$ 70,00</p>
+          </div>
+        </div>
+        
+        <!-- Garantia -->
+        <div class="value-item">
+          <div class="value-icon"></div>
+          <div class="value-content">
+            <h4>GARANTIA BLINDADA: 7 Dias de Reembolso Total</h4>
+            <p>Risco zero para você. Teste o curso, aplique as estratégias, e se não gostar por qualquer motivo, devolvemos 100% do seu dinheiro.</p>
+            <p class="value-price">Valor: Inestimável</p>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Cálculo de Valor -->
+      <div class="value__calculation">
+        <div class="calc-line">
+          <span>Valor Total (se comprado separadamente):</span>
+          <span class="calc-value">R$ 1.147,00</span>
+        </div>
+        <div class="calc-line">
+          <span>Valor Regular do Curso:</span>
+          <span class="calc-value">R$ 997,00</span>
+        </div>
+        <div class="calc-divider"></div>
+        <div class="calc-line calc-line--highlight">
+          <span>INVESTIMENTO HOJE (Promoção Início de Ano):</span>
+          <span class="calc-value-main">12x de R$ 24,75<br>ou R$ 297,00 à vista</span>
+        </div>
+        <div class="calc-line calc-line--savings">
+          <span>ECONOMIA TOTAL:</span>
+          <span class="calc-savings">R$ 700,00 (70% OFF)</span>
+        </div>
+      </div>
+      
+      <!-- Justificativa de Preço -->
+      <p class="value__justification">
+        <strong>R$ 297,00 é menos do que você gastaria em UMA ÚNICA consulta com um advogado especializado em Direito Médico.</strong>
+      </p>
+      <p class="value__justification">
+        E aqui você não recebe apenas uma consulta pontual. Você recebe um <strong>método completo de proteção jurídica</strong> que vai te blindar para o <strong>resto da sua carreira</strong>.
+      </p>
+      <p class="value__justification">
+        Pense assim: <strong>um único processo de responsabilidade civil pode te custar R$ 50 mil ou mais</strong> (sem contar o desgaste emocional, o tempo perdido e o dano à sua reputação).
+      </p>
+      <p class="value__justification value__justification--emphasis">
+        <strong>Este curso é o melhor seguro que você pode fazer para sua carreira.</strong>
+      </p>
+      
+      <!-- CTA Principal -->
+      <a href="#checkout" class="btn-primary">
+        SIM! Quero garantir minha vaga com 70% de desconto
+      </a>
+      
+      <p class="value__cta-subtext">Acesso imediato após a confirmação do pagamento</p>
+      
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO 5: SOCIAL PROOF ========== -->
+  <section class="social-proof" id="social-proof">
+    <div class="container">
+      
+      <!-- Linha Decorativa -->
+      <div class="section-divider"></div>
+      
+      <!-- Headline da Seção -->
+      <h2 class="section__headline">
+        Mais de 200 Profissionais da Saúde Já Aplicam o Método e Estão Protegidos
+      </h2>
+      
+      <!-- Subheadline -->
+      <p class="section__subheadline">
+        Veja o que profissionais como você estão dizendo sobre o curso:
+      </p>
+      
+      <!-- Grid de Testemunhos -->
+      <div class="testimonials">
+        
+        <!-- Testemunho #1 -->
+        <div class="testimonial-card">
+          <h4 class="testimonial__title">"Evitei um processo de R$ 50 mil aplicando o que aprendi no curso"</h4>
+          <p class="testimonial__text">
+            "Eu sempre achei que o 'bom senso' no atendimento era suficiente para me proteger, até que me vi em uma situação delicada com um paciente que interpretou mal um desfecho clínico.
+          </p>
+          <p class="testimonial__text">
+            Graças ao que aprendi com a Dra. Isabela, eu tinha aplicado rigorosamente o plano de blindagem semanas antes: o prontuário estava impecável e o termo de consentimento não era genérico, mas sim específico para aquele caso.
+          </p>
+          <p class="testimonial__text">
+            Quando apresentei a documentação seguindo as estratégias de comunicação assertiva do curso, a ameaça de judicialização cessou ali mesmo.
+          </p>
+          <p class="testimonial__text">
+            Evitei um processo de responsabilidade civil que, entre custas e indenização, me custaria facilmente mais de R$ 50 mil.
+          </p>
+          <p class="testimonial__highlight">
+            <strong>O curso da Dra. Isabela não é um gasto, é o melhor seguro que um profissional da saúde pode ter.</strong>
+          </p>
+          <p class="testimonial__author">— Dr. Roberto, Médico Clínico</p>
+        </div>
+        
+        <!-- Testemunho #2 -->
+        <div class="testimonial-card">
+          <h4 class="testimonial__title">"Aprendi a usar as redes sociais sem medo de denúncias"</h4>
+          <p class="testimonial__text">
+            "Eu tinha muito receio de postar no Instagram e acabar sendo denunciado. No curso, a Dra. Isabela explica exatamente o que pode e o que não pode nas redes sociais e no WhatsApp.
+          </p>
+          <p class="testimonial__text">
+            O módulo sobre comunicação assertiva também foi um diferencial para evitar que pequenas reclamações virassem processos.
+          </p>
+          <p class="testimonial__text">
+            Aprendi a me proteger sem precisar ser advogada, aplicando o plano prático que ela entrega.
+          </p>
+          <p class="testimonial__highlight">
+            <strong>Recomendo muito!</strong>
+          </p>
+          <p class="testimonial__author">— Dra. Aline, Dentista</p>
+        </div>
+        
+        <!-- Testemunho #3 -->
+        <div class="testimonial-card">
+          <h4 class="testimonial__title">"O módulo sobre contratos salvou nossa gestão de cancelamentos"</h4>
+          <p class="testimonial__text">
+            "Minha clínica estava crescendo, mas eu sentia que juridicamente estávamos expostos. A Dra. Isabela ensina a pensar juridicamente sem complicação.
+          </p>
+          <p class="testimonial__text">
+            Agora temos um plano prático de blindagem para toda a equipe. O módulo sobre contratos e honorários salvou nossa gestão de cancelamentos e inadimplência.
+          </p>
+          <p class="testimonial__highlight">
+            <strong>É um investimento obrigatório para quem quer profissionalizar sua atuação na saúde com segurança ética e jurídica.</strong>
+          </p>
+          <p class="testimonial__author">— Mariana, Fisioterapeuta e Gestora de Clínica</p>
+        </div>
+        
+      </div>
+      
+      <!-- Badges de Credibilidade -->
+      <div class="credibility-badges">
+        <span class="badge badge--large"> Mais de 200 profissionais formados</span>
+        <span class="badge badge--large"> Vice-Presidente da Comissão de Direito Médico OAB/DF</span>
+        <span class="badge badge--large"> Especialista em Direito Médico e da Saúde</span>
+        <span class="badge badge--large"> Linguagem acessível - feito para quem não é advogado</span>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO 6: COURSE BREAKDOWN ========== -->
+  <section class="course-breakdown" id="course-breakdown">
+    <div class="container">
+      
+      <!-- Linha Decorativa -->
+      <div class="section-divider"></div>
+      
+      <!-- Headline da Seção -->
+      <h2 class="section__headline">
+        O Que Você Vai Aprender no Método Blindagem Jurídica:
+      </h2>
+      
+      <!-- Subheadline -->
+      <p class="section__subheadline">
+        6 módulos práticos que você pode aplicar imediatamente no seu consultório
+      </p>
+      
+      <!-- Grid de Módulos -->
+      <div class="modules">
+        
+        <!-- Módulo 1 -->
+        <div class="module-card">
+          <div class="module__icon"></div>
+          <h3 class="module__title">MÓDULO 1: Fundamentos da Atuação Segura</h3>
+          <p class="module__subtitle">O que você vai aprender:</p>
+          <ul class="module__list">
+            <li> O que é Direito Médico Preventivo e como aplicar sem ser advogado</li>
+            <li> Diferença entre erro técnico e complicação (e como se proteger de ambos)</li>
+            <li> Responsabilidade civil, ética e penal explicada em linguagem acessível</li>
+            <li> Como pensar juridicamente no dia a dia do consultório</li>
+          </ul>
+          <p class="module__result">
+            <strong>Resultado:</strong> Você vai entender os fundamentos da proteção jurídica e começar a enxergar os riscos antes que eles se tornem problemas.
+          </p>
+        </div>
+        
+        <!-- Módulo 2 -->
+        <div class="module-card">
+          <div class="module__icon"></div>
+          <h3 class="module__title">MÓDULO 2: Documentação que Protege</h3>
+          <p class="module__subtitle">O que você vai aprender:</p>
+          <ul class="module__list">
+            <li> Prontuário estratégico: o que não pode faltar para te blindar</li>
+            <li> Como fazer consentimento informado que realmente funciona (não é cópia da internet)</li>
+            <li> Documentação eletrônica e assinatura digital: validade jurídica</li>
+            <li> Como registrar recusas, orientações e intercorrências de forma segura</li>
+          </ul>
+          <p class="module__bonus">
+            <strong>Bônus incluídos:</strong><br>
+             Modelo de Consentimento Informado Profissional<br>
+             Checklist Completo de Preenchimento de Prontuário
+          </p>
+          <p class="module__result">
+            <strong>Resultado:</strong> Sua documentação vira sua maior aliada em caso de processo ou denúncia.
+          </p>
+        </div>
+        
+        <!-- Módulo 3 -->
+        <div class="module-card">
+          <div class="module__icon"></div>
+          <h3 class="module__title">MÓDULO 3: Ética, Atendimento Humanizado e Comunicação</h3>
+          <p class="module__subtitle">O que você vai aprender:</p>
+          <ul class="module__list">
+            <li> Comunicação assertiva que previne conflitos e processos</li>
+            <li> Como lidar com pacientes difíceis sem criar riscos jurídicos</li>
+            <li> Sigilo, empatia e ética como estratégia de proteção</li>
+            <li> Atendimento humanizado que reduz reclamações</li>
+          </ul>
+          <p class="module__result">
+            <strong>Resultado:</strong> Você vai transformar a forma como se comunica com pacientes, prevenindo 90% dos conflitos que poderiam virar processos.
+          </p>
+        </div>
+        
+        <!-- Módulo 4 -->
+        <div class="module-card">
+          <div class="module__icon"></div>
+          <h3 class="module__title">MÓDULO 4: Redes Sociais, WhatsApp e LGPD</h3>
+          <p class="module__subtitle">O que você vai aprender:</p>
+          <ul class="module__list">
+            <li> O que pode e o que NÃO pode nas redes sociais (evite denúncias no Conselho)</li>
+            <li> Uso profissional do WhatsApp sem violar LGPD</li>
+            <li> Cuidados com fotos, depoimentos e marketing</li>
+            <li> Como aplicar a LGPD na prática (sem complicação)</li>
+          </ul>
+          <p class="module__bonus">
+            <strong>Bônus incluído:</strong><br>
+             Guia Prático "O Que Pode e Não Pode nas Redes Sociais"
+          </p>
+          <p class="module__result">
+            <strong>Resultado:</strong> Você vai usar as redes sociais para atrair pacientes com segurança, sem medo de denúncias ou processos.
+          </p>
+        </div>
+        
+        <!-- Módulo 5 -->
+        <div class="module-card">
+          <div class="module__icon"></div>
+          <h3 class="module__title">MÓDULO 5: Fiscalizações e Conselhos de Classe</h3>
+          <p class="module__subtitle">O que você vai aprender:</p>
+          <ul class="module__list">
+            <li> Como se preparar para fiscalizações (checklist completo)</li>
+            <li> O que fazer se receber uma denúncia no Conselho</li>
+            <li> Como funciona um processo ético-disciplinar (e como se defender)</li>
+            <li> Cuidados com estrutura física, documentos e equipe</li>
+          </ul>
+          <p class="module__bonus">
+            <strong>Bônus incluído:</strong><br>
+             Roteiro de Preparação para Fiscalizações
+          </p>
+          <p class="module__result">
+            <strong>Resultado:</strong> Você vai saber exatamente como agir em uma fiscalização, sem pânico e sem erros que podem te custar caro.
+          </p>
+        </div>
+        
+        <!-- Módulo 6 -->
+        <div class="module-card">
+          <div class="module__icon"></div>
+          <h3 class="module__title">MÓDULO 6: Contratos, Honorários e Relação com Pacientes</h3>
+          <p class="module__subtitle">O que você vai aprender:</p>
+          <ul class="module__list">
+            <li> Contrato de prestação de serviços que realmente te protege</li>
+            <li> O que não pode faltar no contrato com pacientes</li>
+            <li> Como lidar com cancelamentos, inadimplência e reembolsos</li>
+            <li> Acordo de valores e formas de pagamento sem conflitos</li>
+          </ul>
+          <p class="module__bonus">
+            <strong>Bônus incluído:</strong><br>
+             Modelo de Contrato de Prestação de Serviços Profissional
+          </p>
+          <p class="module__result">
+            <strong>Resultado:</strong> Você vai ter contratos profissionais que protegem você de cancelamentos abusivos, inadimplência e exigências descabidas.
+          </p>
+        </div>
+        
+      </div>
+      
+      <!-- CTA -->
+      <a href="#checkout" class="btn-primary">
+        Quero acesso completo aos 6 módulos
+      </a>
+      
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO 7: GUARANTEE ========== -->
+  <section class="guarantee" id="guarantee">
+    <div class="container">
+      
+      <!-- Linha Decorativa -->
+      <div class="section-divider"></div>
+      
+      <!-- Headline da Seção -->
+      <h2 class="section__headline">
+        Garantia Blindada de 7 Dias - Risco Zero Para Você
+      </h2>
+      
+      <!-- Conteúdo da Garantia -->
+      <div class="guarantee__content">
+        
+        <!-- Ícone de Garantia -->
+        <div class="guarantee__icon"></div>
+        
+        <!-- Texto -->
+        <div class="guarantee__text">
+          <p>
+            Você tem <strong>7 dias completos</strong> para:
+          </p>
+          <ul class="guarantee__list">
+            <li> Acessar o curso</li>
+            <li> Assistir as aulas</li>
+            <li> Baixar todos os materiais (contratos, checklists, guias)</li>
+            <li> Aplicar as estratégias no seu consultório</li>
+          </ul>
+          <p>
+            Se por <strong>QUALQUER motivo</strong> você achar que o curso não é para você, basta enviar um e-mail para [email de suporte] e devolvemos <strong>100% do seu investimento</strong>.
+          </p>
+          <p class="guarantee__emphasis">
+            <strong>Sem perguntas. Sem burocracia. Sem enrolação.</strong>
+          </p>
+        </div>
+        
+      </div>
+      
+      <!-- Frase de Reforço -->
+      <p class="guarantee__reinforcement">
+        <strong>O risco é todo nosso. Você só tem a ganhar.</strong>
+      </p>
+      <p class="guarantee__reinforcement">
+        Ou você aplica o método, se protege juridicamente e evita processos...<br>
+        Ou você pede seu dinheiro de volta e não perde nada.
+      </p>
+      <p class="guarantee__reinforcement guarantee__reinforcement--final">
+        <strong>Justo, não é?</strong>
+      </p>
+      
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO 8: URGENCY/SCARCITY ========== -->
+  <section class="urgency" id="urgency">
+    <div class="container">
+      
+      <!-- Headline da Seção -->
+      <h2 class="section__headline section__headline--urgent">
+         ATENÇÃO: Esta Promoção Expira em 31/01/2026
+      </h2>
+      
+      <!-- Prazo Limitado -->
+      <div class="urgency__content">
+        <h3 class="urgency__subtitle"> PRAZO LIMITADO:</h3>
+        <p class="urgency__text">
+          O desconto de <strong>70% OFF</strong> (de R$ 997 por R$ 297) é válido <strong>APENAS até 31 de janeiro de 2026</strong>.
+        </p>
+        <p class="urgency__text">
+          Depois desta data, o curso volta ao <strong>preço regular de R$ 997,00</strong>.
+        </p>
+      </div>
+      
+      <!-- Contador Regressivo -->
+      <div class="countdown">
+        <p class="countdown__label">A promoção termina em:</p>
+        <div class="countdown__timer" id="countdown-timer">
+          <div class="countdown__block">
+            <span class="countdown__number" id="days">00</span>
+            <span class="countdown__text">Dias</span>
+          </div>
+          <div class="countdown__block">
+            <span class="countdown__number" id="hours">00</span>
+            <span class="countdown__text">Horas</span>
+          </div>
+          <div class="countdown__block">
+            <span class="countdown__number" id="minutes">00</span>
+            <span class="countdown__text">Minutos</span>
+          </div>
+          <div class="countdown__block">
+            <span class="countdown__number" id="seconds">00</span>
+            <span class="countdown__text">Segundos</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Justificativa da Escassez -->
+      <div class="urgency__content">
+        <h3 class="urgency__subtitle"> POR QUE ESTA PROMOÇÃO EXISTE:</h3>
+        <p class="urgency__text">
+          Esta é uma <strong>promoção especial de início de ano</strong> para profissionais da saúde que querem começar 2026 blindados juridicamente.
+        </p>
+        <p class="urgency__text">
+          A Dra. Isabela decidiu abrir esta turma promocional para ajudar o máximo de profissionais possível a se protegerem logo no início do ano - antes que os problemas aconteçam.
+        </p>
+        <p class="urgency__text urgency__text--emphasis">
+          <strong>Mas após 31/01/2026, o investimento volta para R$ 997,00.</strong>
+        </p>
+      </div>
+      
+      <!-- Consequência de Não Agir -->
+      <div class="urgency__content">
+        <h3 class="urgency__subtitle"> CONSEQUÊNCIA DE NÃO AGIR AGORA:</h3>
+        <p class="urgency__text">
+          A cada dia que você adia sua proteção jurídica, você está <strong>exposto a riscos desnecessários</strong>.
+        </p>
+        <ul class="urgency__list">
+          <li>Um único processo de responsabilidade civil pode custar <strong>R$ 50 mil ou mais</strong>.</li>
+          <li>Uma denúncia no Conselho pode resultar em <strong>suspensão da sua atividade</strong>.</li>
+          <li>Uma fiscalização mal conduzida pode gerar <strong>multas e processos ético-disciplinares</strong>.</li>
+        </ul>
+        <p class="urgency__text urgency__text--emphasis">
+          <strong>O investimento de R$ 297 hoje pode te poupar dezenas de milhares de reais no futuro.</strong>
+        </p>
+        <p class="urgency__text">
+          E mais importante: pode te poupar do <strong>desgaste emocional, do estresse e do dano à sua reputação</strong> que um processo causa.
+        </p>
+      </div>
+      
+      <!-- Frase Final -->
+      <p class="urgency__final">
+        <strong>Não deixe para depois. Proteja sua carreira AGORA, enquanto ainda está em tempo.</strong>
+      </p>
+      
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO 9: FAQ ========== -->
+  <section class="faq" id="faq">
+    <div class="container">
+      
+      <!-- Linha Decorativa -->
+      <div class="section-divider"></div>
+      
+      <!-- Headline da Seção -->
+      <h2 class="section__headline">
+        Perguntas Frequentes:
+      </h2>
+      
+      <!-- Lista de FAQs -->
+      <div class="faq__list">
+        
+        <!-- FAQ #1 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span> "Direito é muito difícil, não vou entender nada. É para mim?"</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              <strong>Sim!</strong> O curso foi feito especialmente para quem <strong>NUNCA estudou Direito</strong>.
+            </p>
+            <p>
+              A Dra. Isabela traduziu todo o "juridiquês" para <strong>linguagem acessível e prática</strong>. As aulas são diretas ao ponto, com exemplos reais do dia a dia do consultório.
+            </p>
+            <p>
+              Se você é <strong>médico, dentista, psicólogo, fisioterapeuta, enfermeiro</strong> ou qualquer profissional da saúde, este curso é para você.
+            </p>
+            <p>
+              <strong>Você não precisa ser advogado para se proteger juridicamente.</strong>
+            </p>
+          </div>
+        </div>
+        
+        <!-- FAQ #2 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span> "Não tenho tempo para fazer curso. Quanto tempo preciso dedicar?"</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              As aulas são <strong>diretas ao ponto</strong> e você pode assistir <strong>no seu ritmo</strong>.
+            </p>
+            <p>
+              Com apenas <strong>15 a 20 minutos por dia</strong>, você já consegue aplicar as estratégias no seu consultório.
+            </p>
+            <p>
+              O curso é <strong>100% online</strong> e fica <strong>disponível para sempre</strong>. Você assiste quando e onde quiser - no intervalo entre consultas, à noite em casa, no fim de semana.
+            </p>
+            <p>
+              <strong>Não existe desculpa de "falta de tempo" quando sua carreira está em risco.</strong>
+            </p>
+          </div>
+        </div>
+        
+        <!-- FAQ #3 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span> "Já tenho meu advogado. Por que preciso desse curso?"</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Seu advogado é <strong>essencial</strong>, mas ele <strong>não está no seu consultório todo dia</strong>.
+            </p>
+            <p>
+              Os erros acontecem na <strong>linha de frente</strong>:
+            </p>
+            <ul>
+              <li>No preenchimento do prontuário</li>
+              <li>Na conversa com o paciente</li>
+              <li>No post nas redes sociais</li>
+              <li>Na resposta no WhatsApp</li>
+              <li>No atendimento de um paciente difícil</li>
+            </ul>
+            <p>
+              <strong>Este curso te ensina a se proteger ANTES que o problema chegue ao advogado.</strong>
+            </p>
+            <p>
+              Quando o processo já está instaurado, muitas vezes é <strong>tarde demais</strong> (e muito mais caro).
+            </p>
+          </div>
+        </div>
+        
+        <!-- FAQ #4 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span> "Nunca fui processado. Preciso me preocupar com isso?"</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              <strong>Parabéns!</strong> Mas o melhor momento para se proteger é <strong>AGORA</strong>, antes que a notificação chegue.
+            </p>
+            <p>
+              Pense assim: você usa cinto de segurança porque <strong>já bateu o carro</strong>? Não. Você usa porque quer <strong>evitar</strong> o acidente.
+            </p>
+            <p>
+              <strong>Prevenção é sempre mais barata (e menos estressante) que reparação.</strong>
+            </p>
+            <p>
+              E a verdade é: <strong>você pode estar cometendo erros jurídicos agora sem saber</strong>. Um prontuário mal feito, um consentimento genérico, uma comunicação inadequada - tudo isso pode virar processo no futuro.
+            </p>
+            <p>
+              <strong>Não espere o problema acontecer para agir.</strong>
+            </p>
+          </div>
+        </div>
+        
+        <!-- FAQ #5 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span> "Posso usar modelos prontos da internet?"</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              <strong>NÃO!</strong> E aqui está o porquê:
+            </p>
+            <ul>
+              <li> Modelos genéricos da internet <strong>não consideram as especificidades da sua área</strong></li>
+              <li> Não estão <strong>atualizados com a LGPD</strong></li>
+              <li> Podem até <strong>te prejudicar</strong> em uma disputa judicial</li>
+              <li> Não têm validade jurídica comprovada</li>
+            </ul>
+            <p>
+              Os modelos do curso são:
+            </p>
+            <ul>
+              <li> <strong>Profissionais</strong> (feitos por advogada especialista)</li>
+              <li> <strong>Personalizáveis</strong> para sua especialidade</li>
+              <li> <strong>Atualizados</strong> com a legislação vigente</li>
+              <li> <strong>Juridicamente válidos</strong> e testados na prática</li>
+            </ul>
+            <p>
+              <strong>Não arrisque sua carreira com documentos genéricos.</strong>
+            </p>
+          </div>
+        </div>
+        
+        <!-- FAQ #6 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span> "Quanto tempo tenho acesso ao curso?"</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              <strong>Acesso vitalício!</strong>
+            </p>
+            <p>
+              Você pode assistir <strong>quantas vezes quiser</strong>, no seu ritmo, e sempre que precisar revisar algum conteúdo.
+            </p>
+            <p>
+              Comprou hoje? Tem acesso <strong>para sempre</strong>.
+            </p>
+          </div>
+        </div>
+        
+        <!-- FAQ #7 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span> "E se eu não gostar do curso?"</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              Você tem <strong>7 dias de garantia incondicional</strong>.
+            </p>
+            <p>
+              Se não gostar, devolvemos <strong>100% do seu dinheiro</strong>.
+            </p>
+            <p>
+              <strong>Sem perguntas. Sem burocracia. Sem enrolação.</strong>
+            </p>
+            <p>
+              O risco é <strong>zero</strong> para você.
+            </p>
+          </div>
+        </div>
+        
+        <!-- FAQ #8 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <span> "O curso serve para minha especialidade?"</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              <strong>Sim!</strong> O método é aplicável para <strong>TODAS as especialidades da saúde</strong>:
+            </p>
+            <ul>
+              <li> Medicina (todas as especialidades)</li>
+              <li> Odontologia</li>
+              <li> Psicologia</li>
+              <li> Fisioterapia</li>
+              <li> Enfermagem</li>
+              <li> Nutrição</li>
+              <li> Fonoaudiologia</li>
+              <li> E demais profissões da área da saúde</li>
+            </ul>
+            <p>
+              <strong>Os princípios de blindagem jurídica são universais.</strong>
+            </p>
+            <p>
+              O que muda é apenas a aplicação específica - e a Dra. Isabela ensina como adaptar para sua realidade.
+            </p>
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO 10: FINAL CTA ========== -->
+  <section class="final-cta" id="checkout">
+    <div class="container">
+      
+      <!-- Headline da Seção -->
+      <h2 class="section__headline section__headline--white">
+        Está na Hora de Atuar com Segurança e Dormir Tranquilo
+      </h2>
+      
+      <!-- Resumo da Oferta -->
+      <p class="final-cta__summary">
+        Garanta agora o <strong>Curso Completo Blindagem Jurídica na Saúde</strong> + Todos os Bônus (Contratos Profissionais, Checklists Estratégicos e Modelos de Documentos) por apenas:
+      </p>
+      
+      <!-- Preço Final -->
+      <div class="final-cta__pricing">
+        <p class="final-cta__price-main">12x de R$ 24,75 sem juros</p>
+        <p class="final-cta__price-alt">ou R$ 297,00 à vista</p>
+        <p class="final-cta__discount">70% OFF - Válido APENAS até 31/01/2026</p>
+      </div>
+      
+      <!-- CTA Principal -->
+      <a href="https://pay.hotmart.com/SEU-LINK-AQUI" class="btn-primary btn-primary--large">
+        QUERO ME BLINDAR AGORA COM 70% DE DESCONTO
+      </a>
+      
+      <p class="final-cta__subtext">Acesso imediato após confirmação do pagamento</p>
+      
+      <!-- Reforço de Garantia -->
+      <div class="final-cta__guarantees">
+        <span class="badge badge--white"> Garantia incondicional de 7 dias</span>
+        <span class="badge badge--white"> Acesso vitalício ao curso</span>
+        <span class="badge badge--white"> Risco zero para você</span>
+        <span class="badge badge--white"> Suporte por e-mail</span>
+      </div>
+      
+      <!-- Frase Final de Urgência -->
+      <p class="final-cta__urgency">
+         <strong>Promoção válida apenas até 31/01/2026.</strong>
+      </p>
+      <p class="final-cta__urgency">
+        Não perca esta oportunidade de começar 2026 protegido juridicamente.
+      </p>
+      <p class="final-cta__urgency final-cta__urgency--emphasis">
+        <strong>Sua carreira merece essa proteção.</strong>
+      </p>
+      
+      <!-- Última Frase Emocional -->
+      <p class="final-cta__emotional">
+        <em>"A cada dia que você adia, você está exposto. A cada dia que você se protege, você dorme mais tranquilo. A escolha é sua."</em>
+      </p>
+      
+    </div>
+  </section>
+
+  <!-- ========== SEÇÃO 11: FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      
+      <!-- Logo/Nome -->
+      <div class="footer__logo">
+        <h3>Dra. Isabela Hamú</h3>
+        <p>Direito Médico e da Saúde</p>
+      </div>
+      
+      <!-- Links -->
+      <div class="footer__links">
+        <a href="#politica-privacidade">Política de Privacidade</a>
+        <span>|</span>
+        <a href="#termos-uso">Termos de Uso</a>
+        <span>|</span>
+        <a href="#contato">Contato</a>
+      </div>
+      
+      <!-- Suporte -->
+      <div class="footer__support">
+        <p><strong>Suporte:</strong></p>
+        <p>E-mail: <a href="mailto:suporte@isabelahamu.com.br">suporte@isabelahamu.com.br</a></p>
+      </div>
+      
+      <!-- Disclaimer -->
+      <div class="footer__disclaimer">
+        <p>
+          <em>Este curso oferece orientações gerais sobre Direito Médico Preventivo e não substitui consultoria jurídica individualizada. Para questões específicas do seu caso, consulte um advogado especializado.</em>
+        </p>
+      </div>
+      
+      <!-- Copyright -->
+      <div class="footer__copyright">
+        <p>Copyright © 2026 - Isabela Hamú - Todos os direitos reservados</p>
+      </div>
+      
+    </div>
+  </footer>
+
+  <!-- ========== STICKY CTA BAR (Mobile) ========== -->
+  <div class="sticky-cta-bar">
+    <a href="#checkout" class="btn-primary btn-primary--sticky">
+      Garantir Vaga com 70% OFF
+    </a>
+  </div>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    // Contador Regressivo
+    function updateCountdown() {
+      const endDate = new Date('2026-01-31T23:59:59').getTime();
+      const now = new Date().getTime();
+      const distance = endDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+      if (distance &lt; 0) {
+        document.getElementById('countdown-timer').innerHTML = '<p>Promoção encerrada</p>';
+      }
+    }
+
+    // Atualizar a cada segundo
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        
+        // Fechar todos os itens
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        
+        // Abrir o item clicado (se não estava ativo)
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Smooth Scroll para âncoras
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
