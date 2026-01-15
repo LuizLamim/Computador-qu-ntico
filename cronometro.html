@@ -4,3 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oferta Especial</title>
+
+    <style>
+        /* Estilos do Cronômetro */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .offer-banner {
+            background-color: #d32f2f; /* Vermelho para urgência */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .offer-title {
+            margin: 0 0 15px 0;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        #countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .time-box {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 10px 15px;
+            border-radius: 8px;
+            min-width: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .time-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .time-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        /* Mensagem quando o tempo acaba */
+        #expired-message {
+            display: none; /* Escondido por padrão */
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+        }
+    </style>
