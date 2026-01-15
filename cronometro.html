@@ -93,3 +93,45 @@
 
         <div id="expired-message">A OFERTA ENCERROU!</div>
     </div>
+
+    <script>
+        // --- CONFIGURAÇÃO ---
+        // Defina aqui a data limite da sua promoção (Ano, Mês-1, Dia, Hora, Minuto, Segundo)
+        // Nota: Mês começa em 0 (Janeiro) e vai até 11 (Dezembro)
+        // Exemplo: 20 de Fevereiro de 2026 às 23:59:59
+        const targetDate = new Date(2026, 1, 20, 23, 59, 59).getTime();
+
+        // Atualiza o contador a cada 1 segundo
+        const timerInterval = setInterval(function() {
+
+            // Pega a data e hora atuais
+            const now = new Date().getTime();
+
+            // Encontra a distância entre agora e a data alvo
+            const distance = targetDate - now;
+
+            // Cálculos de tempo para dias, horas, minutos e segundos
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Exibe o resultado nos elementos HTML
+            // .toString().padStart(2, '0') garante que números menores que 10 tenham um zero na frente (ex: 09)
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+            // Se a contagem terminar, escreve um texto ou executa uma ação
+            if (distance < 0) {
+                clearInterval(timerInterval);
+                document.getElementById("countdown").style.display = "none";
+                document.getElementById("expired-message").style.display = "block";
+                document.querySelector(".offer-title").style.display = "none";
+                
+                // Opcional: Redirecionar para outra página
+                // window.location.href = "https://seusite.com/oferta-encerrada";
+            }
+        }, 1000);
+    </script>
