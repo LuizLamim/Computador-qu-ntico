@@ -11,3 +11,17 @@
   },
   "interesses": ["tecnologia", "livros", "fitness"]
 }
+
+{
+  "_id": "prod_550",
+  "nome": "Notebook Gamer X",
+  "preco": 4500.00,
+  "categoria": "Eletrônicos",
+  "em_estoque": true,
+  "detalhes": {
+    "ram": "16GB",
+    "processador": "i7",
+    "ssd": "512GB"
+  },
+  "tags": ["computador", "gaming", "promoção"]
+}
