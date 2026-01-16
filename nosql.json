@@ -25,3 +25,70 @@
   },
   "tags": ["computador", "gaming", "promoção"]
 }
+
+{
+  "nome_do_banco": "LojaDB",
+  "data_criacao": "2023-10-27",
+  "colecoes": {
+    "usuarios": [
+      {
+        "_id": "user_001",
+        "nome": "Ana Silva",
+        "email": "ana@email.com",
+        "vip": true,
+        "endereco": {
+          "rua": "Av. Paulista, 1000",
+          "cidade": "São Paulo",
+          "estado": "SP",
+          "cep": "01310-100"
+        },
+        "interesses": ["tecnologia", "livros", "fitness"]
+      },
+      {
+        "_id": "user_002",
+        "nome": "Carlos Souza",
+        "email": "carlos@email.com",
+        "vip": false,
+        "interesses": ["futebol"]
+      }
+    ],
+    "produtos": [
+      {
+        "_id": "prod_550",
+        "nome": "Notebook Gamer X",
+        "preco": 4500.00,
+        "categoria": "Eletrônicos",
+        "em_estoque": true,
+        "detalhes": {
+          "ram": "16GB",
+          "processador": "i7",
+          "ssd": "512GB"
+        },
+        "tags": ["computador", "gaming", "promoção"]
+      },
+      {
+        "_id": "prod_551",
+        "nome": "Camiseta Geek",
+        "preco": 59.90,
+        "categoria": "Vestuário",
+        "em_estoque": true,
+        "tamanhos": ["P", "M", "G"],
+        "tags": ["algodão", "estampada"]
+      }
+    ],
+    "pedidos": [
+      {
+        "_id": "order_999",
+        "usuario_id": "user_001",
+        "status": "enviado",
+        "total": 4500.00,
+        "itens": [
+          {
+            "produto_id": "prod_550",
+            "qtd": 1
+          }
+        ]
+      }
+    ]
+  }
+}
