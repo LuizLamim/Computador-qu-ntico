@@ -1,0 +1,13 @@
+{
+  "_id": "user_001",
+  "nome": "Ana Silva",
+  "email": "ana@email.com",
+  "vip": true,
+  "endereco": {
+    "rua": "Av. Paulista, 1000",
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "cep": "01310-100"
+  },
+  "interesses": ["tecnologia", "livros", "fitness"]
+}
