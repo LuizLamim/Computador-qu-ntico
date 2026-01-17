@@ -121,3 +121,33 @@ CSS
 .faq-item.active .faq-icon {
     transform: rotate(45deg); /* Gira o + para virar um x */
 }
+
+
+
+<script>
+    // Seleciona todas as perguntas
+    const questions = document.querySelectorAll('.faq-question');
+
+    questions.forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            
+            // Verifica se este item já está ativo
+            const isActive = item.classList.contains('active');
+
+            // (Opcional) Fecha todos os outros itens para deixar só um aberto por vez
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.faq-answer').style.maxHeight = null;
+            });
+
+            // Se não estava ativo, abre ele
+            if (!isActive) {
+                item.classList.add('active');
+                // Define a altura exata do conteúdo para a animação funcionar
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        });
+    });
+</script>
