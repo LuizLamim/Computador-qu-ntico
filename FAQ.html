@@ -52,3 +52,72 @@ HTML
         </div>
     </div>
 </section>
+
+
+
+/* Container Principal */
+.faq-container {
+    max-width: 800px; /* Largura máxima para não ficar esticado */
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif; /* Use a fonte do seu site aqui */
+}
+
+.faq-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #333; /* Cor do título */
+}
+
+/* Item individual */
+.faq-item {
+    border-bottom: 1px solid #ddd; /* Linha divisória fina */
+    margin-bottom: 10px;
+}
+
+/* O botão da pergunta */
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 20px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: #0056b3; /* Cor ao passar o mouse (ajuste para a cor da sua marca) */
+}
+
+/* O ícone (+ / -) */
+.faq-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* A área da resposta (escondida inicialmente) */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out; /* A mágica da animação */
+}
+
+/* Conteúdo interno da resposta */
+.answer-content {
+    padding-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Classe que o JavaScript vai adicionar quando estiver aberto */
+.faq-item.active .faq-icon {
+    transform: rotate(45deg); /* Gira o + para virar um x */
+}
