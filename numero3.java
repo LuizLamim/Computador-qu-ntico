@@ -20,3 +20,12 @@ public class SomaTresNumeros {
 
         // 5. Realiza a soma
         int soma = numero1 + numero2 + numero3;
+
+        // 6. Exibe o resultado
+        System.out.println("----------------------------------------");
+        System.out.println("A soma de " + numero1 + " + " + numero2 + " + " + numero3 + " é igual a: " + soma);
+        
+        // Fecha o leitor (boa prática)
+        leitor.close();
+    }
+}
