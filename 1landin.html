@@ -21,7 +21,1583 @@
   
   <!-- CSS será linkado na próxima etapa -->
   <!-- <link rel="stylesheet" href="style.css"> -->
-   
+
+  <style>
+    /* 
+   BLINDAGEM JURÍDICA NA SAÚDE - CSS (PALETA ATUALIZADA)
+   Landing Page de Alta Conversão
+   Paleta: "O Escudo Moderno" - Medical Tech/Premium
+*/
+
+/* ========== 1. VARIÁVEIS CSS (Design Tokens) - NOVA PALETA ========== */
+:root {
+  /* Cores - Paleta "O Escudo Moderno" */
+  --color-primary: #0F172A;           /* Azul Noturno - Textos principais, rodapé */
+  --color-secondary: #1E40AF;         /* Azul Blindagem - Cor primária, ícones */
+  --color-accent: #06B6D4;            /* Ciano Saúde - CTAs principais, destaques */
+  --color-success: #10B981;           /* Verde Sucesso - Mantido para badges */
+  --color-danger: #EF4444;            /* Vermelho Urgência - Mantido */
+  --color-neutral-light: #F8FAFC;     /* Branco Gelo - Fundo principal */
+  --color-neutral-dark: #0F172A;      /* Azul Noturno - Textos body */
+  --color-white: #FFFFFF;             /* Branco Puro */
+  --color-gold: #EAB308;              /* Ouro Soft - Escassez, garantia */
+  
+  /* Gradientes Estratégicos */
+  --color-gradient-hero: linear-gradient(135deg, #1E40AF 0%, #06B6D4 100%);
+  --color-gradient-cta: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+  --color-gradient-icon: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+  --color-gradient-accent: linear-gradient(90deg, #1E40AF 0%, #06B6D4 100%);
+  
+  /* Tipografia */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Tamanhos de Fonte - Desktop */
+  --font-size-h1: 56px;
+  --font-size-h2: 42px;
+  --font-size-h3: 32px;
+  --font-size-h4: 24px;
+  --font-size-body: 18px;
+  --font-size-body-small: 16px;
+  --font-size-small: 14px;
+  
+  /* Espaçamentos */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 60px;
+  --spacing-3xl: 80px;
+  --spacing-4xl: 100px;
+  
+  /* Container */
+  --container-max-width: 1200px;
+  --container-padding: 40px;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 50px;
+  
+  /* Sombras */
+  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 10px 40px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 20px 60px rgba(15, 23, 42, 0.15);
+  --shadow-cta: 0 8px 24px rgba(6, 182, 212, 0.4);
+  --shadow-cta-hover: 0 12px 32px rgba(6, 182, 212, 0.5);
+  
+  /* Transições */
+  --transition-base: all 0.3s ease;
+}
+
+/* ========== 2. RESET/BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: 1.7;
+  color: var(--color-neutral-dark);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ========== 3. TIPOGRAFIA GLOBAL ========== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  letter-spacing: -0.3px;
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+/* ========== 4. LAYOUT GLOBAL ========== */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+section {
+  padding: var(--spacing-4xl) 0;
+}
+
+/* ========== 5. COMPONENTES REUTILIZÁVEIS ========== */
+
+/* ----- Botão Primário (CTA Principal) - CIANO SAÚDE ----- */
+.btn-primary {
+  display: inline-block;
+  background: var(--color-gradient-cta);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 20px 48px;
+  border-radius: var(--radius-pill);
+  border: none;
+  box-shadow: var(--shadow-cta);
+  cursor: pointer;
+  transition: var(--transition-base);
+  text-align: center;
+  animation: pulse 2s infinite;
+}
+
+.btn-primary:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-cta-hover);
+}
+
+.btn-primary--large {
+  font-size: 20px;
+  padding: 24px 56px;
+}
+
+.btn-primary--sticky {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: var(--shadow-cta);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(6, 182, 212, 0.6);
+  }
+}
+
+/* ----- Botão Secundário - AZUL BLINDAGEM ----- */
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--color-secondary);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 16px 32px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-secondary);
+  cursor: pointer;
+  transition: var(--transition-base);
+  text-align: center;
+}
+
+.btn-secondary:hover {
+  background: var(--color-secondary);
+  color: var(--color-white);
+}
+
+/* ----- Badge ----- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: rgba(6, 182, 212, 0.1);
+  border: 2px solid var(--color-accent);
+  border-radius: 24px;
+  padding: 8px 16px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--font-size-small);
+  color: var(--color-secondary);
+  margin: 4px;
+}
+
+.badge--large {
+  font-size: var(--font-size-body-small);
+  padding: 10px 20px;
+}
+
+.badge--white {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+/* ----- Section Divider (Linha Decorativa) - GRADIENTE ----- */
+.section-divider {
+  height: 4px;
+  width: 120px;
+  background: var(--color-gradient-accent);
+  margin: 0 auto var(--spacing-lg);
+  border-radius: 2px;
+}
+
+/* ----- Section Headlines ----- */
+.section__headline {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.section__headline--white {
+  color: var(--color-white);
+}
+
+.section__headline--urgent {
+  color: var(--color-danger);
+}
+
+.section__subheadline {
+  text-align: center;
+  font-size: var(--font-size-body);
+  color: var(--color-neutral-dark);
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.section__subheadline-large {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-md);
+}
+
+/* ----- Card Base ----- */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ========== 6. SEÇÕES ESPECÍFICAS ========== */
+
+/* ----- SEÇÃO 1: HERO - GRADIENTE HERO ----- */
+.hero {
+  background: var(--color-gradient-hero);
+  padding: var(--spacing-3xl) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Opcional: Overlay sutil para profundidade */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.1);
+  z-index: 0;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.urgency-badge {
+  display: inline-block;
+  background: var(--color-gold);
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+  animation: shake 3s infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+.hero__headline {
+  max-width: 900px;
+  margin: 0 auto var(--spacing-md);
+  color: var(--color-white);
+}
+
+.hero__subheadline {
+  font-size: 20px;
+  color: var(--color-white);
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl);
+  opacity: 0.95;
+}
+
+.hero__pricing {
+  margin-bottom: var(--spacing-xl);
+}
+
+.price-old {
+  display: block;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: line-through;
+  margin-bottom: var(--spacing-xs);
+}
+
+.price-new {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-xs);
+}
+
+.price-highlight {
+  display: block;
+  font-weight: 600;
+  color: var(--color-gold);
+  font-size: 16px;
+}
+
+.hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-xl);
+}
+
+/* ----- SEÇÃO 2: PROBLEM - BRANCO GELO ----- */
+.problem {
+  background: var(--color-neutral-light);
+}
+
+.problem__list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.problem__item {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.problem__icon {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-gradient-icon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: var(--color-white);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.problem__content {
+  flex: 1;
+}
+
+.problem__title {
+  font-size: 22px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.problem__text {
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-neutral-dark);
+}
+
+.problem__consequence {
+  color: var(--color-danger);
+  font-weight: 500;
+}
+
+.problem__transition {
+  text-align: center;
+  font-size: 22px;
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----- SEÇÃO 3: SOLUTION ----- */
+.solution {
+  background: var(--color-white);
+}
+
+.solution__pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.pillar-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+  text-align: center;
+  border: 2px solid transparent;
+}
+
+.pillar-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent);
+}
+
+.pillar__icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-md);
+  border-radius: 50%;
+  background: var(--color-gradient-icon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: var(--color-white);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.pillar__title {
+  font-size: 20px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.pillar__subtitle {
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+.pillar__text {
+  text-align: left;
+  font-size: var(--font-size-body-small);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-neutral-dark);
+}
+
+.pillar__result {
+  text-align: left;
+  font-size: var(--font-size-body-small);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.solution__authority {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-xl);
+  background: var(--color-neutral-light);
+  border-radius: var(--radius-lg);
+}
+
+.authority__image {
+  flex-shrink: 0;
+}
+
+.image-placeholder {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--color-gradient-hero);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white);
+  font-weight: 600;
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.authority__content {
+  flex: 1;
+}
+
+.authority__title {
+  font-size: 28px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.authority__text {
+  font-size: var(--font-size-body-small);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-neutral-dark);
+}
+
+.authority__description {
+  font-size: var(--font-size-body-small);
+  color: var(--color-neutral-dark);
+}
+
+.solution .btn-secondary {
+  display: block;
+  margin: var(--spacing-xl) auto 0;
+  max-width: 400px;
+}
+
+/* ----- SEÇÃO 4: VALUE STACK - AZUL NOTURNO ----- */
+.value-stack {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.value__list {
+  max-width: 900px;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.value-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.value-item:last-child {
+  border-bottom: none;
+}
+
+.value-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: rgba(6, 182, 212, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+.value-content h4 {
+  color: var(--color-white);
+  font-size: 20px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.value-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-body-small);
+}
+
+.value-sublist {
+  list-style: none;
+  margin: var(--spacing-md) 0;
+}
+
+.value-sublist li {
+  padding: 4px 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-body-small);
+}
+
+.value-price {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: var(--spacing-sm);
+}
+
+.value__calculation {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
+  max-width: 700px;
+  margin: var(--spacing-xl) auto;
+}
+
+.calc-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) 0;
+  font-size: var(--font-size-body-small);
+}
+
+.calc-value {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.calc-divider {
+  height: 2px;
+  background: var(--color-accent);
+  margin: var(--spacing-md) 0;
+}
+
+.calc-line--highlight {
+  font-size: 18px;
+  font-weight: 600;
+  padding: var(--spacing-md) 0;
+}
+
+.calc-value-main {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-align: right;
+  line-height: 1.3;
+}
+
+.calc-line--savings {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.calc-savings {
+  font-size: 32px;
+  color: var(--color-accent);
+}
+
+.value__justification {
+  text-align: center;
+  max-width: 800px;
+  margin: var(--spacing-md) auto;
+  font-size: var(--font-size-body-small);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.value__justification--emphasis {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-top: var(--spacing-lg);
+}
+
+.value-stack .btn-primary {
+  display: block;
+  margin: var(--spacing-xl) auto var(--spacing-md);
+  max-width: 600px;
+}
+
+.value__cta-subtext {
+  text-align: center;
+  font-size: var(--font-size-small);
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+}
+
+/* ----- SEÇÃO 5: SOCIAL PROOF ----- */
+.social-proof {
+  background: var(--color-white);
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.testimonial-card {
+  background: var(--color-white);
+  border-left: 4px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  transition: var(--transition-base);
+}
+
+.testimonial-card::before {
+  content: """;
+  font-size: 80px;
+  color: rgba(6, 182, 212, 0.15);
+  font-family: Georgia, serif;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  line-height: 1;
+  z-index: 0;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-left-width: 6px;
+}
+
+.testimonial__title {
+  font-size: 18px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial__text {
+  font-size: var(--font-size-body-small);
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+  z-index: 1;
+  color: var(--color-neutral-dark);
+}
+
+.testimonial__highlight {
+  font-size: var(--font-size-body-small);
+  color: var(--color-secondary);
+  font-weight: 600;
+  margin-top: var(--spacing-md);
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial__author {
+  font-size: var(--font-size-small);
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: var(--spacing-md);
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.credibility-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-xl);
+}
+
+/* ----- SEÇÃO 6: COURSE BREAKDOWN - BRANCO GELO ----- */
+.course-breakdown {
+  background: var(--color-neutral-light);
+}
+
+.modules {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.module-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-base);
+  border: 2px solid transparent;
+}
+
+.module-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent);
+}
+
+.module__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-gradient-icon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.module__title {
+  font-size: 20px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.module__subtitle {
+  font-weight: 600;
+  color: var(--color-neutral-dark);
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-body-small);
+}
+
+.module__list {
+  list-style: none;
+  margin: var(--spacing-md) 0;
+}
+
+.module__list li {
+  padding: 6px 0;
+  font-size: var(--font-size-body-small);
+  color: var(--color-neutral-dark);
+}
+
+.module__bonus {
+  background: rgba(6, 182, 212, 0.1);
+  border-left: 3px solid var(--color-accent);
+  padding: var(--spacing-sm);
+  margin: var(--spacing-md) 0;
+  font-size: var(--font-size-body-small);
+  border-radius: 4px;
+  color: var(--color-neutral-dark);
+}
+
+.module__result {
+  font-size: var(--font-size-body-small);
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-top: var(--spacing-md);
+}
+
+.course-breakdown .btn-primary {
+  display: block;
+  margin: var(--spacing-xl) auto 0;
+  max-width: 500px;
+}
+
+/* ----- SEÇÃO 7: GUARANTEE ----- */
+.guarantee {
+  background: var(--color-white);
+}
+
+.guarantee__content {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xl);
+  max-width: 900px;
+  margin: var(--spacing-xl) auto;
+  padding: var(--spacing-xl);
+  background: var(--color-neutral-light);
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--color-success);
+}
+
+.guarantee__icon {
+  font-size: 80px;
+  flex-shrink: 0;
+}
+
+.guarantee__text {
+  flex: 1;
+}
+
+.guarantee__list {
+  list-style: none;
+  margin: var(--spacing-md) 0;
+}
+
+.guarantee__list li {
+  padding: 6px 0;
+  font-size: var(--font-size-body);
+  color: var(--color-neutral-dark);
+}
+
+.guarantee__emphasis {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: var(--spacing-md);
+}
+
+.guarantee__reinforcement {
+  text-align: center;
+  font-size: 20px;
+  max-width: 700px;
+  margin: var(--spacing-lg) auto;
+  color: var(--color-neutral-dark);
+}
+
+.guarantee__reinforcement--final {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+/* ----- SEÇÃO 8: URGENCY/SCARCITY ----- */
+.urgency {
+  background: rgba(234, 179, 8, 0.1);
+  border-top: 4px solid var(--color-gold);
+  border-bottom: 4px solid var(--color-gold);
+}
+
+.urgency__content {
+  max-width: 800px;
+  margin: var(--spacing-xl) auto;
+}
+
+.urgency__subtitle {
+  font-size: 24px;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.urgency__text {
+  font-size: var(--font-size-body);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+  color: var(--color-neutral-dark);
+}
+
+.urgency__text--emphasis {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-danger);
+}
+
+.urgency__list {
+  list-style: none;
+  margin: var(--spacing-md) 0;
+  text-align: left;
+}
+
+.urgency__list li {
+  padding: var(--spacing-sm) 0;
+  font-size: var(--font-size-body);
+  color: var(--color-neutral-dark);
+}
+
+.urgency__final {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-danger);
+  margin-top: var(--spacing-xl);
+}
+
+/* Contador Regressivo - OURO SOFT */
+.countdown {
+  max-width: 700px;
+  margin: var(--spacing-xl) auto;
+  text-align: center;
+}
+
+.countdown__label {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.countdown__timer {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  background: var(--color-white);
+  border: 3px solid var(--color-gold);
+  border-radius: var(--radius-md);
+}
+
+.countdown__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: var(--color-gold);
+  color: var(--color-primary);
+  border-radius: var(--radius-sm);
+}
+
+.countdown__number {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.countdown__text {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-top: 4px;
+  letter-spacing: 1px;
+}
+
+/* ----- SEÇÃO 9: FAQ ----- */
+.faq {
+  background: var(--color-white);
+}
+
+.faq__list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--color-neutral-light);
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  cursor: pointer;
+  transition: var(--transition-base);
+}
+
+.faq-item.active {
+  background: var(--color-white);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 18px;
+}
+
+.faq-icon {
+  font-size: 24px;
+  color: var(--color-accent);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  margin-left: var(--spacing-md);
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  color: var(--color-neutral-dark);
+  line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 1000px;
+  margin-top: var(--spacing-md);
+}
+
+.faq-answer p {
+  margin-bottom: var(--spacing-sm);
+  font-size: var(--font-size-body-small);
+}
+
+.faq-answer ul {
+  list-style: none;
+  margin: var(--spacing-sm) 0;
+}
+
+.faq-answer ul li {
+  padding: 4px 0;
+  font-size: var(--font-size-body-small);
+}
+
+/* ----- SEÇÃO 10: FINAL CTA - AZUL NOTURNO ----- */
+.final-cta {
+  background: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+}
+
+.final-cta__summary {
+  font-size: 20px;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.final-cta__pricing {
+  margin: var(--spacing-xl) 0;
+}
+
+.final-cta__price-main {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-sm);
+}
+
+.final-cta__price-alt {
+  font-size: 24px;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+}
+
+.final-cta__discount {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-gold);
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 24px;
+}
+
+.final-cta .btn-primary {
+  margin: var(--spacing-xl) auto var(--spacing-md);
+  max-width: 700px;
+}
+
+.final-cta__subtext {
+  font-size: var(--font-size-small);
+  color: rgba(255, 255, 255, 0.8);
+  font-style: 
+
+  /* CONTINUAÇÃO DO CSS - PARTE FINAL QUE FALTOU */
+
+  font-style: italic;
+}
+
+.final-cta__guarantees {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-xl) 0;
+}
+
+.final-cta__urgency {
+  font-size: 18px;
+  margin: var(--spacing-md) auto;
+  max-width: 700px;
+}
+
+.final-cta__urgency--emphasis {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.final-cta__emotional {
+  font-size: 20px;
+  font-style: italic;
+  color: var(--color-accent);
+  margin-top: var(--spacing-xl);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----- SEÇÃO 11: FOOTER - AZUL NOTURNO ----- */
+.footer {
+  background: var(--color-neutral-dark);
+  color: rgba(255, 255, 255, 0.8);
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  text-align: center;
+}
+
+.footer__logo h3 {
+  color: var(--color-white);
+  font-size: 24px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.footer__logo p {
+  color: var(--color-accent);
+  font-size: var(--font-size-body-small);
+  margin-bottom: var(--spacing-lg);
+}
+
+.footer__links {
+  margin: var(--spacing-lg) 0;
+  font-size: var(--font-size-small);
+}
+
+.footer__links a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.3s ease;
+  margin: 0 var(--spacing-xs);
+}
+
+.footer__links a:hover {
+  color: var(--color-accent);
+}
+
+.footer__support {
+  margin: var(--spacing-lg) 0;
+}
+
+.footer__support p {
+  font-size: var(--font-size-small);
+  margin-bottom: var(--spacing-xs);
+}
+
+.footer__support a {
+  color: var(--color-accent);
+}
+
+.footer__disclaimer {
+  max-width: 800px;
+  margin: var(--spacing-lg) auto;
+  font-size: var(--font-size-small);
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+}
+
+.footer__copyright {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: var(--font-size-small);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ----- STICKY CTA BAR (Mobile) ----- */
+.sticky-cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-sm);
+  z-index: 1000;
+  display: none;
+}
+
+/* ========== 7. RESPONSIVIDADE (Media Queries) ========== */
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) {
+  :root {
+    --font-size-h1: 42px;
+    --font-size-h2: 36px;
+    --font-size-h3: 28px;
+    --font-size-h4: 22px;
+    --container-padding: 30px;
+    --spacing-4xl: 60px;
+  }
+
+  .solution__pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .modules {
+    grid-template-columns: 1fr;
+  }
+
+  .solution__authority {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .countdown__timer {
+    gap: var(--spacing-sm);
+  }
+
+  .countdown__block {
+    width: 80px;
+    height: 80px;
+  }
+
+  .countdown__number {
+    font-size: 28px;
+  }
+}
+
+/* Mobile (até 767px) */
+@media (max-width: 767px) {
+  :root {
+    --font-size-h1: 36px;
+    --font-size-h2: 28px;
+    --font-size-h3: 24px;
+    --font-size-h4: 20px;
+    --font-size-body: 16px;
+    --font-size-body-small: 14px;
+    --container-padding: 20px;
+    --spacing-4xl: 40px;
+    --spacing-3xl: 40px;
+    --spacing-2xl: 32px;
+  }
+
+  section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .hero__headline {
+    font-size: 32px;
+  }
+
+  .hero__subheadline {
+    font-size: 18px;
+  }
+
+  .price-new {
+    font-size: 28px;
+  }
+
+  .hero__badges {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary {
+    font-size: 16px;
+    padding: 18px 32px;
+  }
+
+  .btn-primary--large {
+    font-size: 18px;
+    padding: 20px 40px;
+  }
+
+  .problem__item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .problem__icon {
+    margin: 0 auto var(--spacing-md);
+  }
+
+  .solution__pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .pillar__text,
+  .pillar__result {
+    text-align: center;
+  }
+
+  .solution__authority {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-placeholder {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .value-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .value-icon {
+    margin: 0 auto var(--spacing-sm);
+  }
+
+  .calc-line {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    text-align: center;
+  }
+
+  .calc-value-main {
+    text-align: center;
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .modules {
+    grid-template-columns: 1fr;
+  }
+
+  .guarantee__content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .guarantee__icon {
+    margin: 0 auto;
+  }
+
+  .countdown__timer {
+    gap: 8px;
+  }
+
+  .countdown__block {
+    width: 70px;
+    height: 70px;
+  }
+
+  .countdown__number {
+    font-size: 24px;
+  }
+
+  .countdown__text {
+    font-size: 10px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+  }
+
+  .final-cta__price-main {
+    font-size: 32px;
+  }
+
+  .final-cta__price-alt {
+    font-size: 20px;
+  }
+
+  /* Mostrar Sticky CTA Bar em Mobile */
+  .sticky-cta-bar {
+    display: block;
+  }
+
+  /* Adicionar padding no body para compensar sticky bar */
+  body {
+    padding-bottom: 80px;
+  }
+}
+
+/* Mobile Small (até 575px) */
+@media (max-width: 575px) {
+  :root {
+    --font-size-h1: 28px;
+    --font-size-h2: 24px;
+    --container-padding: 16px;
+  }
+
+  .urgency-badge {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .hero__headline {
+    font-size: 28px;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+    padding: 16px 24px;
+    width: 100%;
+  }
+
+  .countdown__block {
+    width: 60px;
+    height: 60px;
+  }
+
+  .countdown__number {
+    font-size: 20px;
+  }
+}
+
+/* ========== 8. ANIMAÇÕES ========== */
+
+/* Fade In ao Scroll (opcional - requer Intersection Observer) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Pulse para CTAs */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: var(--shadow-cta);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(6, 182, 212, 0.6);
+  }
+}
+
+/* Shake para Badge de Urgência */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+/* ========== FIM DO CSS ATUALIZADO ========== */
+  </style>
+
 </head>
 <body>
 
