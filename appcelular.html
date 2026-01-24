@@ -4,3 +4,206 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interface Mobile Sofisticada</title>
+    <style>
+        /* Reset e Centralização */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+        }
+
+        /* O "Hardware" do Celular */
+        .phone-frame {
+            width: 320px;
+            height: 650px;
+            background: #000;
+            border-radius: 50px;
+            padding: 12px; /* Espaço para a borda preta */
+            position: relative;
+            box-shadow: 
+                0 0 0 2px #333, /* Borda metálica fina */
+                0 20px 50px rgba(0,0,0,0.3); /* Sombra realista */
+            overflow: hidden;
+        }
+
+        /* Botões Laterais (Hardware) */
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            top: 100px;
+            left: -2px;
+            width: 4px;
+            height: 25px;
+            background: #222;
+            border-radius: 4px 0 0 4px;
+        }
+        .phone-frame::after {
+            content: '';
+            position: absolute;
+            top: 140px;
+            left: -2px;
+            width: 4px;
+            height: 50px;
+            background: #222;
+            border-radius: 4px 0 0 4px;
+        }
+        .power-btn {
+            position: absolute;
+            top: 120px;
+            right: -2px;
+            width: 4px;
+            height: 50px;
+            background: #222;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* A Tela */
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite; /* Animação do gradiente */
+            border-radius: 40px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+
+        /* Animação do Fundo Sofisticado */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Barra de Status e Notch */
+        .status-bar {
+            height: 40px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 25px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 10;
+        }
+
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 30px;
+            background: #000;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            z-index: 20;
+        }
+
+        /* Conteúdo da Tela de Bloqueio */
+        .lock-screen {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 60px;
+            transition: opacity 0.5s ease;
+        }
+
+        .date {
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .time {
+            font-size: 5rem;
+            font-weight: 200;
+            margin-top: -10px;
+        }
+
+        /* Ícones de Notificação Simulados */
+        .notifications {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        .notification-pill {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Área inferior (Lanterna/Câmera) */
+        .bottom-controls {
+            margin-top: auto;
+            margin-bottom: 40px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 40px;
+        }
+
+        .round-btn {
+            width: 50px;
+            height: 50px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .round-btn:active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .home-bar {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 130px;
+            height: 5px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        /* Estado Desbloqueado (Oculto por padrão) */
+        .home-screen {
+            display: none;
+            padding: 60px 20px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .app-icon {
+            width: 100%;
+            aspect-ratio: 1;
+            background: rgba(255,255,255,0.25);
+            border-radius: 14px;
+            backdrop-filter: blur(5px);
+        }
+
+    </style>
