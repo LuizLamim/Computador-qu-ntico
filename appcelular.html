@@ -208,3 +208,105 @@
 
     </style>
 </head>
+<body>
+
+    <div class="phone-frame">
+        <div class="power-btn"></div>
+        
+        <div class="screen" id="mainScreen">
+            <div class="notch"></div>
+            
+            <div class="status-bar">
+                <span>VIVO</span>
+                <span id="batteryIcon">100%</span>
+            </div>
+
+            <div class="lock-screen" id="lockScreen">
+                <div class="date" id="dateDisplay">Segunda, 23 Jan</div>
+                <div class="time" id="clockDisplay">09:41</div>
+
+                <div class="notifications">
+                    <div class="notification-pill">✉️</div>
+                    <div class="notification-pill">📞</div>
+                </div>
+
+                <div class="bottom-controls">
+                    <div class="round-btn">🔦</div>
+                    <div class="round-btn">📷</div>
+                </div>
+            </div>
+
+            <div class="home-screen" id="homeScreen">
+                <div class="app-icon" style="background: #e74c3c"></div>
+                <div class="app-icon" style="background: #2ecc71"></div>
+                <div class="app-icon" style="background: #3498db"></div>
+                <div class="app-icon" style="background: #f1c40f"></div>
+                <div class="app-icon"></div>
+                <div class="app-icon"></div>
+                <div class="app-icon"></div>
+                <div class="app-icon"></div>
+            </div>
+
+            <div class="home-bar" id="unlockBtn"></div>
+        </div>
+    </div>
+
+    <script>
+        // --- 1. Sistema de Relógio em Tempo Real ---
+        function updateClock() {
+            const now = new Date();
+            
+            // Hora
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('clockDisplay').textContent = `${hours}:${minutes}`;
+
+            // Data
+            const options = { weekday: 'long', day: 'numeric', month: 'short' };
+            const dateStr = now.toLocaleDateString('pt-BR', options);
+            // Capitalizar a primeira letra
+            document.getElementById('dateDisplay').textContent = dateStr.charAt(0).toUpperCase() + dateStr.slice(1);
+        }
+
+        setInterval(updateClock, 1000); // Atualiza a cada segundo
+        updateClock(); // Executa imediatamente ao carregar
+
+        // --- 2. Sistema de Desbloqueio (Interatividade) ---
+        const homeBar = document.getElementById('unlockBtn');
+        const lockScreen = document.getElementById('lockScreen');
+        const homeScreen = document.getElementById('homeScreen');
+        let isLocked = true;
+
+        homeBar.addEventListener('click', () => {
+            if (isLocked) {
+                // Animação de saída
+                lockScreen.style.opacity = '0';
+                
+                setTimeout(() => {
+                    lockScreen.style.display = 'none';
+                    homeScreen.style.display = 'grid';
+                    
+                    // Pequeno delay para permitir a transição CSS
+                    setTimeout(() => {
+                        homeScreen.style.opacity = '1';
+                    }, 50);
+                    
+                    isLocked = false;
+                }, 500);
+            } else {
+                // Bloquear novamente
+                homeScreen.style.opacity = '0';
+                setTimeout(() => {
+                    homeScreen.style.display = 'none';
+                    lockScreen.style.display = 'flex';
+                    setTimeout(() => {
+                        lockScreen.style.opacity = '1';
+                    }, 50);
+                    isLocked = true;
+                }, 500);
+            }
+        });
+
+    </script>
+</body>
+</html>
