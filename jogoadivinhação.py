@@ -22,3 +22,7 @@ def jogo_adivinhacao():
                 acertou = True
         except ValueError:
             print("Por favor, digite apenas números inteiros.")
+
+# Executar o jogo
+if __name__ == "__main__":
+    jogo_adivinhacao()
