@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio Profissional</title>
+    <style>
+        /* --- CONFIGURAÇÕES GERAIS (CSS) --- */
+        :root {
+            --cor-primaria: #2563eb; /* Azul */
+            --cor-fundo: #f8fafc;
+            --cor-texto: #1e293b;
+            --cor-card: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+        }
+
+        /* --- CABEÇALHO --- */
+        header {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        /* --- CONTEÚDO PRINCIPAL --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Seções */
+        section {
+            margin-bottom: 3rem;
+            background: var(--cor-card);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--cor-primaria);
+            padding-bottom: 0.5rem;
+            color: var(--cor-primaria);
+        }
+
+        /* Lista de Habilidades */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: #e2e8f0;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Projetos */
+        .projeto {
+            border-left: 4px solid var(--cor-primaria);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .projeto h3 {
+            margin: 0 0 0.5rem 0;
+        }
+
+        /* Botão de Contato */
+        .btn {
+            display: inline-block;
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #334155;
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>[Seu Nome Completo]</h1>
+        <p>[Sua Profissão ou Área de Estudo]</p>
+        <br>
+        <a href="mailto:seuemail@exemplo.com" class="btn">Entrar em Contato</a>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <h2>Sobre Mim</h2>
+            <p>
+                Olá! Sou um profissional apaixonado por tecnologia e inovação. 
+                Atualmente, foco em resolver problemas complexos através de código e 
+                estou sempre em busca de novos desafios para expandir meus conhecimentos.
+            </p>
+        </section>
+
+        <section>
+            <h2>Habilidades</h2>
+            <div class="skills">
+                <span class="skill-tag">HTML5 & CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Git & GitHub</span>
+                <span class="skill-tag">Comunicação</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projetos Recentes</h2>
+            
+            <div class="projeto">
+                <h3>Nome do Projeto 1</h3>
+                <p>Uma breve descrição do que esse projeto faz, as tecnologias usadas e o problema que ele resolveu.</p>
+                <a href="#">Ver no GitHub &rarr;</a>
+            </div>
+
+            <div class="projeto">
+                <h3>Nome do Projeto 2</h3>
+                <p>Descrição de outro projeto ou experiência profissional relevante. Destaque seus resultados aqui.</p>
+                <a href="#">Ver online &rarr;</a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Formação Acadêmica</h2>
+            <p><strong>Nome do Curso / Graduação</strong><br>
+            Nome da Universidade ou Instituição - <em>Conclusão em [Ano]</em></p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 [Seu Nome]. Feito com HTML e CSS.</p>
+    </footer>
+
+</body>
+</html>
