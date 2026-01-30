@@ -23,3 +23,17 @@ def calcular_queda_livre():
 
         # Convertendo velocidade para km/h (opcional, mas útil)
         velocidade_kmh = velocidade * 3.6
+
+        # 4. Exibindo os resultados
+        print("\n--- Resultados ---")
+        print(f"Tempo de queda: {tempo} segundos")
+        print(f"Distância percorrida (Altura): {distancia:.2f} metros")
+        print(f"Velocidade final: {velocidade:.2f} m/s")
+        print(f"Velocidade final: {velocidade_kmh:.2f} km/h")
+
+    except ValueError:
+        print("Erro: Por favor, digite apenas números válidos (use ponto para decimais).")
+
+# Executa o programa
+if __name__ == "__main__":
+    calcular_queda_livre()
