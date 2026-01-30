@@ -6,12 +6,10 @@
   <title>Recuperação Judicial Prática - Dr. Adelino Neto | ABAJUD</title>
   <meta name="description" content="Domine Processos de Recuperação Judicial e acesse honorários de R$ 250 mil. Curso prático com Dr. Adelino Neto, Presidente da ABAJUD.">
   
-  <!-- <link rel="stylesheet" href="style.css"> -->
-
   <style>
     /* ============================================
-   VARIÁVEIS CSS - DESIGN TOKENS
-   Paleta "Executivo de Elite"
+    VARIÁVEIS CSS - DESIGN TOKENS
+    Paleta "Executivo de Elite"
 ============================================ */
 :root {
   /* CORES */
@@ -50,7 +48,7 @@
 }
 
 /* ============================================
-   RESET E BASE
+    RESET E BASE
 ============================================ */
 * {
   margin: 0;
@@ -74,7 +72,7 @@ body {
 }
 
 /* ============================================
-   TIPOGRAFIA GLOBAL
+    TIPOGRAFIA GLOBAL
 ============================================ */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
@@ -128,7 +126,7 @@ ul {
 }
 
 /* ============================================
-   LAYOUT GLOBAL - CONTAINERS
+    LAYOUT GLOBAL - CONTAINERS
 ============================================ */
 section {
   padding: var(--spacing-xl) var(--spacing-md);
@@ -150,10 +148,16 @@ section {
 }
 
 /* ============================================
-   COMPONENTES REUTILIZÁVEIS - BOTÕES CTA
+    COMPONENTES REUTILIZÁVEIS - BOTÕES CTA
 ============================================ */
 .cta-button {
-  display: inline-block;
+  /* ALTERAÇÃO AQUI PARA CENTRALIZAR TODOS OS BOTÕES */
+  display: block; 
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  /* FIM DA ALTERAÇÃO */
+  
   font-family: var(--font-cta);
   font-size: 1.25rem;
   font-weight: 700;
@@ -189,7 +193,8 @@ section {
 .cta-button--giant {
   font-size: 1.6rem;
   padding: 1.75rem 4rem;
-  margin: var(--spacing-md) 0;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
 .cta-subtext {
@@ -201,7 +206,7 @@ section {
 }
 
 /* ============================================
-   HERO SECTION
+    HERO SECTION
 ============================================ */
 .hero {
   background: linear-gradient(180deg, var(--preto-antracite) 0%, var(--cinza-platina) 100%);
@@ -269,7 +274,7 @@ section {
 }
 
 /* ============================================
-   PROBLEM SECTION
+    PROBLEM SECTION
 ============================================ */
 .problem {
   background-color: var(--cinza-platina);
@@ -350,7 +355,7 @@ section {
 }
 
 /* ============================================
-   SOLUTION SECTION
+    SOLUTION SECTION
 ============================================ */
 .solution {
   background-color: var(--preto-antracite);
@@ -396,7 +401,7 @@ section {
 }
 
 /* ============================================
-   PILARES SECTION
+    PILARES SECTION
 ============================================ */
 .pilares {
   background-color: var(--cinza-platina);
@@ -447,7 +452,7 @@ section {
 }
 
 /* ============================================
-   VALUE STACK SECTION
+    VALUE STACK SECTION
 ============================================ */
 .value-stack {
   background-color: var(--preto-antracite);
@@ -601,7 +606,7 @@ section {
 }
 
 /* ============================================
-   SOCIAL PROOF SECTION
+    SOCIAL PROOF SECTION
 ============================================ */
 .social-proof {
   background-color: var(--cinza-platina);
@@ -760,7 +765,7 @@ section {
 }
 
 /* ============================================
-   GUARANTEE SECTION
+    GUARANTEE SECTION
 ============================================ */
 .guarantee {
   background-color: var(--preto-antracite);
@@ -821,7 +826,7 @@ section {
 }
 
 /* ============================================
-   URGENCY SECTION
+    URGENCY SECTION
 ============================================ */
 .urgency {
   background-color: var(--cinza-platina);
@@ -875,7 +880,7 @@ section {
 }
 
 /* ============================================
-   FAQ SECTION
+    FAQ SECTION
 ============================================ */
 .faq {
   background-color: var(--preto-antracite);
@@ -921,7 +926,7 @@ section {
 }
 
 /* ============================================
-   FINAL CTA SECTION
+    FINAL CTA SECTION
 ============================================ */
 .final-cta {
   background: linear-gradient(135deg, var(--cinza-platina) 0%, var(--preto-antracite) 100%);
@@ -988,7 +993,7 @@ section {
 }
 
 /* ============================================
-   FOOTER
+    FOOTER
 ============================================ */
 .footer {
   background-color: var(--preto-antracite);
@@ -1009,7 +1014,7 @@ section {
 }
 
 /* ============================================
-   RESPONSIVIDADE - MOBILE FIRST
+    RESPONSIVIDADE - MOBILE FIRST
 ============================================ */
 
 /* Tablets (768px e acima) */
@@ -1103,7 +1108,7 @@ section {
 }
 
 /* ============================================
-   ANIMAÇÕES SUTIS
+    ANIMAÇÕES SUTIS
 ============================================ */
 @keyframes fadeInUp {
   from {
@@ -1125,16 +1130,13 @@ section {
 }
 
 /* ============================================
-   GOOGLE FONTS IMPORT
+    GOOGLE FONTS IMPORT
 ============================================ */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap');
   </style>
 </head>
 <body>
 
-  <!-- ========================================
-       HERO SECTION
-  ======================================== -->
   <section class="hero">
     <div class="hero__container">
       <h1 class="hero__headline">
@@ -1169,9 +1171,6 @@ section {
     </div>
   </section>
 
-  <!-- ========================================
-       PROBLEM SECTION
-  ======================================== -->
   <section class="problem">
     <div class="problem__container">
       <h2 class="problem__headline">
@@ -1182,7 +1181,6 @@ section {
         Três obstáculos que impedem você de atuar nesse mercado (e como superá-los).
       </p>
 
-      <!-- Problema 01 -->
       <article class="problem__item">
         <h3 class="problem__item-headline">
           Você não conhece o mercado — e está deixando oportunidades de R$ 250 mil passarem para outros.
@@ -1192,7 +1190,6 @@ section {
         </p>
       </article>
 
-      <!-- Problema 02 -->
       <article class="problem__item">
         <h3 class="problem__item-headline">
           A Lei 11.101/05 é densa e confusa — e você não sabe como aplicá-la na prática
@@ -1212,7 +1209,6 @@ section {
         </p>
       </article>
 
-      <!-- Problema 03 -->
       <article class="problem__item">
         <h3 class="problem__item-headline">
           Você foi nomeado em uma RJ e o processo JÁ ESTÁ EM CURSO — precisa atuar AGORA
@@ -1231,7 +1227,6 @@ section {
         </p>
       </article>
 
-      <!-- Consequências -->
       <div class="problem__consequences">
         <h3 class="problem__consequences-headline">
           A Consequência de Não Resolver Isso Agora
@@ -1251,9 +1246,6 @@ section {
     </div>
   </section>
 
-  <!-- ========================================
-       SOLUTION SECTION
-  ======================================== -->
   <section class="solution">
     <div class="solution__container">
       <h2 class="solution__headline">
@@ -1282,14 +1274,10 @@ section {
     </div>
   </section>
 
-  <!-- ========================================
-       OS 3 PILARES
-  ======================================== -->
   <section class="pilares">
     <div class="pilares__container">
       <h2 class="pilares__headline">Os 3 Pilares da Estratégia</h2>
 
-      <!-- Pilar 1 -->
       <article class="pilar">
         <h3 class="pilar__headline">
           Pilar 1: Domine Todas as Fases Processuais de uma RJ — Do Pedido Inicial ao Encerramento.
@@ -1307,7 +1295,6 @@ section {
         </p>
       </article>
 
-      <!-- Pilar 2 -->
       <article class="pilar">
         <h3 class="pilar__headline">
           Pilar 2: Ferramentas de "Pronto Uso" para Execução Imediata nos Seus Casos.
@@ -1331,7 +1318,6 @@ section {
         </p>
       </article>
 
-      <!-- Pilar 3 -->
       <article class="pilar">
         <h3 class="pilar__headline">
           Pilar 3: Posicionamento de Autoridade e Viabilização de Contratos de Alto Valor.
@@ -1352,9 +1338,6 @@ section {
     </div>
   </section>
 
-  <!-- ========================================
-       VALUE STACK SECTION
-  ======================================== -->
   <section class="value-stack" id="oferta">
     <div class="value-stack__container">
       <h2 class="value-stack__headline">
@@ -1364,10 +1347,8 @@ section {
         Tudo o que você precisa para dominar Recuperação Judicial, atuar com segurança e fechar contratos de alto valor de honorários.
       </p>
 
-      <!-- Bônus em Destaque -->
       <div class="bonus-destaque">
         <h3 class="bonus-destaque__headline">BÔNUS 01: COMPÊNDIO DE DIREITO EMPRESARIAL (1.659 PÁGINAS)</h3>
-        <!-- Imagem: Mockup do Compêndio -->
         <p>
           Este não é um "bônus comum". É uma obra completa que poderia ser comercializada separadamente por R$ 297,00.
         </p>
@@ -1389,7 +1370,6 @@ section {
         <p class="bonus-destaque__valor"> VALOR DE MERCADO: R$ 297,00<br>(Incluído gratuitamente na sua inscrição hoje)</p>
       </div>
 
-      <!-- Tabela de Valor Stack -->
       <div class="value-table">
         <table>
           <thead>
@@ -1438,7 +1418,6 @@ section {
         </table>
       </div>
 
-      <!-- Garantia -->
       <div class="garantia-box">
         <h3> GARANTIA BLINDADA: 7 DIAS DE RISCO ZERO</h3>
         <p>
@@ -1446,7 +1425,6 @@ section {
         </p>
       </div>
 
-      <!-- Investimento -->
       <div class="investimento">
         <p class="investimento__de">DE <span class="investimento__riscado">R$ 5.182,00</span></p>
         <p class="investimento__por">POR:</p>
@@ -1459,7 +1437,6 @@ section {
         </a>
       </div>
 
-      <!-- Análise de Viabilidade -->
       <div class="viabilidade">
         <h3> Análise de Viabilidade Econômica (O "Pulo do Gato")</h3>
         <p>Para o advogado estrategista, este não é um custo, é um aporte.</p>
@@ -1474,9 +1451,6 @@ section {
     </div>
   </section>
 
-  <!-- ========================================
-       SOCIAL PROOF SECTION
-  ======================================== -->
   <section class="social-proof">
     <div class="social-proof__container">
       <h2 class="social-proof__headline">
@@ -1486,7 +1460,6 @@ section {
         Resultados reais de profissionais que transformaram suas carreiras com o Método Adelino Neto
       </p>
 
-      <!-- Hero Testimonial -->
       <article class="testimonial testimonial--hero">
         <h3 class="testimonial__label"> CASO: SOLANGE ARCH</h3>
         <h4 class="testimonial__title">A Transformação: Da advocacia convencional à especialista em demandas de alta relevância econômica.</h4>
@@ -1509,7 +1482,6 @@ section {
         <p class="testimonial__rating"></p>
       </article>
 
-      <!-- Testemunhos Adicionais -->
       <div class="testimonials-grid">
         <article class="testimonial">
           <p class="testimonial__rating"></p>
@@ -1536,7 +1508,6 @@ section {
         </article>
       </div>
 
-      <!-- Módulos do Curso -->
       <div class="modulos">
         <h3 class="modulos__headline">O Que Você Vai Aprender na Trilha do Dr. Adelino Neto:</h3>
         <p class="modulos__intro">10 módulos com videoaulas práticas que você pode aplicar no seu escritório ou em suas nomeações judiciais imediatamente.</p>
@@ -1579,7 +1550,6 @@ section {
       </a>
       <p class="cta-subtext"> Acesso imediato à plataforma |  Certificado ABAJUD</p>
 
-      <!-- Credenciais Dr. Adelino -->
       <div class="credenciais">
         <h3 class="credenciais__headline"> QUEM CONDUZ A TRILHA: DR. ADELINO NETO</h3>
         <p class="credenciais__intro">
@@ -1622,9 +1592,6 @@ section {
     </div>
   </section>
 
-  <!-- ========================================
-       GUARANTEE SECTION
-  ======================================== -->
   <section class="guarantee">
     <div class="guarantee__container">
       <h2 class="guarantee__headline">
@@ -1683,13 +1650,10 @@ section {
     </div>
   </section>
 
-  <!-- ========================================
-       URGENCY/SCARCITY SECTION
-  ======================================== -->
   <section class="urgency">
     <div class="urgency__container">
       <h2 class="urgency__headline">
-         ATENÇÃO: BÔNUS EXCLUSIVO PARA OS 20 PRIMEIROS ALUNOS
+          ATENÇÃO: BÔNUS EXCLUSIVO PARA OS 20 PRIMEIROS ALUNOS
       </h2>
       <p class="urgency__intro">
         A Planilha de Cálculo de Votos da AGC (Valor: R$ 697) está disponível APENAS para os primeiros 20 inscritos.
@@ -1741,9 +1705,6 @@ section {
     </div>
   </section>
 
-  <!-- ========================================
-       FAQ SECTION
-  ======================================== -->
   <section class="faq">
     <div class="faq__container">
       <h2 class="faq__headline">Perguntas Frequentes</h2>
@@ -1809,9 +1770,6 @@ section {
     </div>
   </section>
 
-  <!-- ========================================
-       FINAL CTA SECTION
-  ======================================== -->
   <section class="final-cta">
     <div class="final-cta__container">
       <h2 class="final-cta__headline">
@@ -1860,9 +1818,6 @@ section {
     </div>
   </section>
 
-  <!-- ========================================
-       FOOTER
-  ======================================== -->
   <footer class="footer">
     <div class="footer__container">
       <p>&copy; 2026 ABAJUD - Associação Brasileira de Administradores Judiciais. Todos os direitos reservados.</p>
