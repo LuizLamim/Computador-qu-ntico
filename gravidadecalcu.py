@@ -9,3 +9,17 @@ def calcular_queda_livre():
 
         # 2. Recebendo o tempo de queda do usuário
         tempo = float(input("Digite o tempo de queda (em segundos): "))
+
+        if tempo < 0:
+            print("O tempo não pode ser negativo!")
+            return
+
+        # 3. Realizando os cálculos
+        # Fórmula da distância: d = (1/2) * g * t^2
+        distancia = 0.5 * g * (tempo ** 2)
+
+        # Fórmula da velocidade: v = g * t
+        velocidade = g * tempo
+
+        # Convertendo velocidade para km/h (opcional, mas útil)
+        velocidade_kmh = velocidade * 3.6
