@@ -54,3 +54,10 @@ def update(frame):
     # Atualiza o gráfico
     Q.set_UVC(Bx, By)
     return Q,
+
+# 4. Executar Animação
+ani = FuncAnimation(fig, update, frames=np.arange(0, 360, 2), interval=50, blit=True)
+
+plt.xlabel("Eixo X")
+plt.ylabel("Eixo Y")
+plt.show()
