@@ -36,3 +36,21 @@ ax.set_title("Animação de Campo Magnético (Ímã em Rotação)")
 
 # Inicializa o gráfico de vetores (Quiver)
 Q = ax.quiver(X, Y, np.zeros_like(X), np.zeros_like(Y), color='royalblue', pivot='mid')
+
+# 3. Função de Animação
+def update(frame):
+    # O ímã gira conforme o tempo (frame)
+    angle = np.radians(frame)
+    m_dir = [np.cos(angle), np.sin(angle)]
+    
+    # Calcula os novos vetores
+    Bx, By = magnetic_field(X, Y, 0, 0, m_dir)
+    
+    # Normalização para os vetores não ficarem gigantes na tela
+    mag = np.sqrt(Bx**2 + By**2)
+    Bx /= mag
+    By /= mag
+    
+    # Atualiza o gráfico
+    Q.set_UVC(Bx, By)
+    return Q,
