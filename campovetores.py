@@ -23,3 +23,16 @@ def magnetic_field(x, y, x0, y0, m_dir):
     By = (3 * dy * dot_product / r**5 - m_dir[1] / r**3)
     
     return Bx, By
+
+# 2. Configuração da Grade
+x = np.linspace(-5, 5, 20)
+y = np.linspace(-5, 5, 20)
+X, Y = np.meshgrid(x, y)
+
+fig, ax = plt.subplots(figsize=(8, 8))
+ax.set_xlim(-5, 5)
+ax.set_ylim(-5, 5)
+ax.set_title("Animação de Campo Magnético (Ímã em Rotação)")
+
+# Inicializa o gráfico de vetores (Quiver)
+Q = ax.quiver(X, Y, np.zeros_like(X), np.zeros_like(Y), color='royalblue', pivot='mid')
