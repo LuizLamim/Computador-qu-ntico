@@ -6,3 +6,27 @@
     <title>Bloco Minimalista Transparente</title>
 
 </head>
+<body>
+
+    <div class="glass-card">
+        <h2 id="titulo">Olá!</h2>
+        <p id="texto">Este é um bloco com design minimalista, bordas arredondadas e fundo semitransparente.</p>
+        <button onclick="mudarTexto()">Clique aqui</button>
+    </div>
+
+    <script>
+        // Pequena interação em JavaScript
+        function mudarTexto() {
+            const frases = [
+                "O design é a alma das coisas.",
+                "Menos é mais.",
+                "Simplicidade é a sofisticação máxima.",
+                "Foco no essencial."
+            ];
+            const aleatorio = Math.floor(Math.random() * frases.length);
+            document.getElementById('texto').innerText = frases[aleatorio];
+        }
+    </script>
+
+</body>
+</html>
