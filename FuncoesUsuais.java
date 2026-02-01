@@ -21,3 +21,15 @@ public class FuncoesUsuais {
         } else {
             System.out.println(nome + ", você é menor de idade.");
         }
+
+        // 3. Estruturas de Repetição (for) e Listas (ArrayList)
+        System.out.println("\n--- Trabalhando com Listas ---");
+        List<String> linguagens = new ArrayList<>();
+        linguagens.add("Java");
+        linguagens.add("Python");
+        linguagens.add("JavaScript");
+
+        System.out.println("Linguagens populares:");
+        for (int i = 0; i < linguagens.size(); i++) {
+            System.out.println((i + 1) + "º: " + linguagens.get(i));
+        }
