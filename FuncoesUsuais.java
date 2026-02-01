@@ -41,3 +41,15 @@ public class FuncoesUsuais {
         System.out.println("Sem espaços (trim): '" + frase.trim() + "'");
         System.out.println("Maiúsculo: " + frase.toUpperCase());
         System.out.println("Substituição: " + frase.replace("Poderoso", "Versátil"));
+
+        // 5. Matemática Básica (Math)
+        double numero = 25.0;
+        System.out.println("\n--- Funções Matemáticas ---");
+        System.out.println("Raiz quadrada de " + numero + " é: " + Math.sqrt(numero));
+        System.out.println("O valor de PI é: " + Math.PI);
+
+        // Fechando o scanner
+        leitor.close();
+        System.out.println("\nPrograma finalizado com sucesso.");
+    }
+}
