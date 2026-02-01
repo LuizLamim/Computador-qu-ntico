@@ -33,3 +33,11 @@ public class FuncoesUsuais {
         for (int i = 0; i < linguagens.size(); i++) {
             System.out.println((i + 1) + "º: " + linguagens.get(i));
         }
+
+        // 4. Manipulação de Strings
+        System.out.println("\n--- Manipulação de Texto ---");
+        String frase = "  Java é Poderoso  ";
+        System.out.println("Original: '" + frase + "'");
+        System.out.println("Sem espaços (trim): '" + frase.trim() + "'");
+        System.out.println("Maiúsculo: " + frase.toUpperCase());
+        System.out.println("Substituição: " + frase.replace("Poderoso", "Versátil"));
