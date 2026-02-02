@@ -15,3 +15,19 @@ def plotar_esfera(raio=1):
     x = raio * np.outer(np.cos(u), np.sin(v))
     y = raio * np.outer(np.sin(u), np.sin(v))
     z = raio * np.outer(np.ones(np.size(u)), np.cos(v))
+
+    # Plotando a superfície
+    # 'cmap' define a cor (magma, viridis, ocean, etc)
+    # 'alpha' define a transparência
+    ax.plot_surface(x, y, z, color='skyblue', edgecolor='k', alpha=0.6, linewidth=0.1)
+
+    # Ajustando os limites para manter o aspecto de esfera
+    max_range = raio
+    ax.set_xlim(-max_range, max_range)
+    ax.set_ylim(-max_range, max_range)
+    ax.set_zlim(-max_range, max_range)
+
+    ax.set_title(f'Esfera 3D com Raio = {raio}')
+    ax.set_xlabel('Eixo X')
+    ax.set_ylabel('Eixo Y')
+    ax.set_zlabel('Eixo Z')
