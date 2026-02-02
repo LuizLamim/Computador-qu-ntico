@@ -31,3 +31,8 @@ def plotar_esfera(raio=1):
     ax.set_xlabel('Eixo X')
     ax.set_ylabel('Eixo Y')
     ax.set_zlabel('Eixo Z')
+
+    plt.show()
+
+if __name__ == "__main__":
+    plotar_esfera(raio=5)
