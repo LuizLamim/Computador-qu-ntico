@@ -1,8 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-</head>
+    <meta charset="UTF-8">
+    <style>
+        .botao-interativo {
+            /* Cores e Fundo */
+            background: linear-gradient(45deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            
+            /* Dimensões e Estilo */
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            
+            /* Transição suave */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            outline: none;
+        }
 
+        /* Efeito ao passar o mouse (Hover) */
+        .botao-interativo:hover {
+            transform: scale(1.15); /* Aumenta o tamanho em 15% */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: linear-gradient(45deg, #2575fc 0%, #6a11cb 100%); /* Inverte o degradê */
+        }
+
+        /* Efeito ao clicar */
+        .botao-interativo:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
 <body>
 
     <button class="botao-interativo">Clique aqui</button>
