@@ -8,3 +8,5 @@ bola = sphere(pos=vector(0,0,0), radius=1, color=color.cyan, make_trail=True)
 
 t = 0
 dt = 0.01
+
+print("Iniciando animação...")
